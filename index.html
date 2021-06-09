@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+	<script src="./script.js"></script>
+    <title>Incorrect Quotes Generator</title>
+</head>
+<body>
+    <nav>
+        <span>yet another incorrect quotes generator</span> |
+        <a href="https://github.com/andythepie/incorrect-quotes-generator">source code</a>
+    </nav>
+	<h1>input some names</h1>
+    <div>
+        <input placeholder="person 1" onfocus="this.value=''" type="text">
+    </div>
+	<button onclick="generatePrompt()">do the thing!</button>
+    <h1>output</h1>
+    <div id="output">
+		this is where the output goes.
+    </div>
+	<hr>
+	<div>
+		there are currently <span id="prompt-count">num</span> prompts.
+	</div>
+</body>
+</html>

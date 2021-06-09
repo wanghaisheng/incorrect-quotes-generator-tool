@@ -1,0 +1,22 @@
+{
+  "name": "incorrect-quotes-generator",
+  "version": "0.0.1",
+  "description": "a ripoff of scatterpatter's incorrect quotes generator ",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AndyThePie/incorrect-quotes-generator.git"
+  },
+  "author": "AndyThePie",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AndyThePie/incorrect-quotes-generator/issues"
+  },
+  "homepage": "andythepie.github.io/incorrect-quotes-generator",
+  "scripts": {
+    "test": "xo"
+  },
+  "devDependencies": {
+    "eslint": "^7.28.0",
+    "eslint-config-xo": "^0.36.0"
+  }
+}

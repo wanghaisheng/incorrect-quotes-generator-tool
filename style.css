@@ -1,0 +1,39 @@
+/* fonts woot */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
+
+* {
+    font-family: "Open Sans", "Ubuntu", "Helvetica", "Arial", sans-serif;
+}
+
+body{
+    margin: 2% 20%;
+    background: #d1d4cb;
+}
+/* and resizing... */
+
+@media (max-width: 1280px){
+    body {
+        margin: 2% 10%;
+    }
+}
+
+@media (max-width: 480px){
+    body {
+        margin: 2% 1em;
+    }
+}
+
+nav{
+    background: rgba(32, 32, 32, 0.8);
+    color: white;
+    padding: 0.5em
+}
+
+a{
+    color: inherit
+}
+
+#output{
+	padding: 0.5em;
+	background: #ffffffc4;
+}
