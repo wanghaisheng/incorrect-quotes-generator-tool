@@ -1,23 +1,47 @@
-const prompts = [
-	"{1}: hello i'm saying a thing",
-	"{1}: do you like waffles yeah we ilke waffles",
-	"{1}: hrrgnh colonel im trying to sneak around but im dummy thicc and the clap from my ass cheeks keeps alerting the guards",
-	"{1}: how many shrimps do you have to eat before you commit arson",
-	"{1}: what if {1} was to use {1}'s name and talk in the third person?"
-];
+let prompts;
+fetch("./prompts.json")
+	.then(response => response.json())
+	.then(data => {
+		prompts = data;
+
+		// and then calculating number of prompts...
+		let promptCount = 0;
+		for (let i = 1; i < Object.keys(prompts).length + 1; i++) {
+			promptCount += prompts[i].length;
+		}
+
+		document.querySelector("#prompt-count").textContent = promptCount;
+	});
 
 window.onload = function () {
-	document.querySelector("#prompt-count").textContent = prompts.length;
 };
 
 // eslint-disable-next-line no-unused-vars
 function generatePrompt() {
-	const values = [];
-	for (const input of document.querySelectorAll("input")) {
-		values.push(input.value);
+	const characters = [];
+
+	for (const input of document.querySelectorAll(".character")) {
+		if (input.value !== "") {
+			characters.push(input.value);
+		}
 	}
 
-	const prompt = prompts[Math.floor(Math.random() * prompts.length)];
-	const output = prompt.replaceAll("{1}", values[0]);
-	document.querySelector("#output").textContent = output;
+	// number of characters determines what set of prompts to use.
+	const promptsIndex = characters.length;
+
+	// getting a random prompt
+	const prompt = prompts[promptsIndex][Math.floor(Math.random() * prompts[promptsIndex].length)];
+
+	let output = prompt;
+
+	// replacing placeholders with characters
+	for (let i = 0; i < characters.length; i++) {
+		const char = characters[i];
+
+		console.log(i, output);
+
+		output = output.replaceAll(`{${i + 1}}`, char); // standard
+	}
+
+	document.querySelector("#output").innerText = output;
 }
