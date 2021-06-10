@@ -16,6 +16,7 @@ fetch("./prompts.json")
 
 const test = document.querySelectorAll(".character");
 
+// dealing with inputs enabling/disabling
 for (let i = 0; i < test.length; i++) {
 	test[i].disabled = true; // disable all inputs by default
 	test[i].value = ""; // also clear everything. no persistence.
@@ -82,6 +83,7 @@ function generatePrompt() {
 
 		output = output.replaceAll(`{${i + 1}}`, char); // standard
 		output = output.replaceAll(`{${i + 1}.upper}`, char.toUpperCase()); // uppercase
+		output = output.replaceAll(`{${i + 1}.first}`, char.charAt(0)); // first letter
 	}
 
 	document.querySelector("#output").innerText = output;

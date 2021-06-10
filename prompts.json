@@ -12,6 +12,33 @@
 		"{1}: It's a dinner rush and the restaurant's full but we want to be seated immediately.\n{2}: DONE AND DONE LET ME PULL THE TABLE OUT OF MY ASS--",
 		"{1}: Hey {2}, could you read number 23 for the class-\n{2}: No, I cannot! What up, I'm {2}, I'm 19, and I never fuckin' learned how to read!",
 		"{1}: So, uh, you guys comin' to my party?\n{2}: Who?\n{1}: You guys.\n{2}: It's just me-- [notices the mirror beside them and fist bumps it]-- oh what up, you going?",
-		"{1}: [holding a crayon]\n{2}: {1.upper}, IS THAT A WEED?\n{1}: N-no it's a crayo--\n{2}: I'M CALLING THE POLICE [presses 9-1-1 on the microwave]"
+		"{1}: [holding a crayon]\n{2}: {1.upper}, IS THAT A WEED?\n{1}: N-no it's a crayo--\n{2}: I'M CALLING THE POLICE [presses 9-1-1 on the microwave]",
+		"{1}: You either buckle down and do your work or you'll end up at McDonald's.\n{2}: WE'RE GOING TO MCDONALD'S IF I DON'T DO MY WORK\n{1}: NO!!",
+		"{1}: My mom said if I don't get my grades up she won't let me get my tetanus shot next year\n{2}: That's...weird, what're you gonna do?\n{1}: FUCKIN' STUDY, I GUESS!",
+		"{1}: [running away from {2} and screaming]\n{2}, getting out of a car: WHY ARE YOU RUNNING? WHY ARE YOU RUNNING?"
+	],
+	"3": [
+		"{1}: I SAW YOU HANGING OUT WITH {3.upper} YESTERDAY!\n{2}: {1.first}-{1.upper} IT'S NOT WHAT YOU THINK-\n{1}: I WON'T HESITATE BITCH *pulls out a gun*",
+		"{1}, whispering to {2}, who’s on the phone with {3}: Ask them something!\n{2}: How are you feeling?\n{3}: Fine.\n{1}: Something personal!\n{2}: At what age did you first get your period?",
+		"*The squad is having dinner together*\n{1}: {2}, can you pass the salt?\n{2}: *Throws {3} across the table*"
+	],
+	"4": [
+		"{1}: Screams\n{2}: Screams louder to assert dominance\n{3}: Should we do something?!\n{4}, observing: No, I want to see who wins this.",
+		"{1}, about {2}: Apparently we’re getting someone new in the group.\n{3}: Are we stealing them?\n{4}: New or used?\n{1}: Wonderful responses, both of you.",
+		"{1}: *Gently taps table*\n{2}: *Taps back*\n{3}: What are they doing?\n{4}: Morse code.\n{1}: *Aggressively taps table*\n{2}: *Slams hands down* YOU TAKE THAT BACK-",
+		"{1}: I currently have 7 empty notebooks and I have no clue what to put in them. Suggestions?\n{2}: Put spaghetti in it.\n{1}: I'm currently taking suggestions from literally anyone but you.\n{3}: Put spaghetti in it.\n{1}: I'm currently taking suggestions from anyone but you two.\n{4}: Put spaghetti in it.\n{1}: I'm no longer taking suggestions.",
+		"{1}: Why are your tongues purple?\n{2}: We had slushies. I had a blue one.\n{3}: I had a red one.\n{1}: oh\n{1}:\n{1}: OH\n{4}:\n{4}: You drank each other's slushies?"
+	],
+	"5": [
+		"{1}: I’m an idiot.\n{2}:\n{3}:\n{4}:\n{5}:\n{1}:\n{2}: If you’re waiting for us to disagree, this is going to be a long day.",
+		"{1}: We’ve been conducting an ongoing study to see what {3} will and will not eat.\n{2}: Grass? Yes!\n{1}: Moss? Yes!!\n{2}: Leaves? Ohh, yes!\n{1}: Shoelaces? Strange but true!\n{2}: Worms? Sometimes!\n{1}: Rocks? Usually nah.\n{2}: Twigs? Usually!\n{1}: {5}'s cooking? Inconclusive!\n{4}: How did you… test this?\n{1}: You just hand them stuff and say ‘eat this’ and if they eat it, they eat it.\n{4}: ... I don’t know how to feel about this.\n{5}: IS THAT WHERE ALL MY SPARE SHOELACES WENT?",
+		"{1}: Looking left cause you don’t treat me right\n{2}: Looking right because you left\n{3}: Looking up cause you let me down\n{4}: Looking down cause you fucked up\n{5}: What is wrong with you guys"
+	],
+	"6": [
+		"{1}: If you bite it and you die, it’s poisonous. If it bites you and you die, it’s venomous. \n{2}: What if it bites me and it dies!? \n{3}: Then you’re poisonous. Jesus Christ, {2}, learn to listen. \n{4}: What if it bites itself and I die? \n{5}: That’s voodoo. \n{6}: What if it bites me and someone else dies? \n{2}: That’s correlation, not causation. \n{4}: What if we bite each other, and neither of us die? \n{5}: That’s kinky. \n{1}: Oh my God.",
+		"{1}: Thanks fam!\n{2}: oh no\n{3}: *cries* I love you too\n{4}: Sounds fake but okay\n{5}: *A flustered mess*\n{6}: can i get a refund",
+		"*Everyone is standing around the broken coffee maker*\n{1}: So. Who broke it? I'm not mad, I just wanna know. \nEveryone: \n{2}: ...I did. I broke it. \n{1}: No. No you didn't. {3}? \n{3}: Don't look at me. Look at {4}. \n{4}: What?! I didn't break it. \n{3}: Huh, that's weird. How'd you even know it was broken? \n{4}: Because it's sitting right in front of us and it's broken. \n{3}: Suspicious. \n{4}: No, it's not! \n{5}: If it matters, probably not, but {6} was the last one to use it.\n{6}: Liar! I don't even drink that crap! \n{5}: Oh really? Then what were you doing by the coffee cart earlier? \n{6}: I use the wooden stirrers to push back my cuticles. Everyone knows that, {5}! \n{2}: Okay, let's not fight. I broke it. Let me pay for it, {1}. \n{1}: No! Who broke it!? \nEveryone: \n{5}: {1}... {3}'s been awfully quiet. \n{3}: rEALLY?! \n*Everyone starts arguing*\n{1}, being interviewed: I broke it. I burned my hand so I punched it. \n{1}: I predict 10 minutes from now they'll be at each other's throats with warpaint\non their faces and a pig head on a stick. \n{1}: \n{1}: Good. It was getting a little chummy around here.",
+		"*The squad right before {1}'s wedding*\n{2}: Well I have to go, I have a wedding to attend.\n{3}: Wait... Oh! I have a wedding to attend too!\n{4}: Oh, I have a wedding to attend as well.\n{5}: I THINK WE ALL HAVE WEDDINGS TO ATTEND\n{6}, panicked: I THINK I HAVE A WEDDING TO OFFICIATE",
+		"{1}: Who the fuck added me to a fucking group chat?\n{2}: >:O language\n{3}: Yeah watch your fucking language\n{4}: OKAY WHO TAUGHT {3.upper} THE FUCK WORD?\n{5}: ‘The fuck word'.\n{6}: Are you stupid? You guys use the f word all the time\n{3}: Oh my god they censored it\n{5}: Say fuck, {6}.\n{3}: Do it, {6}. Say fuck."
 	]
 }
