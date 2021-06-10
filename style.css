@@ -17,7 +17,7 @@ body{
     }
 }
 
-@media (max-width: 480px){
+@media (max-width: 560px){
     body {
         margin: 2% 1em;
     }
@@ -33,7 +33,27 @@ a{
     color: inherit
 }
 
+#title{
+	font-weight: 600;
+}
+
 #output{
 	padding: 0.5em;
 	background: #ffffffc4;
+}
+
+#character-inputs{
+	margin: 0 -5%;
+	display: flex;
+	justify-content: space-evenly;
+	text-align: center;
+}
+
+.center-wrapper{
+	display: flex;
+	justify-content: center;
+}
+
+.character{
+	width: calc(90%/6.5);
 }
