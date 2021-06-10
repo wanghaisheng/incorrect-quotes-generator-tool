@@ -41,6 +41,7 @@ function generatePrompt() {
 		console.log(i, output);
 
 		output = output.replaceAll(`{${i + 1}}`, char); // standard
+		output = output.replaceAll(`{${i + 1}.upper}`, char.toUpperCase()); // uppercase
 	}
 
 	document.querySelector("#output").innerText = output;
