@@ -77,7 +77,7 @@ function generatePrompt() {
 
 	// replacing placeholders with characters
 	for (let i = 0; i < characters.length; i++) {
-		const char = characters[i];
+		const char = `<span class="char-${(i + 1)}">${characters[i]}</span>`;
 
 		console.log(i, output);
 
