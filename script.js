@@ -86,5 +86,5 @@ function generatePrompt() {
 		output = output.replaceAll(`{${i + 1}.first}`, char.charAt(0)); // first letter
 	}
 
-	document.querySelector("#output").innerText = output;
+	document.querySelector("#output").innerHTML = output;
 }
