@@ -3,7 +3,7 @@ let prompts;
 fetch("./prompts.json")
 	.then(response => response.json())
 	.then(data => {
-		prompts = data;
+		prompts = data.prompts;
 
 		// and then calculating number of prompts...
 		let promptCount = 0;
