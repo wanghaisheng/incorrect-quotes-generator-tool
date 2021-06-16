@@ -1,6 +1,6 @@
 // getting prompts - they're in a separate .json file.
 let prompts;
-fetch("./prompts.json")
+fetch("./prompts/scatterpatter.json")
 	.then(response => response.json())
 	.then(data => {
 		prompts = data.prompts;
