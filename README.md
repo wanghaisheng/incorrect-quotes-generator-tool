@@ -8,4 +8,4 @@
 
  ~~rips off~~ heavily inspired by [scatterpatter's incorrect quotes generator](https://incorrect-quotes-generator.neocities.org/). in fact, all of the prompts are stolen from his generator.
 
-colors are from holllo's color theme, [love](https://love.holllo.cc/). (it's quite pretty!)
+colors are from holllo's color theme, [love](https://love.holllo.cc/). (it's quite pretty!) love is under the [MIT License](https://git.holllo.cc/Holllo/love/src/branch/main/LICENSE).

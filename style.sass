@@ -1,18 +1,14 @@
-/* fonts woot */
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400600&display=swap")
+// with apologies, this is a bit of a mess. -a
 
-html
+@use "sass:color"
+
+:root
+	@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400600&display=swap")
 	font-family: "Open Sans", "Ubuntu", "Helvetica", "Arial", sans-serif
 	font-size: 16px
 	box-sizing: border-box
 
-
-h1
-	margin: 0.5em 0 0.5em
-
-
-/* colors, taken from the Love Theme (https://love.holllo.cc), version 0.1.0, under the MIT license. <3 */
-:root
+	/* colors are taken from the love color theme (https://love.holllo.cc), under the MIT license. <3 */
 	--bg-primary: #F2EFFF
 	--bg-secondary: #E6DEFF
 	--fg-primary: #1F1731
@@ -29,18 +25,30 @@ h1
 	--accent-9:#D5A6F8
 	--accent-10:#F99ADD
 
-	--gray-1: #E2E2E2
 	--gray-2: #C6C6C6
 	--gray-3: #ABABAB
 
+	--char-1:#F99FB180
+	--char-2:#FAA56C80
+	--char-3:#D2B83A80
+	--char-4:#96C83980
+	--char-5:#3BD18A80
+	--char-6:#3ECDBF80
+	--char-7:#41C8E580
+	--char-8:#98B9F880
+	--char-9:#D5A6F880
+	--char-10:#F99ADD80
+
 	--rainbow-gradient: linear-gradient(to right, var(--accent-1), var(--accent-2), var(--accent-3), var(--accent-4), var(--accent-5), var(--accent-6), var(--accent-7), var(--accent-8), var(--accent-9), var(--accent-10))
 
+/* dark theme! /*
 @media (prefers-color-scheme: dark)
 	:root
 		--bg-primary: #1F1731
 		--bg-secondary: #2A2041
 		--fg-primary: #F2EFFF
 		--fg-secondary: #E6DEFF
+
 		--accent-1: #8B123C
 		--accent-2: #6A3B11
 		--accent-3: #514610
@@ -51,28 +59,18 @@ h1
 		--accent-8: #17477E
 		--accent-9: #6F1995
 		--accent-10: #81156A
-		--gray-1: #1B1B1B
+
 		--gray-2: #303030
 		--gray-3: #474747
 
-// sass variables, for sassy reasons.
-$accent-1:#F99FB180
-$accent-2:#FAA56C80
-$accent-3:#D2B83A80
-$accent-4:#96C83980
-$accent-5:#3BD18A80
-$accent-6:#3ECDBF80
-$accent-7:#41C8E580
-$accent-8:#98B9F880
-$accent-9:#D5A6F880
-$accent-10:#F99ADD80
-
+/* end of colors, now the rest  of the stylesheet */
+h1
+	margin: 0.5em 0 0.5em
 
 body
 	margin: 2% 20%
 	background: var(--bg-primary)
 	color: var(--fg-primary)
-
 
 /* resizing margins based on display width... */
 @media (max-width: 1280px)
@@ -107,12 +105,10 @@ a
 	background: var(--bg-secondary)
 	border: 2px var(--gray-2) solid
 
-
 /* this exists to center the button. */
 .center-wrapper
 	display: flex
 	justify-content: center
-
 
 /* the div containing the character input boxes. */
 #character-inputs
@@ -122,24 +118,21 @@ a
 	text-align: center
 	flex-wrap: wrap
 
-
-/* the character input boxes themselves. */
+/* the character input boxes. */
 .character
 	padding: 0.2em
 	max-width: 20%
 	margin: 0.2em
-
 
 /* style the things so they don't look like windows 98 */
 button, input
 	font-size: 1em
 
 input
-	border: 2px var(--gray-2) solid
+	border: 2px var(--gray-3) solid
 	color: var(--fg-primary)
 	&:disabled
-		opacity: 0.5
-
+		opacity: 0.4
 
 button
 	border: 0
@@ -151,49 +144,19 @@ button
 	&:active
 		background: #FFFFFF96
 
-
 br
 	/* wow this is (probably) awful */
 	margin-bottom: 0.25em
 
+// .char-#{ background: var(--char-#); }
+@mixin character-highlight($character-numbers)
+	@each $character-number in $character-numbers
+		.char-#{$character-number}
+			background: var(--char-#{$character-number})
 
-/* colors taken from Love. <3 https://love.holllo.cc/ */
-.char-1
-	background: $accent-1
+@include character-highlight(1 2 3 4 5 6 7 8 9 10)
 
-.char-2
-	background: $accent-2
-
-
-.char-3
-	background: $accent-3
-
-
-.char-4
-	background: $accent-4
-
-
-.char-5
-	background: $accent-5
-
-.char-6
-	background: $accent-6
-
-.char-7
-	background: $accent-7
-
-.char-8
-	background: $accent-8
-
-.char-9
-	background: $accent-9
-
-.char-10
-	background: $accent-10
-
-
-/* rainbow... thing. thanks css-tricks (https://css-tricks.com/gradient-borders-in-css/) */
+/* rainbow thing on the top of the button. thanks css-tricks (https://css-tricks.com/gradient-borders-in-css/) */
 .rainbow-wrapper
 		background: var(--rainbow-gradient)
 		padding-top: 0.2em
-
