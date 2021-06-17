@@ -24,6 +24,10 @@ for (let i = 0; i < initialInputs.length; i++) {
 
 initialInputs[0].disabled = false; // first input should never be disabled
 
+// setting up a style element for later use...
+const style = document.createElement("style");
+document.head.append(style);
+
 // gives inputs their functions
 function giveInputFunctions() {
 	const inputs = getCharacterInputs();
@@ -121,6 +125,14 @@ function addInput() {
 	newInput.setAttribute("class", "character char-" + inputNumber);
 	newInput.setAttribute("placeholder", "person " + inputNumber);
 	newInput.setAttribute("type", "text");
+
+	// creating a new color for the new character...
+	const color = window.hsluv.hsluvToHex([
+		((inputNumber - 1) * 36) % 360, // hue
+		80 - Math.min(50, (inputNumber - 10)), // saturation
+		75 // lightness
+	]);
+	style.sheet.insertRule(`.char-${inputNumber} { background: ${color}C4 }`);
 
 	inputsDiv.append(newInput);
 	giveInputFunctions(inputNumber - 1);

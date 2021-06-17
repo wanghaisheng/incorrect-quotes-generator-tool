@@ -12,5 +12,6 @@
     "rules": {
 		"capitalized-comments": 0,
 		"quotes": 0
-    }
+    },
+	"ignorePatterns": ["*min*"]
 }
