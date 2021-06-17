@@ -4,73 +4,60 @@
 
 :root
 	@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400600&display=swap")
-	font-family: "Open Sans", "Ubuntu", "Helvetica", "Arial", sans-serif
-	font-size: 16px
+	font-family: "Open Sans", "Ubuntu", "Helvetica Neue", "Arial", sans-serif
 	box-sizing: border-box
 
 	/* colors are taken from the love color theme (https://love.holllo.cc), under the MIT license. <3 */
-	--bg-primary: #F2EFFF
+	--bg-primary:   #F2EFFF
 	--bg-secondary: #E6DEFF
-	--fg-primary: #1F1731
+	--fg-primary:   #1F1731
 	--fg-secondary: #2A2041
-
-	--accent-1:#F99FB1
-	--accent-2:#FAA56C
-	--accent-3:#D2B83A
-	--accent-4:#96C839
-	--accent-5:#3BD18A
-	--accent-6:#3ECDBF
-	--accent-7:#41C8E5
-	--accent-8:#98B9F8
-	--accent-9:#D5A6F8
-	--accent-10:#F99ADD
-
+	--accent-1:  #F99FB1
+	--accent-2:  #FAA56C
+	--accent-3:  #D2B83A
+	--accent-4:  #96C839
+	--accent-5:  #3BD18A
+	--accent-6:  #3ECDBF
+	--accent-7:  #41C8E5
+	--accent-8:  #98B9F8
+	--accent-9:  #D5A6F8
+	--accent-10: #F99ADD
 	--gray-2: #C6C6C6
 	--gray-3: #ABABAB
 
-	--char-1:#F99FB180
-	--char-2:#FAA56C80
-	--char-3:#D2B83A80
-	--char-4:#96C83980
-	--char-5:#3BD18A80
-	--char-6:#3ECDBF80
-	--char-7:#41C8E580
-	--char-8:#98B9F880
-	--char-9:#D5A6F880
-	--char-10:#F99ADD80
+	--char-1:  #F99FB180
+	--char-2:  #FAA56C80
+	--char-3:  #D2B83A80
+	--char-4:  #96C83980
+	--char-5:  #3BD18A80
+	--char-6:  #3ECDBF80
+	--char-7:  #41C8E580
+	--char-8:  #98B9F880
+	--char-9:  #D5A6F880
+	--char-10: #F99ADD80
 
-	--rainbow-gradient: linear-gradient(to right, var(--accent-1), var(--accent-2), var(--accent-3), var(--accent-4), var(--accent-5), var(--accent-6), var(--accent-7), var(--accent-8), var(--accent-9), var(--accent-10))
+	--rainbow-gradient: linear-gradient(to right, #F99FB1, #FAA56C, #D2B83A, #96C839, #3BD18A, #3ECDBF, #41C8E5, #98B9F8, #D5A6F8, #F99ADD)
 
 /* dark theme! /*
 @media (prefers-color-scheme: dark)
 	:root
-		--bg-primary: #1F1731
+		--bg-primary:   #1F1731
 		--bg-secondary: #2A2041
-		--fg-primary: #F2EFFF
+		--fg-primary:  #F2EFFF
 		--fg-secondary: #E6DEFF
-
 		--gray-2: #303030
 		--gray-3: #474747
 
 /* end of colors, now the rest  of the stylesheet */
 h1
-	margin: 0.5em 0
+	margin: 0.4em 0
 
 body
-	margin: 2% 20%
+	width: 90vw
+	max-width: 96ch
+	margin: 2% auto
 	background: var(--bg-primary)
 	color: var(--fg-primary)
-
-/* resizing margins based on display width... */
-@media (max-width: 1280px)
-	body
-		margin: 2% 10%
-
-@media (max-width: 560px)
-	body
-		margin: 2% 1em
-	nav > a
-		display: none
 
 nav
 	background: var(--fg-secondary)
@@ -80,6 +67,10 @@ nav
 	display: flex
 	flex-wrap: nowrap
 	justify-content: space-between
+
+@media (max-width: 64ch)
+	nav > a
+		display: none
 
 a
 	color: inherit
@@ -106,12 +97,14 @@ a
 	justify-content: space-evenly
 	text-align: center
 	flex-wrap: wrap
+	max-height: 16em
+	overflow-y: scroll
 
 /* the character input boxes. */
 .character
-	padding: 0.2em
+	padding: 0.25em
 	max-width: 15ch
-	margin: 0.2em
+	margin: 0.25em
 
 /* style the things so they don't look like windows 98 */
 button, input
@@ -127,10 +120,8 @@ button
 	border: 0
 	background: #E6DEFFDF
 	text-align: center
-
 	&:hover
 		background: #E6DEFFC4
-
 	&:active
 		background: #FFFFFF96
 
