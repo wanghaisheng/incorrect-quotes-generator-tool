@@ -14,52 +14,73 @@ fetch("./prompts/scatterpatter.json")
 		document.querySelector("#prompt-count").textContent = promptCount;
 	});
 
-const test = document.querySelectorAll(".character");
-
-// dealing with inputs enabling/disabling
-for (let i = 0; i < test.length; i++) {
-	test[i].disabled = true; // disable all inputs by default
-	test[i].value = ""; // also clear everything. no persistence.
-
-	// clear input on focus
-	test[i].onfocus = function () {
-		const inputIndex = i;
-		test[inputIndex].value = "";
-		console.log("index", inputIndex);
-		for (let i = inputIndex; i < test.length - 1; i++) {
-			test[i + 1].disabled = true;
-		}
-	};
-
-	// enable next input (oninput, so you can tab through inputs)
-	test[i].oninput = function () {
-		if (test[i].textLength > 0) {
-			if (i < test.length - 1) {
-				test[i + 1].disabled = false;
-			}
-		}
-	};
-
-	// re-enable input if input has content (disabled by clearing previous input)
-	test[i].onchange = function () {
-		const inputIndex = i;
-		for (let i = inputIndex; i < test.length - 1; i++) {
-			if (test[i + 1].textLength > 0) {
-				test[i + 1].disabled = false;
-			} else {
-				break;
-			}
-		}
-	};
+// initial disabling of inputs or whatever
+const initialInputs = getCharacterInputs();
+for (let i = 0; i < initialInputs.length; i++) {
+	initialInputs[i].disabled = true; // disable all inputs by default
+	initialInputs[i].value = ""; // also clear everything. no persistence.
+	giveInputFunctions(i);
 }
 
-test[0].disabled = false; // first input should never be disabled
+initialInputs[0].disabled = false; // first input should never be disabled
+
+// gives inputs their functions
+function giveInputFunctions() {
+	const inputs = getCharacterInputs();
+
+	// clear input on focus
+	for (let i = 0; i < inputs.length - 1; i++) {
+		inputs[i].onfocus = function () {
+			const inputIndex = i;
+			inputs[inputIndex].value = "";
+			for (let i = inputIndex; i < inputs.length - 1; i++) {
+				inputs[i + 1].disabled = true;
+			}
+		};
+
+		// enable next input (oninput, so you can tab through inputs)
+		inputs[i].oninput = function () {
+			if (inputs[i].textLength > 0) {
+				if (i < inputs.length - 1) {
+					inputs[i + 1].disabled = false;
+				}
+			}
+		};
+
+		// re-enable input if input has content (disabled by clearing previous input)
+		inputs[i].onchange = function () {
+			const inputIndex = i;
+			for (let i = inputIndex; i < inputs.length - 1; i++) {
+				if (inputs[i + 1].textLength > 0) {
+					inputs[i + 1].disabled = false;
+				} else {
+					break;
+				}
+			}
+		};
+	}
+}
+
+function enableDisablePrompts() {
+	const inputs = getCharacterInputs();
+	for (let i = 1; i < inputs.length; i++) {
+		if (inputs[i - 1].textLength > 0) {
+			inputs[i].disabled = false;
+		} else {
+			inputs[i].disabled = true;
+		}
+	}
+}
+
+function getCharacterInputs() {
+	return document.querySelectorAll(".character");
+}
 
 // eslint-disable-next-line no-unused-vars
 function generatePrompt() {
 	// get characters from <input>s, add to array
 	const characters = [];
-	for (const input of document.querySelectorAll(".character")) {
+	for (const input of getCharacterInputs()) {
 		if (input.value === "") {
 			break;
 		} else {
@@ -87,4 +108,27 @@ function generatePrompt() {
 	}
 
 	document.querySelector("#output").innerHTML = output;
+}
+
+// eslint-disable-next-line no-unused-vars
+function addInput() {
+	const inputsDiv = document.querySelector("#character-inputs");
+	const inputs = getCharacterInputs();
+	const inputNumber = inputs.length + 1;
+	// console.log(nodeCount, "nodes");
+
+	const newInput = document.createElement("input");
+	newInput.setAttribute("class", "character char-" + inputNumber);
+	newInput.setAttribute("placeholder", "person " + inputNumber);
+	newInput.setAttribute("type", "text");
+
+	inputsDiv.append(newInput);
+	giveInputFunctions(inputNumber - 1);
+	enableDisablePrompts();
+}
+
+// eslint-disable-next-line no-unused-vars
+function removeInput() {
+	const nodes = getCharacterInputs();
+	nodes[nodes.length - 1].remove();
 }

@@ -49,23 +49,12 @@
 		--fg-primary: #F2EFFF
 		--fg-secondary: #E6DEFF
 
-		--accent-1: #8B123C
-		--accent-2: #6A3B11
-		--accent-3: #514610
-		--accent-4: #384D10
-		--accent-5: #115133
-		--accent-6: #124F49
-		--accent-7: #144D5A
-		--accent-8: #17477E
-		--accent-9: #6F1995
-		--accent-10: #81156A
-
 		--gray-2: #303030
 		--gray-3: #474747
 
 /* end of colors, now the rest  of the stylesheet */
 h1
-	margin: 0.5em 0 0.5em
+	margin: 0.5em 0
 
 body
 	margin: 2% 20%
@@ -121,7 +110,7 @@ a
 /* the character input boxes. */
 .character
 	padding: 0.2em
-	max-width: 20%
+	max-width: 15ch
 	margin: 0.2em
 
 /* style the things so they don't look like windows 98 */
@@ -137,12 +126,23 @@ input
 button
 	border: 0
 	background: #E6DEFFDF
+	text-align: center
 
 	&:hover
 		background: #E6DEFFC4
 
 	&:active
 		background: #FFFFFF96
+
+#remove-character, #add-character
+	width: 4ch
+	margin: 0 2ch
+
+#remove-character:active
+	background: var(--accent-1)
+
+#add-character:active
+	background: var(--accent-4)
 
 br
 	/* wow this is (probably) awful */

@@ -23,21 +23,19 @@
 
 	<h1>input some stuff</h1>
 	<div id="character-inputs">
-		<input class="character char-1" placeholder="person 1" onfocus="this.value=''" type="text">
-		<input class="character char-2" placeholder="person 2" onfocus="this.value=''" type="text">
-		<input class="character char-3" placeholder="person 3" onfocus="this.value=''" type="text">
-		<input class="character char-4" placeholder="person 4" onfocus="this.value=''" type="text">
-		<input class="character char-5" placeholder="person 5" onfocus="this.value=''" type="text">
-		<input class="character char-6" placeholder="person 6" onfocus="this.value=''" type="text">
-		<input class="character char-7" placeholder="person 7" onfocus="this.value=''" type="text">
-		<input class="character char-8" placeholder="person 8" onfocus="this.value=''" type="text">
-		<input class="character char-9" placeholder="person 9" onfocus="this.value=''" type="text">
-		<input class="character char-10" placeholder="person 10" onfocus="this.value=''" type="text">
+		<input class="character char-1" placeholder="person 1" type="text">
+		<input class="character char-2" placeholder="person 2" type="text">
+		<input class="character char-3" placeholder="person 3" type="text">
+		<input class="character char-4" placeholder="person 4" type="text">
+		<input class="character char-5" placeholder="person 5" type="text">
+		<input class="character char-6" placeholder="person 6" type="text">
 	</div>
 	<div class="center-wrapper">
+		<button id="remove-character" onclick="removeInput()">x</button>
 		<div class="rainbow-wrapper">
 			<button id="generate-prompt" class="rainbow-button" onclick="generatePrompt()">do the thing!</button>
 		</div>
+		<button id="add-character" onclick="addInput(1)">+</button>
 	</div>
 
 	<h1>output</h1>
