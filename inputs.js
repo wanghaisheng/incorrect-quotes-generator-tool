@@ -1,18 +1,7 @@
-// getting prompts - they're in a separate .json file.
-let prompts;
-fetch("./prompts/scatterpatter.json")
-	.then(response => response.json())
-	.then(data => {
-		prompts = data.prompts;
-
-		// and then calculating number of prompts...
-		let promptCount = 0;
-		for (let i = 1; i < Object.keys(prompts).length + 1; i++) {
-			promptCount += prompts[i].length;
-		}
-
-		document.querySelector("#prompt-count").textContent = promptCount;
-	});
+// something something don't repeat yourself. also used in promptGeneration.js
+function getCharacterInputs() {
+	return document.querySelectorAll(".character");
+}
 
 // initial disabling of inputs or whatever
 const initialInputs = getCharacterInputs();
@@ -65,7 +54,7 @@ function giveInputFunctions() {
 	}
 }
 
-function enableDisablePrompts() {
+function enableDisableInputs() {
 	const inputs = getCharacterInputs();
 	for (let i = 1; i < inputs.length; i++) {
 		if (inputs[i - 1].textLength > 0) {
@@ -76,46 +65,7 @@ function enableDisablePrompts() {
 	}
 }
 
-function getCharacterInputs() {
-	return document.querySelectorAll(".character");
-}
-
-// eslint-disable-next-line no-unused-vars
-function generatePrompt() {
-	// get characters from <input>s, add to array
-	const characters = [];
-	for (const input of getCharacterInputs()) {
-		if (input.value === "") {
-			break;
-		} else {
-			characters.push(input.value);
-		}
-	}
-
-	// number of characters determines what set of prompts to use.
-	const promptsIndex = characters.length;
-
-	// getting a random prompt
-	const prompt = prompts[promptsIndex][Math.floor(Math.random() * prompts[promptsIndex].length)];
-
-	let output = prompt;
-
-	// replacing placeholders with characters
-	for (let i = 0; i < characters.length; i++) {
-		const char = `<span class="char-${(i + 1)}">${characters[i]}</span>`;
-
-		console.log(i, output);
-
-		output = output.replaceAll(`{${i + 1}}`, char); // standard
-		output = output.replaceAll(`{${i + 1}.upper}`, char.toUpperCase()); // uppercase
-		output = output.replaceAll(`{${i + 1}.first}`, char.charAt(0)); // first letter
-	}
-
-	document.querySelector("#output").innerHTML = output;
-}
-
-// eslint-disable-next-line no-unused-vars
-function addInput() {
+window.addInput = function () {
 	const inputsDiv = document.querySelector("#character-inputs");
 	const inputs = getCharacterInputs();
 	const inputNumber = inputs.length + 1;
@@ -136,11 +86,10 @@ function addInput() {
 
 	inputsDiv.append(newInput);
 	giveInputFunctions(inputNumber - 1);
-	enableDisablePrompts();
-}
+	enableDisableInputs();
+};
 
-// eslint-disable-next-line no-unused-vars
-function removeInput() {
+window.removeInput = function () {
 	const nodes = getCharacterInputs();
 	nodes[nodes.length - 1].remove();
-}
+};
