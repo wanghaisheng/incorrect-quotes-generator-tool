@@ -1,17 +1,39 @@
-// getting prompts - they're in a separate .json file.
-let prompts;
-fetch("./prompts/scatterpatter.json")
+/* promptGeneration.js
+what it says on the tin. handles prompt generation and settings. */
+
+// defining some variables...
+const globalPrompts = {}; // object containing all the prompts. keys are number of characters.
+const promptCounter = document.querySelector("#prompt-count");
+let promptCount = 0;
+
+// getting prompts - oh no.
+fetch("./prompts.json") // contains an array of paths to files.
 	.then(response => response.json())
-	.then(data => {
-		prompts = data.prompts;
+	.then(files => {
+		for (const file of files) {
+			fetch(file) // fetch each file defined in prompts.json...
+				.then(response => response.json())
+				.then(data => {
+					console.log("loading", data.title);
+					const {prompts} = data; // the prompts of the file
 
-		// and then calculating number of prompts...
-		let promptCount = 0;
-		for (let i = 1; i < Object.keys(prompts).length + 1; i++) {
-			promptCount += prompts[i].length;
+					for (let i = 0; i < Object.keys(prompts).length; i++) {
+						const key = Object.keys(prompts)[i]; // key = # of characters in prompt
+
+						if (!globalPrompts[key]) {
+							globalPrompts[key] = []; // initialize an empty array if needed
+						}
+
+						for (const prompt of prompts[key]) {
+							globalPrompts[key].push(prompt); // add prompts to array
+						}
+
+						// prompt count and stuff
+						promptCount += prompts[key].length;
+						promptCounter.textContent = promptCount;
+					}
+				});
 		}
-
-		document.querySelector("#prompt-count").textContent = promptCount;
 	});
 
 window.generatePrompt = function () {
@@ -33,7 +55,7 @@ window.generatePrompt = function () {
 	const promptsIndex = characters.length;
 
 	// getting a random prompt
-	const prompt = prompts[promptsIndex][Math.floor(Math.random() * prompts[promptsIndex].length)];
+	const prompt = globalPrompts[promptsIndex][Math.floor(Math.random() * globalPrompts[promptsIndex].length)];
 
 	let output = prompt;
 

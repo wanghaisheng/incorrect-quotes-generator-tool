@@ -5,6 +5,12 @@
 	"prompts": {
 		"1": [
 			"{1}: how am i supposed to be funny"
+		],
+		"2": [
+			"{1}: hey, wanna hear a joke?<br>{2}: yeah, sure!<br>{1}: alright, knock knock!<br>{2}: who's there?<br>{1}: *pulls out gun* the police. put your hands up."
+		],
+		"10": [
+			"{1}: Well, it seems there's nine of us here.<br>{2}: Yes, exactly nine of us here.<br>{3}: Yep, just you, me, {1}, {4}, {5}, {6}, {7}—<br>{8}: Just listing us all so the developer doesn't have to think of a reason for us to talk?<br>{9}: Yeah, that sounds like a {3} thing to do.<br>{10}: Sure is, that's their defining character trait.<br>{1}: Yeah, real shame {10} couldn't make it here today, though.<br>{10}: Excuse me—"
 		]
 	}
 }
