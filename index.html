@@ -6,7 +6,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="./style.css">
 	<script src="./hsluv/hsluv-0.1.0.min.js" type="module"></script>
-	<script src="./script.js" defer></script>
+	<script src="./promptGeneration.js" defer></script>
+	<script src="./inputs.js" defer></script>
 	<title>Incorrect Quotes Generator</title>
 </head>
 <body>
@@ -37,6 +38,19 @@
 			<button id="generate-prompt" class="rainbow-button" onclick="generatePrompt()">do the thing!</button>
 		</div>
 		<button id="add-character" onclick="addInput(1)">+</button>
+	</div>
+
+	<h2>other settings</h2>
+	<div class="columns">
+		<div>
+			<label>
+				<input type="checkbox" id="randomize">
+				Randomize characters
+			</label>
+		</div>
+		<div>
+			<p>second column</p>
+		</div>
 	</div>
 
 	<h1>output</h1>
