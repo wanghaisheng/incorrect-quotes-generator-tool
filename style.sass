@@ -79,17 +79,16 @@ a
 /* the div containing the character input boxes. */
 #character-inputs
 	display: flex
-	margin: 0 -2.5% 1em
-	justify-content: space-evenly
-	text-align: center
+	margin: 0 -3% 1em
+	justify-content: center
 	flex-wrap: wrap
 	max-height: 16em
-	overflow-y: scroll
+	overflow-y: auto
 
 /* the character input boxes. */
 .character
 	padding: 0.25em
-	max-width: 15ch
+	max-width: 12ch
 	margin: 0.25em
 
 /* style the things so they don't look like windows 98 */
@@ -131,7 +130,7 @@ br
 		.char-#{$character-number}
 			background: var(--char-#{$character-number})
 
-@include character-highlight(1 2 3 4 5 6 7 8 9 10)
+@include character-highlight(1 2 3 4 5 6)
 
 /* rainbow thing on the top of the button. thanks css-tricks (https://css-tricks.com/gradient-borders-in-css/) */
 .rainbow-wrapper
@@ -144,4 +143,4 @@ br
 	flex-wrap: wrap
 	justify-content: space-around
 	> *
-		width: 32ch
+		width: 42ch
