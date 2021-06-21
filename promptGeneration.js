@@ -57,7 +57,7 @@ window.generatePrompt = function () {
 	// getting a random prompt
 	const prompt = globalPrompts[promptsIndex][Math.floor(Math.random() * globalPrompts[promptsIndex].length)];
 
-	let output = prompt;
+	let output = prompt.text;
 
 	// replacing placeholders with characters
 	for (let i = 0; i < characters.length; i++) {
