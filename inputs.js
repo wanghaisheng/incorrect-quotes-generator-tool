@@ -1,10 +1,32 @@
+/* inputs.js
+this file deals with the input elements -- getting them, adding their functions, adding, and removing them. */
+
 // something something don't repeat yourself. also used in promptGeneration.js
-function getCharacterInputs() {
-	return document.querySelectorAll(".character");
+function getCharacters() {
+	const characterInputs = []; // should be an array of objects
+
+	document.querySelectorAll(".character-block").forEach(block => {
+		const {children} = block;
+		console.log(children);
+
+		const pronouns = [];
+		console.log(children[1]);
+		for (const input of children[1].children) {
+			console.log(input);
+			pronouns.push(input.value);
+		}
+
+		characterInputs.push({
+			name: children[0].value,
+			pronouns
+		});
+	});
+
+	return characterInputs;
 }
 
 // initial disabling of inputs or whatever
-const initialInputs = getCharacterInputs();
+const initialInputs = getCharacters();
 for (let i = 0; i < initialInputs.length; i++) {
 	initialInputs[i].disabled = true; // disable all inputs by default
 	initialInputs[i].value = ""; // also clear everything. no persistence.
@@ -19,7 +41,7 @@ document.head.append(style);
 
 // gives inputs their functions
 function giveInputFunctions() {
-	const inputs = getCharacterInputs();
+	const inputs = getCharacters();
 
 	// clear input on focus
 	for (let i = 0; i < inputs.length - 1; i++) {
@@ -55,7 +77,7 @@ function giveInputFunctions() {
 }
 
 function enableDisableInputs() {
-	const inputs = getCharacterInputs();
+	const inputs = getCharacters();
 	for (let i = 1; i < inputs.length; i++) {
 		if (inputs[i - 1].textLength > 0) {
 			inputs[i].disabled = false;
@@ -67,14 +89,36 @@ function enableDisableInputs() {
 
 window.addInput = function () {
 	const inputsDiv = document.querySelector("#character-inputs");
-	const inputs = getCharacterInputs();
-	const inputNumber = inputs.length + 1;
-	// console.log(nodeCount, "nodes");
+	const inputNumber = getCharacters().length + 1;
+	// the character block
+	const charBlock = document.createElement("div");
+	charBlock.className = "character-block";
 
-	const newInput = document.createElement("input");
-	newInput.setAttribute("class", "character char-" + inputNumber);
-	newInput.setAttribute("placeholder", "person " + inputNumber);
-	newInput.setAttribute("type", "text");
+	// character name input
+	const nameInput = document.createElement("input");
+	nameInput.className = "character-name char-" + inputNumber;
+	nameInput.setAttribute("placeholder", "person " + inputNumber);
+	nameInput.setAttribute("type", "text");
+	charBlock.appendChild(nameInput);
+
+	// pronoun inputs
+	const pronounTypes = [
+		"subject pronoun",
+		"object pronoun",
+		"possessive determiner",
+		"possessive pronoun",
+		"reflexive pronoun"
+	];
+	const pronounsDiv = document.createElement("div");
+	pronounsDiv.className = "pronouns";
+	charBlock.appendChild(pronounsDiv);
+
+	pronounTypes.forEach(pronounType => {
+		const pronounInput = document.createElement("input");
+		pronounInput.className = "char-" + inputNumber;
+		pronounInput.setAttribute("placeholder", pronounType);
+		pronounsDiv.appendChild(pronounInput);
+	});
 
 	// creating a new color for the new character...
 	const color = window.hsluv.hsluvToHex([
@@ -84,12 +128,12 @@ window.addInput = function () {
 	]);
 	style.sheet.insertRule(`.char-${inputNumber} { background: ${color}C4 }`);
 
-	inputsDiv.append(newInput);
+	inputsDiv.append(charBlock);
 	giveInputFunctions(inputNumber - 1);
 	enableDisableInputs();
 };
 
 window.removeInput = function () {
-	const nodes = getCharacterInputs();
+	const nodes = getCharacters();
 	nodes[nodes.length - 1].remove();
 };

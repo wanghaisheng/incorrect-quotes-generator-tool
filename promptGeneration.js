@@ -40,11 +40,11 @@ window.generatePrompt = function () {
 	// get characters from <input>s, add to array
 	const characters = [];
 	// eslint-disable-next-line no-undef
-	for (const input of getCharacterInputs()) { // defined in inputs.js
-		if (input.value === "") {
+	for (const input of getCharacters()) { // defined in inputs.js
+		if (input.name === "") {
 			break;
 		} else {
-			characters.push(input.value);
+			characters.push(input.name);
 		}
 	}
 
