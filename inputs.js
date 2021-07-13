@@ -1,19 +1,19 @@
 /* inputs.js
 this file deals with the input elements -- getting them, adding their functions, adding, and removing them. */
 
+window.onload = (() => {
+	window.addInput();
+});
+
 // something something don't repeat yourself. also used in promptGeneration.js
 function getCharacters() {
 	const characterInputs = []; // should be an array of objects
 
 	document.querySelectorAll(".character-block").forEach(block => {
 		const {children} = block;
-		console.log(children);
-
-		const pronouns = [];
-		console.log(children[1]);
+		const pronouns = {};
 		for (const input of children[1].children) {
-			console.log(input);
-			pronouns.push(input.value);
+			pronouns[input.placeholder] = input.value;
 		}
 
 		characterInputs.push({
