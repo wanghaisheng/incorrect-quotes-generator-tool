@@ -38,15 +38,7 @@ fetch("./prompts.json") // contains an array of paths to files.
 
 window.generatePrompt = function () {
 	// get characters from <input>s, add to array
-	const characters = [];
-	// eslint-disable-next-line no-undef
-	for (const input of getCharacters()) { // defined in inputs.js
-		if (input.name === "") {
-			break;
-		} else {
-			characters.push(input.name);
-		}
-	}
+	const characters = window.getCharacters();
 
 	const order = document.querySelector("#randomize").checked ?
 		randomIndexOrder(characters) : [null];
@@ -62,13 +54,18 @@ window.generatePrompt = function () {
 	// replacing placeholders with characters
 	for (let i = 0; i < characters.length; i++) {
 		const charNum = order[i] ?? i;
-		const char = `<span class="char-${(charNum + 1)}">${characters[charNum]}</span>`;
+		const characterName = characters[charNum].name;
+		const characterPronouns = characters[charNum].pronouns;
 
-		// console.log(i, output);
+		const spanStart = `<span class="char-${(charNum + 1)}">`;
+		const spanEnd = "</span>";
 
-		output = output.replaceAll(`{${i + 1}}`, char); // standard
-		output = output.replaceAll(`{${i + 1}.upper}`, char.toUpperCase()); // uppercase
-		output = output.replaceAll(`{${i + 1}.first}`, char.charAt(0)); // first letter
+		output = output.replaceAll(`{${i + 1}}`, // standard
+			spanStart + characterName + spanEnd);
+		output = output.replaceAll(`{${i + 1}.upper}`, // uppercase
+			characterName.toUpperCase());
+		output = output.replaceAll(`{${i + 1}.first}`, // first letter
+			characterName.charAt(0));
 	}
 
 	document.querySelector("#output").innerHTML = output;

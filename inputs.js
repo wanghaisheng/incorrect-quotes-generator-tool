@@ -6,7 +6,7 @@ window.onload = (() => {
 });
 
 // something something don't repeat yourself. also used in promptGeneration.js
-function getCharacters() {
+window.getCharacters = (() => {
 	const characterInputs = []; // should be an array of objects
 
 	document.querySelectorAll(".character-block").forEach(block => {
@@ -23,7 +23,7 @@ function getCharacters() {
 	});
 
 	return characterInputs;
-}
+});
 
 // setting up a style element for later use...
 const style = document.createElement("style");
@@ -31,7 +31,7 @@ document.head.append(style);
 
 // gives inputs their functions
 function giveInputFunctions() {
-	const inputs = getCharacters();
+	const inputs = window.getCharacters();
 
 	// clear input on focus
 	for (let i = 0; i < inputs.length - 1; i++) {
@@ -67,7 +67,7 @@ function giveInputFunctions() {
 }
 
 function enableDisableInputs() {
-	const inputs = getCharacters();
+	const inputs = window.getCharacters();
 	for (let i = 1; i < inputs.length; i++) {
 		if (inputs[i - 1].textLength > 0) {
 			inputs[i].disabled = false;
@@ -79,7 +79,7 @@ function enableDisableInputs() {
 
 window.addInput = function () {
 	const inputsDiv = document.querySelector("#character-inputs");
-	const inputNumber = getCharacters().length + 1;
+	const inputNumber = window.getCharacters().length + 1;
 	// the character block
 	const charBlock = document.createElement("div");
 	charBlock.className = "character-block";
