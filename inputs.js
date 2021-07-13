@@ -13,7 +13,7 @@ function getCharacters() {
 		const {children} = block;
 		const pronouns = {};
 		for (const input of children[1].children) {
-			pronouns[input.placeholder] = input.value;
+			pronouns[input.name] = input.value;
 		}
 
 		characterInputs.push({
@@ -24,16 +24,6 @@ function getCharacters() {
 
 	return characterInputs;
 }
-
-// initial disabling of inputs or whatever
-const initialInputs = getCharacters();
-for (let i = 0; i < initialInputs.length; i++) {
-	initialInputs[i].disabled = true; // disable all inputs by default
-	initialInputs[i].value = ""; // also clear everything. no persistence.
-	giveInputFunctions(i);
-}
-
-initialInputs[0].disabled = false; // first input should never be disabled
 
 // setting up a style element for later use...
 const style = document.createElement("style");
@@ -103,11 +93,26 @@ window.addInput = function () {
 
 	// pronoun inputs
 	const pronounTypes = [
-		"subject pronoun",
-		"object pronoun",
-		"possessive determiner",
-		"possessive pronoun",
-		"reflexive pronoun"
+		{
+			name: "subject pronoun",
+			shortName: "subjectPn"
+		},
+		{
+			name: "object pronoun",
+			shortName: "objectPn"
+		},
+		{
+			name: "possessive determiner",
+			shortName: "possessiveDet"
+		},
+		{
+			name: "possessive pronoun",
+			shortName: "possessivePn"
+		},
+		{
+			name: "reflexive pronoun",
+			shortName: "reflexivePn"
+		}
 	];
 	const pronounsDiv = document.createElement("div");
 	pronounsDiv.className = "pronouns";
@@ -116,7 +121,8 @@ window.addInput = function () {
 	pronounTypes.forEach(pronounType => {
 		const pronounInput = document.createElement("input");
 		pronounInput.className = "char-" + inputNumber;
-		pronounInput.setAttribute("placeholder", pronounType);
+		pronounInput.setAttribute("placeholder", pronounType.name);
+		pronounInput.setAttribute("name", pronounType.shortName);
 		pronounsDiv.appendChild(pronounInput);
 	});
 
