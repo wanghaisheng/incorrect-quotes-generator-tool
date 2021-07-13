@@ -134,6 +134,10 @@ window.addInput = function () {
 };
 
 window.removeInput = function () {
-	const nodes = getCharacters();
-	nodes[nodes.length - 1].remove();
+	const nodes = document.querySelectorAll(".character-block");
+	if (nodes.length > 1) {
+		nodes[nodes.length - 1].remove();
+	} else {
+		console.log("there's only one...");
+	}
 };
