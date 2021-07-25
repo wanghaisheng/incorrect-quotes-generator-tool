@@ -17,7 +17,7 @@ window.getCharacters = (() => {
 		}
 
 		characterInputs.push({
-			name: children[0].value,
+			name: children[0].children[0].value,
 			pronouns
 		});
 	});
@@ -84,12 +84,29 @@ window.addInput = function () {
 	const charBlock = document.createElement("div");
 	charBlock.className = "character-block";
 
+	const topRow = document.createElement("div");
+
 	// character name input
 	const nameInput = document.createElement("input");
 	nameInput.className = "character-name char-" + inputNumber;
 	nameInput.setAttribute("placeholder", "person " + inputNumber);
 	nameInput.setAttribute("type", "text");
-	charBlock.appendChild(nameInput);
+	topRow.appendChild(nameInput);
+	charBlock.appendChild(topRow);
+
+	// button to toggle display of pronouns.
+	const pronounToggle = document.createElement("button");
+	topRow.appendChild(pronounToggle);
+	pronounToggle.textContent = "pronouns";
+	pronounToggle.id = "test";
+	pronounToggle.onclick = function () {
+		const toggleDiv = this.parentNode.parentNode.lastChild;
+		if (toggleDiv.style.display === "none") {
+			toggleDiv.style.display = "flex";
+		} else {
+			toggleDiv.style.display = "none";
+		}
+	};
 
 	// pronoun inputs
 	const pronounTypes = [
@@ -116,6 +133,7 @@ window.addInput = function () {
 	];
 	const pronounsDiv = document.createElement("div");
 	pronounsDiv.className = "pronouns";
+	pronounsDiv.style.display = "none";
 	charBlock.appendChild(pronounsDiv);
 
 	pronounTypes.forEach(pronounType => {
