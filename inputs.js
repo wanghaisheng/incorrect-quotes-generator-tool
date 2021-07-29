@@ -77,6 +77,30 @@ function enableDisableInputs() {
 	}
 }
 
+// the pronouns
+window.pronounTypes = [
+	{
+		name: "subject pronoun",
+		shortName: "subjectPn"
+	},
+	{
+		name: "object pronoun",
+		shortName: "objectPn"
+	},
+	{
+		name: "possessive determiner",
+		shortName: "possessiveDet"
+	},
+	{
+		name: "possessive pronoun",
+		shortName: "possessivePn"
+	},
+	{
+		name: "reflexive pronoun",
+		shortName: "reflexivePn"
+	}
+];
+
 window.addInput = function () {
 	const inputsDiv = document.querySelector("#character-inputs");
 	const inputNumber = window.getCharacters().length + 1;
@@ -108,35 +132,12 @@ window.addInput = function () {
 		}
 	};
 
-	// pronoun inputs
-	const pronounTypes = [
-		{
-			name: "subject pronoun",
-			shortName: "subjectPn"
-		},
-		{
-			name: "object pronoun",
-			shortName: "objectPn"
-		},
-		{
-			name: "possessive determiner",
-			shortName: "possessiveDet"
-		},
-		{
-			name: "possessive pronoun",
-			shortName: "possessivePn"
-		},
-		{
-			name: "reflexive pronoun",
-			shortName: "reflexivePn"
-		}
-	];
 	const pronounsDiv = document.createElement("div");
 	pronounsDiv.className = "pronouns";
 	pronounsDiv.style.display = "none";
 	charBlock.appendChild(pronounsDiv);
 
-	pronounTypes.forEach(pronounType => {
+	window.pronounTypes.forEach(pronounType => {
 		const pronounInput = document.createElement("input");
 		pronounInput.className = "char-" + inputNumber;
 		pronounInput.setAttribute("placeholder", pronounType.name);
