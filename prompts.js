@@ -64,6 +64,13 @@ window.generatePrompt = function () {
 			wrapSpan(charNum, characterName.toUpperCase()));
 		output = output.replaceAll(`{${i + 1}.first}`, // first letter
 			wrapSpan(charNum, characterName.charAt(0)));
+
+		// pronouns!
+		console.log(window.pronounTypes);
+		window.pronounTypes.forEach(pronounType => {
+			const {shortName} = pronounType;
+			output = output.replaceAll(`{${i + 1}.${shortName}}`, wrapSpan(charNum, characterPronouns[shortName]));
+		});
 	}
 
 	document.querySelector("#output").innerHTML = output;
