@@ -57,19 +57,24 @@ window.generatePrompt = function () {
 		const characterName = characters[charNum].name;
 		const characterPronouns = characters[charNum].pronouns;
 
-		const spanStart = `<span class="char-${(charNum + 1)}">`;
-		const spanEnd = "</span>";
-
+		// name tomfoolery
 		output = output.replaceAll(`{${i + 1}}`, // standard
-			spanStart + characterName + spanEnd);
+			wrapSpan(charNum, characterName));
 		output = output.replaceAll(`{${i + 1}.upper}`, // uppercase
-			characterName.toUpperCase());
+			wrapSpan(charNum, characterName.toUpperCase()));
 		output = output.replaceAll(`{${i + 1}.first}`, // first letter
-			characterName.charAt(0));
+			wrapSpan(charNum, characterName.charAt(0)));
 	}
 
 	document.querySelector("#output").innerHTML = output;
 };
+
+// wraps some text in a <span> tag with a specific character's class. just because.
+function wrapSpan(charNum, text) {
+	const spanStart = `<span class="char-${(charNum + 1)}">`;
+	const spanEnd = "</span>";
+	return spanStart + text + spanEnd;
+}
 
 // returns an array containing a random order of array indices.
 function randomIndexOrder(array) {
