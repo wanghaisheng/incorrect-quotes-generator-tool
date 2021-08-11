@@ -59,11 +59,11 @@ window.generatePrompt = function () {
 
 		// name tomfoolery
 		output = output.replaceAll(`{${i + 1}}`, // standard
-			window.wrapSpan(charNum, characterName));
+			window.wrapSpan(charNum, characterName, "name"));
 		output = output.replaceAll(`{${i + 1}.upper}`, // uppercase
-			window.wrapSpan(charNum, characterName.toUpperCase()));
+			window.wrapSpan(charNum, characterName.toUpperCase(), "name", "upper"));
 		output = output.replaceAll(`{${i + 1}.first}`, // first letter
-			window.wrapSpan(charNum, characterName.charAt(0)));
+			window.wrapSpan(charNum, characterName.charAt(0), "name", "first"));
 
 		// pronouns!
 		window.pronounTypes.forEach(pronounType => {
@@ -74,7 +74,7 @@ window.generatePrompt = function () {
 				pronoun = pronounType.default;
 			}
 
-			output = output.replaceAll(`{${i + 1}.${shortName}}`, window.wrapSpan(charNum, pronoun));
+			output = output.replaceAll(`{${i + 1}.${shortName}}`, window.wrapSpan(charNum, pronoun, shortName));
 		});
 	}
 
@@ -82,10 +82,17 @@ window.generatePrompt = function () {
 };
 
 // wraps some text in a <span> tag with a specific character's class. just because.
-window.wrapSpan = (charNum, text) => {
-	const spanStart = `<span class="char-${(charNum + 1)}">`;
-	const spanEnd = "</span>";
-	return spanStart + text + spanEnd;
+window.wrapSpan = (charNum, text, ...moreClasses) => {
+	const span = document.createElement("span");
+	span.classList.add("char-" + (charNum + 1));
+
+	moreClasses.forEach(className => {
+		span.classList.add(className);
+	});
+
+	span.textContent = text;
+
+	return span.outerHTML;
 };
 
 // returns an array containing a random order of array indices.
