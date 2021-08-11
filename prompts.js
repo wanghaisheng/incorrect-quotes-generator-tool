@@ -14,7 +14,7 @@ fetch("./prompts.json") // contains an array of paths to files.
 			fetch(file) // fetch each file defined in prompts.json...
 				.then(response => response.json())
 				.then(data => {
-					console.log("loading", data.title);
+					console.log("loading prompt collection:", data.title);
 					const {prompts} = data; // the prompts of the file
 
 					for (let i = 0; i < Object.keys(prompts).length; i++) {
@@ -59,17 +59,22 @@ window.generatePrompt = function () {
 
 		// name tomfoolery
 		output = output.replaceAll(`{${i + 1}}`, // standard
-			wrapSpan(charNum, characterName));
+			window.wrapSpan(charNum, characterName));
 		output = output.replaceAll(`{${i + 1}.upper}`, // uppercase
-			wrapSpan(charNum, characterName.toUpperCase()));
+			window.wrapSpan(charNum, characterName.toUpperCase()));
 		output = output.replaceAll(`{${i + 1}.first}`, // first letter
-			wrapSpan(charNum, characterName.charAt(0)));
+			window.wrapSpan(charNum, characterName.charAt(0)));
 
 		// pronouns!
-		console.log(window.pronounTypes);
 		window.pronounTypes.forEach(pronounType => {
 			const {shortName} = pronounType;
-			output = output.replaceAll(`{${i + 1}.${shortName}}`, wrapSpan(charNum, characterPronouns[shortName]));
+			let pronoun = characterPronouns[shortName];
+
+			if (!pronoun) {
+				pronoun = pronounType.default;
+			}
+
+			output = output.replaceAll(`{${i + 1}.${shortName}}`, window.wrapSpan(charNum, pronoun));
 		});
 	}
 
@@ -77,11 +82,11 @@ window.generatePrompt = function () {
 };
 
 // wraps some text in a <span> tag with a specific character's class. just because.
-function wrapSpan(charNum, text) {
+window.wrapSpan = (charNum, text) => {
 	const spanStart = `<span class="char-${(charNum + 1)}">`;
 	const spanEnd = "</span>";
 	return spanStart + text + spanEnd;
-}
+};
 
 // returns an array containing a random order of array indices.
 function randomIndexOrder(array) {

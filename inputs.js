@@ -12,12 +12,13 @@ window.getCharacters = (() => {
 	document.querySelectorAll(".character-block").forEach(block => {
 		const {children} = block;
 		const pronouns = {};
-		for (const input of children[1].children) {
-			pronouns[input.name] = input.value;
+		for (const label of children[1].children[1].children) {
+			const input = label.children[0];
+			pronouns[input.name] = input.value || input.placeholder;
 		}
 
 		characterInputs.push({
-			name: children[0].children[0].value,
+			name: children[0].value,
 			pronouns
 		});
 	});
@@ -77,73 +78,23 @@ function enableDisableInputs() {
 	}
 }
 
-// the pronouns
-window.pronounTypes = [
-	{
-		name: "subject pronoun",
-		shortName: "subjectPn"
-	},
-	{
-		name: "object pronoun",
-		shortName: "objectPn"
-	},
-	{
-		name: "possessive determiner",
-		shortName: "possessiveDet"
-	},
-	{
-		name: "possessive pronoun",
-		shortName: "possessivePn"
-	},
-	{
-		name: "reflexive pronoun",
-		shortName: "reflexivePn"
-	}
-];
-
+// this is the part where characters are added. this is where things get messy.
 window.addInput = function () {
-	const inputsDiv = document.querySelector("#character-inputs");
+	const inputsDiv = document.querySelector("#character-blocks");
 	const inputNumber = window.getCharacters().length + 1;
-	// the character block
+
+	// the character block, <div>
 	const charBlock = document.createElement("div");
 	charBlock.className = "character-block";
 
-	const topRow = document.createElement("div");
-
-	// character name input
+	// character name input (child of topRow)
 	const nameInput = document.createElement("input");
 	nameInput.className = "character-name char-" + inputNumber;
 	nameInput.setAttribute("placeholder", "person " + inputNumber);
 	nameInput.setAttribute("type", "text");
-	topRow.appendChild(nameInput);
-	charBlock.appendChild(topRow);
+	charBlock.appendChild(nameInput);
 
-	// button to toggle display of pronouns.
-	const pronounToggle = document.createElement("button");
-	topRow.appendChild(pronounToggle);
-	pronounToggle.textContent = "pronouns";
-	pronounToggle.id = "test";
-	pronounToggle.onclick = function () {
-		const toggleDiv = this.parentNode.parentNode.lastChild;
-		if (toggleDiv.style.display === "none") {
-			toggleDiv.style.display = "flex";
-		} else {
-			toggleDiv.style.display = "none";
-		}
-	};
-
-	const pronounsDiv = document.createElement("div");
-	pronounsDiv.className = "pronouns";
-	pronounsDiv.style.display = "none";
-	charBlock.appendChild(pronounsDiv);
-
-	window.pronounTypes.forEach(pronounType => {
-		const pronounInput = document.createElement("input");
-		pronounInput.className = "char-" + inputNumber;
-		pronounInput.setAttribute("placeholder", pronounType.name);
-		pronounInput.setAttribute("name", pronounType.shortName);
-		pronounsDiv.appendChild(pronounInput);
-	});
+	charBlock.appendChild(window.createPronounsDiv(inputNumber));
 
 	// creating a new color for the new character...
 	const color = window.hsluv.hsluvToHex([

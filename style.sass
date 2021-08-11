@@ -81,7 +81,7 @@ a
 /* the div containing the character input boxes. */
 #character-inputs
 	display: flex
-	flex-direction: column
+	flex-direction: row
 	margin: 0 -3% 1em
 	max-height: 36em
 	overflow-y: auto
@@ -96,23 +96,30 @@ a
 		display: flex
 		justify-content: space-between
 		flex-grow: 1
-		flex-wrap: true
 		column-gap: 1em
 
 .character-name
 	width: 100%
 	height: 2em
 
+.pronouns-block
+	flex-direction: column
+	border: 1px var(--fg-secondary) solid
+	margin-top: 0.5em
+
 .pronouns
 	display: flex
+	flex-direction: column
 	justify-content: space-between
 	flex-grow: 1
 	flex-wrap: true
+	margin: 0.5em
 	width: 100%
-	> input
+	> label
 		margin-top: 0.5em
-		height: 1.5em
-		width: 19%
+		> input
+			height: 1.5em
+			width: 12ch
 
 /* style the things so they don't look like windows 98 */
 button, input
