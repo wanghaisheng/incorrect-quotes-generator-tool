@@ -42,7 +42,7 @@ window.addInput = function () {
 	// character name input (child of topRow)
 	const nameInput = document.createElement("input");
 	nameInput.className = "character-name char-" + inputNumber;
-	nameInput.setAttribute("placeholder", "person " + inputNumber);
+	nameInput.setAttribute("placeholder", "character " + inputNumber);
 	nameInput.setAttribute("type", "text");
 	charBlock.appendChild(nameInput);
 
@@ -50,9 +50,7 @@ window.addInput = function () {
 
 	// creating a new color for the new character...
 	const color = window.hsluv.hsluvToHex([
-		((inputNumber - 1) * 36) % 360, // hue
-		80 - Math.min(50, (inputNumber - 10)), // saturation
-		75 // lightness
+		((inputNumber - 1) * 36) % 360, 70, 75
 	]);
 	style.sheet.insertRule(`.char-${inputNumber} { background: ${color}C4 }`);
 
