@@ -113,7 +113,6 @@ a
 	justify-content: space-between
 	flex-grow: 1
 	flex-wrap: true
-	margin: 0.5em
 	width: 100%
 	> label
 		margin-top: 0.5em
@@ -168,9 +167,13 @@ br
 		padding-top: 0.2em
 
 .columns
+	margin: 0.5em
 	display: flex
 	flex-direction: row
+	align-items: stretch
 	flex-wrap: wrap
-	justify-content: space-around
-	> *
-		width: 42ch
+	justify-content: space-between
+	> div
+		margin: 0.5em
+		max-width: 48ch
+		flex-grow: 1

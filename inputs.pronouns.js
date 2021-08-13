@@ -65,28 +65,51 @@ window.createPronounsDiv = function (inputNumber) {
 	};
 
 	const pronounsInnerDiv = document.createElement("div");
-	pronounsInnerDiv.className = "pronouns";
+	pronounsInnerDiv.className = "columns";
 	pronounsInnerDiv.style.display = "none";
 	pronounsDiv.appendChild(pronounsInnerDiv);
 
+	const pronounSentences = document.createElement("div");
+	pronounSentences.className = "pronouns";
+
 	// for each pronounType... (see pronouns.js)
 	window.pronounTypes.forEach(pronounType => {
-		const {examples} = pronounType;
-		const label = document.createElement("label");
-
 		const pronounInput = document.createElement("input");
 		pronounInput.className = "char-" + inputNumber;
 		pronounInput.setAttribute("placeholder", pronounType.default);
 		pronounInput.setAttribute("name", pronounType.shortName);
 
+		// get a random example sentence
+		const {examples} = pronounType;
 		let example = examples[Math.floor(Math.random() * examples.length)];
 
-		example = example.replace("{{input}}", pronounInput.outerHTML);
+		// putting an input between text
+		example = example.split("{{input}}");
 
-		label.innerHTML = example;
+		// putting it all together with a nice label
+		const label = document.createElement("label");
+		label.insertAdjacentText("afterbegin", example[0]);
+		label.insertAdjacentElement("beforeend", pronounInput);
+		label.insertAdjacentText("beforeend", example[1]);
 
-		pronounsInnerDiv.appendChild(label);
+		pronounSentences.appendChild(label);
 	});
+
+	// settings
+	const pronounSettings = document.createElement("div");
+	pronounSettings.className = "pronounSettings";
+
+	// treat pronoun as plural?
+	const pluralLabel = document.createElement("label");
+	const pluralInput = document.createElement("input");
+	pluralInput.type = "checkbox";
+	pluralInput.className = "plural";
+	pluralLabel.appendChild(pluralInput);
+	pluralLabel.insertAdjacentText("beforeend", "Treat as plural");
+
+	pronounSettings.append(pluralLabel);
+
+	pronounsInnerDiv.append(pronounSentences, pronounSettings);
 
 	return pronounsDiv;
 };
