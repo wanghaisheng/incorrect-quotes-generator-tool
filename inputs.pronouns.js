@@ -1,11 +1,13 @@
 // inputs.pronouns.js
-// handling pronoun inputs.
+// handling pronoun inputs, and other pronoun-related stuff.
 
 window.pronounTypes = [
 	{
 		name: "subject pronoun",
 		shortName: "subjectPn",
-		default: "they",
+		defaults: {
+			none: "they"
+		},
 		examples: [
 			"This morning, {{input}} went to the park."
 		]
@@ -13,7 +15,9 @@ window.pronounTypes = [
 	{
 		name: "object pronoun",
 		shortName: "objectPn",
-		default: "them",
+		defaults: {
+			none: "them"
+		},
 		examples: [
 			"I went with {{input}}.",
 			"Somebody once told {{input}} the world was going to roll {{objectPn}}."
@@ -22,7 +26,9 @@ window.pronounTypes = [
 	{
 		name: "possessive determiner",
 		shortName: "possessiveDet",
-		default: "their",
+		defaults: {
+			none: "their"
+		},
 		examples: [
 			"{{name}} threw {{input}} frisbee."
 		]
@@ -30,7 +36,11 @@ window.pronounTypes = [
 	{
 		name: "possessive pronoun",
 		shortName: "possessivePn",
-		default: "theirs",
+		defaults: {
+			none: "theirs",
+			singular: "{{possessiveDet}}s",
+			plural: "{{possessiveDet}}s"
+		},
 		examples: [
 			"That burger is {{input}}."
 		]
@@ -38,11 +48,22 @@ window.pronounTypes = [
 	{
 		name: "reflexive pronoun",
 		shortName: "reflexivePn",
-		default: "themselves",
+		defaults: {
+			none: "themselves",
+			singular: "{{objectPn}}self",
+			plural: "{{objectPn}}selves"
+		},
 		examples: [
 			"{{name}} can do it by {{input}}."
 		]
 	}
+];
+
+const pronounSets = [
+	{subjectPn: "he", objectPn: "him", possessiveDet: "his", possessivePn: "his", reflexivePn: "himself"},
+	{subjectPn: "she", objectPn: "her", possessiveDet: "her", possessivePn: "hers", reflexivePn: "herself"},
+	{subjectPn: "it", objectPn: "it", possessiveDet: "its", possessivePn: "its", reflexivePn: "itself"},
+	{subjectPn: "they", objectPn: "them", possessiveDet: "their", possessivePn: "theirs", reflexivePn: "themself"}
 ];
 
 window.createPronounsDiv = function (inputNumber) {
@@ -76,8 +97,9 @@ window.createPronounsDiv = function (inputNumber) {
 	window.pronounTypes.forEach(pronounType => {
 		const pronounInput = document.createElement("input");
 		pronounInput.className = "char-" + inputNumber;
-		pronounInput.setAttribute("placeholder", pronounType.default);
+		pronounInput.setAttribute("placeholder", pronounType.defaults.none);
 		pronounInput.setAttribute("name", pronounType.shortName);
+		pronounInput.addEventListener("input", event => updatePronouns(event));
 
 		// get a random example sentence
 		const {examples} = pronounType;
@@ -113,3 +135,19 @@ window.createPronounsDiv = function (inputNumber) {
 
 	return pronounsDiv;
 };
+
+function updatePronouns(event) {
+	// get the other pronoun inputs
+	const characterInputs = event.target.parentNode.parentNode.querySelectorAll("input");
+
+	pronounSets.forEach(pronounSet => {
+		if (characterInputs[0].value === pronounSet.subjectPn) {
+			console.log("matched " + characterInputs[0].value + "! setting placeholder values for remaining inputs…");
+			for (const input of characterInputs) {
+				input.placeholder = pronounSet[input.name];
+			}
+		} else {
+			// TODO: Implement suffixes.
+		}
+	});
+}
