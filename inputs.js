@@ -1,5 +1,7 @@
-/* inputs.js
-this file deals with the input elements -- getting them, adding their functions, adding, and removing them. */
+// inputs.js
+// this file deals with inputs, more specifically:
+// - getting the contents of inputs
+// - adding and removing inputs
 
 window.onload = (() => {
 	window.addInput();
