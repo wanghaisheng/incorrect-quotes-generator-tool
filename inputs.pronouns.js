@@ -49,7 +49,7 @@ window.pronounTypes = [
 		name: "reflexive pronoun",
 		shortName: "reflexivePn",
 		defaults: {
-			none: "themselves",
+			none: "themself",
 			singular: "{{objectPn}}self",
 			plural: "{{objectPn}}selves"
 		},
@@ -62,8 +62,7 @@ window.pronounTypes = [
 const pronounSets = [
 	{subjectPn: "he", objectPn: "him", possessiveDet: "his", possessivePn: "his", reflexivePn: "himself"},
 	{subjectPn: "she", objectPn: "her", possessiveDet: "her", possessivePn: "hers", reflexivePn: "herself"},
-	{subjectPn: "it", objectPn: "it", possessiveDet: "its", possessivePn: "its", reflexivePn: "itself"},
-	{subjectPn: "they", objectPn: "them", possessiveDet: "their", possessivePn: "theirs", reflexivePn: "themself"}
+	{subjectPn: "it", objectPn: "it", possessiveDet: "its", possessivePn: "its", reflexivePn: "itself"}
 ];
 
 window.createPronounsDiv = function (inputNumber) {
