@@ -139,14 +139,19 @@ function updatePronouns(event) {
 	// get the other pronoun inputs
 	const characterInputs = event.target.parentNode.parentNode.querySelectorAll("input");
 
-	pronounSets.forEach(pronounSet => {
+	if (!pronounSets.some(pronounSet => {
 		if (characterInputs[0].value === pronounSet.subjectPn) {
 			console.log("matched " + characterInputs[0].value + "! setting placeholder values for remaining inputs…");
 			for (const input of characterInputs) {
 				input.placeholder = pronounSet[input.name];
 			}
-		} else {
-			// TODO: Implement suffixes.
+
+			return true;
 		}
-	});
+
+		return false;
+	})) {
+		// if it doesn't fit any of the pronoun sets (wow i hate this)
+		console.log("nope");
+	}
 }
