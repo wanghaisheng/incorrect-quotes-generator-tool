@@ -14,8 +14,8 @@ window.getCharacters = (() => {
 	document.querySelectorAll(".character-block").forEach(block => {
 		const {children} = block;
 		const pronouns = {};
-		for (const label of children[1].children[1].children) {
-			const input = label.children[0];
+		for (const label of children[1].querySelector(".pronouns").querySelectorAll("input")) {
+			const input = label;
 			pronouns[input.name] = input.value || input.placeholder;
 		}
 

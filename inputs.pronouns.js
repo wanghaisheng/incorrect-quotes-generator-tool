@@ -1,10 +1,9 @@
 // inputs.pronouns.js
 // handling pronoun inputs, and other pronoun-related stuff.
 
-window.pronounTypes = [
-	{
+window.pronounTypes = {
+	subjectPn: {
 		name: "subject pronoun",
-		shortName: "subjectPn",
 		defaults: {
 			none: "they"
 		},
@@ -12,9 +11,8 @@ window.pronounTypes = [
 			"This morning, {{input}} went to the park."
 		]
 	},
-	{
+	objectPn: {
 		name: "object pronoun",
-		shortName: "objectPn",
 		defaults: {
 			none: "them"
 		},
@@ -23,9 +21,8 @@ window.pronounTypes = [
 			"Somebody once told {{input}} the world was going to roll {{objectPn}}."
 		]
 	},
-	{
+	possessiveDet: {
 		name: "possessive determiner",
-		shortName: "possessiveDet",
 		defaults: {
 			none: "their"
 		},
@@ -33,9 +30,8 @@ window.pronounTypes = [
 			"{{name}} threw {{input}} frisbee."
 		]
 	},
-	{
+	possessivePn: {
 		name: "possessive pronoun",
-		shortName: "possessivePn",
 		defaults: {
 			none: "theirs",
 			singular: "{{possessiveDet}}s",
@@ -45,9 +41,8 @@ window.pronounTypes = [
 			"That burger is {{input}}."
 		]
 	},
-	{
+	reflexivePn: {
 		name: "reflexive pronoun",
-		shortName: "reflexivePn",
 		defaults: {
 			none: "themself",
 			singular: "{{objectPn}}self",
@@ -57,7 +52,7 @@ window.pronounTypes = [
 			"{{name}} can do it by {{input}}."
 		]
 	}
-];
+};
 
 const pronounSets = [
 	{subjectPn: "he", objectPn: "him", possessiveDet: "his", possessivePn: "his", reflexivePn: "himself"},
@@ -93,11 +88,13 @@ window.createPronounsDiv = function (inputNumber) {
 	pronounSentences.className = "pronouns";
 
 	// for each pronounType... (see pronouns.js)
-	window.pronounTypes.forEach(pronounType => {
+	Object.keys(window.pronounTypes).forEach(typeName => {
+		const pronounType = window.pronounTypes[typeName];
+
 		const pronounInput = document.createElement("input");
 		pronounInput.className = "char-" + inputNumber;
 		pronounInput.setAttribute("placeholder", pronounType.defaults.none);
-		pronounInput.setAttribute("name", pronounType.shortName);
+		pronounInput.setAttribute("name", typeName);
 		pronounInput.addEventListener("input", event => updatePronouns(event));
 
 		// get a random example sentence

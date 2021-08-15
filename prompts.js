@@ -66,15 +66,10 @@ window.generatePrompt = function () {
 			window.wrapSpan(charNum, characterName.charAt(0), "name", "first"));
 
 		// pronouns!
-		window.pronounTypes.forEach(pronounType => {
-			const {shortName} = pronounType;
-			let pronoun = characterPronouns[shortName];
+		Object.keys(window.pronounTypes).forEach(typeName => {
+			const pronoun = characterPronouns[typeName];
 
-			if (!pronoun) {
-				pronoun = pronounType.default;
-			}
-
-			output = output.replaceAll(`{${i + 1}.${shortName}}`, window.wrapSpan(charNum, pronoun, shortName));
+			output = output.replaceAll(`{${i + 1}.${typeName}}`, window.wrapSpan(charNum, pronoun, typeName));
 		});
 	}
 
