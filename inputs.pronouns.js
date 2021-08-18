@@ -69,7 +69,6 @@ window.createPronounsDiv = function (inputNumber) {
 	const pronounToggle = document.createElement("button");
 	pronounsDiv.appendChild(pronounToggle);
 	pronounToggle.textContent = "pronouns";
-	pronounToggle.id = "test";
 	pronounToggle.onclick = function () {
 		const toggleDiv = this.parentNode.lastChild;
 		if (toggleDiv.style.display === "none") {
