@@ -3,6 +3,8 @@
 // - getting the contents of inputs
 // - adding and removing inputs
 
+const charBlocks = document.querySelector("#character-blocks");
+
 window.onload = (() => {
 	window.addInput();
 });
@@ -34,7 +36,6 @@ document.head.append(style);
 
 // this is the part where characters are added. this is where things get messy.
 window.addInput = function () {
-	const inputsDiv = document.querySelector("#character-blocks");
 	const inputNumber = window.getCharacters().length + 1;
 
 	// the character block, <div>
@@ -56,7 +57,7 @@ window.addInput = function () {
 	]);
 	style.sheet.insertRule(`.char-${inputNumber} { background: ${color}C4 }`);
 
-	inputsDiv.append(charBlock);
+	charBlocks.append(charBlock);
 };
 
 window.removeInput = function () {
