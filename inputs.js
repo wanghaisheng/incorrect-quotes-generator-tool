@@ -30,6 +30,20 @@ window.getCharacters = (() => {
 	return characterInputs;
 });
 
+/**
+ * Returns the value of an input belonging to a character.
+ * @param {number} character - character number.
+ * @param {...string} classes - classes to look for.
+ * @returns {string}
+ */
+window.getCharacterInput = (character, ...classes) => {
+	const characterDiv = charBlocks.children[character - 1];
+	classes = "." + classes.join(".");
+	const input = characterDiv.querySelector("input" + classes);
+
+	return input.value || input.placeholder;
+};
+
 // setting up a style element for later use...
 const style = document.createElement("style");
 document.head.append(style);
