@@ -43,7 +43,7 @@ window.addInput = function () {
 
 	// character name input (child of topRow)
 	const nameInput = document.createElement("input");
-	nameInput.className = "character-name char-" + inputNumber;
+	nameInput.classList.add("name", "char-" + inputNumber);
 	nameInput.setAttribute("placeholder", "character " + inputNumber);
 	nameInput.setAttribute("type", "text");
 	charBlock.appendChild(nameInput);

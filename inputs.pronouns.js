@@ -91,7 +91,7 @@ window.createPronounsDiv = function (inputNumber) {
 		const pronounType = window.pronounTypes[typeName];
 
 		const pronounInput = document.createElement("input");
-		pronounInput.className = "char-" + inputNumber;
+		pronounInput.classList.add("char-" + inputNumber, "pronoun");
 		pronounInput.setAttribute("placeholder", pronounType.defaults.none);
 		pronounInput.setAttribute("name", typeName);
 		pronounInput.addEventListener("input", event => updatePronouns(event));
