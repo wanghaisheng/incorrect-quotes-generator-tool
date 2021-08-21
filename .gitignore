@@ -1,2 +1,8 @@
+# node.js stuff, woo
 node_modules
+
+# compile sass.
 *.css*
+
+# configure your own workspace.
+.vscode
