@@ -112,7 +112,7 @@ window.createPronounsDiv = function (inputNumber) {
 		pronounSentences.appendChild(label);
 	});
 
-	// settings
+	/* SETTINGS */
 	const pronounSettings = document.createElement("div");
 	pronounSettings.className = "pronounSettings";
 
@@ -134,6 +134,18 @@ window.createPronounsDiv = function (inputNumber) {
 function updatePronouns(event) {
 	// get the other pronoun inputs
 	const characterInputs = event.target.parentNode.parentNode.querySelectorAll("input");
+	const characterNum = event.target.classList[0].slice(5);
+	const settings = (() => {
+		const inputs = event.target.parentNode.parentNode.parentNode.querySelector(".pronounSettings").querySelectorAll("input");
+
+		const settings = new Map();
+
+		inputs.forEach(input => {
+			settings.set(input.className, input.checked);
+		});
+
+		return settings;
+	})();
 
 	if (!pronounSets.some(pronounSet => {
 		if (characterInputs[0].value === pronounSet.subjectPn) {
@@ -147,7 +159,31 @@ function updatePronouns(event) {
 
 		return false;
 	})) {
-		// if it doesn't fit any of the pronoun sets (wow i hate this)
-		console.log("nope");
+		// if it doesn't fit any of the pronoun sets
+		characterInputs.forEach(input => {
+			if (settings.get("plural")) {
+				input.placeholder =
+					window.pronounTypes[input.name].defaults.plural ??
+					window.pronounTypes[input.name].defaults.none;
+			} else {
+				input.placeholder =
+					window.pronounTypes[input.name].defaults.singular ??
+					window.pronounTypes[input.name].defaults.none;
+			}
+
+			let start = input.placeholder.indexOf("{{");
+			let end = input.placeholder.indexOf("}}");
+
+			while (start >= 0) {
+				const substring = (input.placeholder.substring(start + 2, end));
+				input.placeholder = input.placeholder.replace(
+					"{{" + substring + "}}",
+					window.getCharacterInput(characterNum, substring)
+				);
+
+				start = input.placeholder.indexOf("{{");
+				end = input.placeholder.indexOf("}}");
+			}
+		});
 	}
 }
