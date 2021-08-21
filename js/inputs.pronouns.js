@@ -1,6 +1,7 @@
 // inputs.pronouns.js
 // handling pronoun inputs, and other pronoun-related stuff.
 
+/** @type {object} */
 window.pronounTypes = {
 	subjectPn: {
 		name: "subject pronoun",
@@ -54,6 +55,7 @@ window.pronounTypes = {
 	}
 };
 
+/** @type {Object[]} */
 const pronounSets = [
 	{subjectPn: "he", objectPn: "him", possessiveDet: "his", possessivePn: "his", reflexivePn: "himself"},
 	{subjectPn: "she", objectPn: "her", possessiveDet: "her", possessivePn: "hers", reflexivePn: "herself"},
