@@ -18,8 +18,7 @@ window.pronounTypes = {
 			none: "them"
 		},
 		examples: [
-			"I went with {{input}}.",
-			"Somebody once told {{input}} the world was going to roll {{objectPn}}."
+			"I went with {{input}}."
 		]
 	},
 	possessiveDet: {
@@ -39,7 +38,7 @@ window.pronounTypes = {
 			plural: "{{possessiveDet}}s"
 		},
 		examples: [
-			"That burger is {{input}}."
+			"At least I think it was {{input}}."
 		]
 	},
 	reflexivePn: {
@@ -62,7 +61,7 @@ const pronounSets = [
 	{subjectPn: "it", objectPn: "it", possessiveDet: "its", possessivePn: "its", reflexivePn: "itself"}
 ];
 
-window.createPronounsDiv = function (inputNumber) {
+window.createPronounsDiv = function (charNum) {
 	// div containing all the pronouns-related stuff
 	const pronounsDiv = document.createElement("div");
 	pronounsDiv.className = "pronouns-block";
@@ -93,7 +92,7 @@ window.createPronounsDiv = function (inputNumber) {
 		const pronounType = window.pronounTypes[typeName];
 
 		const pronounInput = document.createElement("input");
-		pronounInput.classList.add("char-" + inputNumber, "pronoun", typeName);
+		pronounInput.classList.add("char-" + charNum, "pronoun", typeName);
 		pronounInput.setAttribute("placeholder", pronounType.defaults.none);
 		pronounInput.setAttribute("name", typeName);
 		pronounInput.addEventListener("input", event => updatePronouns(event));
@@ -102,14 +101,14 @@ window.createPronounsDiv = function (inputNumber) {
 		const {examples} = pronounType;
 		let example = examples[Math.floor(Math.random() * examples.length)];
 
-		// putting an input between text
-		example = example.split("{{input}}");
+		// replace some placeholder text
+		example = window.replaceText(example, charNum);
 
 		// putting it all together with a nice label
 		const label = document.createElement("label");
-		label.insertAdjacentText("afterbegin", example[0]);
+		label.insertAdjacentHTML("afterbegin", example[0]);
 		label.insertAdjacentElement("beforeend", pronounInput);
-		label.insertAdjacentText("beforeend", example[1]);
+		label.insertAdjacentHTML("beforeend", example[1]);
 
 		pronounSentences.appendChild(label);
 	});

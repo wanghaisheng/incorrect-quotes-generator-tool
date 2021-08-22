@@ -38,6 +38,10 @@ window.getCharacters = (() => {
  */
 window.getCharacterInput = (character, ...classes) => {
 	const characterDiv = charBlocks.children[character - 1];
+	if (!characterDiv) {
+		return;
+	}
+
 	classes = "." + classes.join(".");
 	const input = characterDiv.querySelector("input" + classes);
 
