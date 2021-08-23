@@ -79,11 +79,13 @@ window.createPronounsDiv = function (charNum) {
 		}
 	};
 
+	// a div containing the parts of the dropdown
 	const pronounsInnerDiv = document.createElement("div");
 	pronounsInnerDiv.className = "columns";
 	pronounsInnerDiv.style.display = "none";
 	pronounsDiv.appendChild(pronounsInnerDiv);
 
+	// the pronoun inputs and their example sentences.
 	const pronounSentences = document.createElement("div");
 	pronounSentences.className = "pronouns";
 
@@ -91,6 +93,7 @@ window.createPronounsDiv = function (charNum) {
 	Object.keys(window.pronounTypes).forEach(typeName => {
 		const pronounType = window.pronounTypes[typeName];
 
+		// creating the input element
 		const pronounInput = document.createElement("input");
 		pronounInput.classList.add("char-" + charNum, "pronoun", typeName);
 		pronounInput.setAttribute("placeholder", pronounType.defaults.none);
@@ -121,7 +124,9 @@ window.createPronounsDiv = function (charNum) {
 	const pluralLabel = document.createElement("label");
 	const pluralInput = document.createElement("input");
 	pluralInput.type = "checkbox";
-	pluralInput.className = "plural";
+	pluralInput.classList.add("char-" + charNum, "plural", "pronoun-setting");
+	pluralInput.name = "plural";
+	pluralInput.addEventListener("change", event => updatePronouns(event));
 	pluralLabel.appendChild(pluralInput);
 	pluralLabel.insertAdjacentText("beforeend", "Treat as plural");
 
@@ -134,24 +139,18 @@ window.createPronounsDiv = function (charNum) {
 
 function updatePronouns(event) {
 	// get the other pronoun inputs
-	const characterInputs = event.target.parentNode.parentNode.querySelectorAll("input");
-	const characterNum = event.target.classList[0].slice(5);
-	const settings = (() => {
-		const inputs = event.target.parentNode.parentNode.parentNode.querySelector(".pronounSettings").querySelectorAll("input");
+	const charNum = event.target.classList[0].slice(5);
+	const {pronouns: pronounInputs, settings: settingInputs} = window.charInputs[charNum];
 
-		const settings = new Map();
-
-		inputs.forEach(input => {
-			settings.set(input.className, input.checked);
-		});
-
-		return settings;
-	})();
+	const settings = new Map();
+	settingInputs.forEach(input => {
+		settings.set(input.name, input.checked);
+	});
 
 	if (!pronounSets.some(pronounSet => {
-		if (characterInputs[0].value === pronounSet.subjectPn) {
-			console.log("matched " + characterInputs[0].value + "! setting placeholder values for remaining inputs…");
-			for (const input of characterInputs) {
+		if (pronounInputs[0].value === pronounSet.subjectPn) {
+			console.log("matched \"" + pronounInputs[0].value + "\" for character " + charNum + "! setting placeholder values for remaining inputs…");
+			for (const input of pronounInputs) {
 				input.placeholder = pronounSet[input.name];
 			}
 
@@ -161,7 +160,7 @@ function updatePronouns(event) {
 		return false;
 	})) {
 		// if it doesn't fit any of the pronoun sets
-		characterInputs.forEach(input => {
+		pronounInputs.forEach(input => {
 			if (settings.get("plural")) {
 				input.placeholder =
 					window.pronounTypes[input.name].defaults.plural ??
@@ -179,7 +178,7 @@ function updatePronouns(event) {
 				const substring = (input.placeholder.substring(start + 2, end));
 				input.placeholder = input.placeholder.replace(
 					"{{" + substring + "}}",
-					window.getCharacterInput(characterNum, substring)
+					window.getCharacterInput(charNum, substring)
 				);
 
 				start = input.placeholder.indexOf("{{");

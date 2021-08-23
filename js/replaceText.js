@@ -13,7 +13,6 @@ window.replaceText = function (text, charNum) {
 
 	while (start >= 0) {
 		const substring = (text.substring(start + 2, end));
-		console.log(substring);
 
 		switch (substring) {
 			case "name":

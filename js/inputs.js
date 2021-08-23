@@ -5,6 +5,8 @@
 
 const charBlocks = document.querySelector("#character-blocks");
 
+window.charInputs = {};
+
 window.onload = (() => {
 	window.addInput();
 });
@@ -76,6 +78,12 @@ window.addInput = function () {
 	style.sheet.insertRule(`.char-${inputNumber} { background: ${color}C4 }`);
 
 	charBlocks.append(charBlock);
+
+	window.charInputs[inputNumber] = {
+		name: document.querySelector("input.name.char-" + inputNumber),
+		pronouns: document.querySelectorAll("input.pronoun.char-" + inputNumber),
+		settings: document.querySelectorAll("input.pronoun-setting.char-" + inputNumber)
+	};
 };
 
 window.removeInput = function () {

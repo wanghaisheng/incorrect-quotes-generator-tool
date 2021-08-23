@@ -34,7 +34,6 @@ window.createField = (property, charNum, title, content) => {
 
 	field.textContent = content;
 
-	window.fields.push(field);
 	return field;
 };
 
