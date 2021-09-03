@@ -56,7 +56,7 @@ document.head.append(style);
 
 // this is the part where characters are added. this is where things get messy.
 window.addInput = function () {
-	const inputNumber = window.getCharacters().length + 1;
+	const charNum = window.getCharacters().length + 1;
 
 	// the character block, <div>
 	const charBlock = document.createElement("div");
@@ -64,31 +64,36 @@ window.addInput = function () {
 
 	// character name input (child of topRow)
 	const nameInput = document.createElement("input");
-	nameInput.classList.add("name", "char-" + inputNumber);
-	nameInput.setAttribute("placeholder", "character " + inputNumber);
+	nameInput.classList.add("name", "char-" + charNum);
+	nameInput.dataset.charNum = charNum;
+	nameInput.setAttribute("placeholder", "character " + charNum);
 	nameInput.setAttribute("type", "text");
+	nameInput.addEventListener("input", event => window.updateFields(event));
 	charBlock.appendChild(nameInput);
 
-	charBlock.appendChild(window.createPronounsDiv(inputNumber));
+	charBlock.appendChild(window.createPronounsDiv(charNum));
 
 	// creating a new color for the new character...
 	const color = window.hsluv.hsluvToHex([
-		((inputNumber - 1) * 36) % 360, 70, 75
+		((charNum - 1) * 36) % 360, 70, 75
 	]);
-	style.sheet.insertRule(`.char-${inputNumber} { background: ${color}C4 }`);
+	style.sheet.insertRule(`.char-${charNum} { background: ${color}C4 }`);
 
 	charBlocks.append(charBlock);
 
-	window.charInputs[inputNumber] = {
-		name: document.querySelector("input.name.char-" + inputNumber),
-		pronouns: document.querySelectorAll("input.pronoun.char-" + inputNumber),
-		settings: document.querySelectorAll("input.pronoun-setting.char-" + inputNumber)
+	window.fields[charNum] = (charBlock.querySelectorAll(".field"));
+
+	window.charInputs[charNum] = {
+		name: document.querySelector("input.name.char-" + charNum),
+		pronouns: document.querySelectorAll("input.pronoun.char-" + charNum),
+		settings: document.querySelectorAll("input.pronoun-setting.char-" + charNum)
 	};
 };
 
 window.removeInput = function () {
 	const nodes = document.querySelectorAll(".character-block");
 	if (nodes.length > 1) {
+		window.fields.splice(nodes.length, 1);
 		nodes[nodes.length - 1].remove();
 	} else {
 		console.log("there's only one...");

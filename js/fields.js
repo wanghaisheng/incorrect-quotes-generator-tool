@@ -2,7 +2,8 @@
 // updating fields on input changes.
 
 /** @type {HTMLSpanElement[]} */
-window.fields = [];
+window.fields = [[]];
+// 0 is for fields in the output.
 
 /**
  * Creates a new "field" that updates or whatever.
@@ -12,7 +13,7 @@ window.fields = [];
  * @param {string} [content] - Content of field, if needed.
  * @returns HTMLSpanElement
  */
-window.createField = (property, charNum, title, content) => {
+window.createField = function (property, charNum, title, content) {
 	const field = document.createElement("span");
 	field.classList.add("field", "char-" + charNum, property);
 	field.title = title ?? property;
@@ -37,6 +38,12 @@ window.createField = (property, charNum, title, content) => {
 	return field;
 };
 
-window.updateFields = () => {
-	// TODO: Implement dynamically changing fields.
+window.updateFields = event => {
+	const input = event.target;
+	const fields = window.fields[input.dataset.charNum];
+
+	fields.forEach(field => {
+		console.log(field);
+		field.innerText = input.value || input.placeholder;
+	});
 };
