@@ -40,8 +40,14 @@ window.generatePrompt = function () {
 	// get characters from <input>s, add to array
 	const characters = window.getCharacters();
 
-	const order = document.querySelector("#randomize").checked ?
-		randomIndexOrder(characters) : [null];
+	// randomize character order?
+	if (document.querySelector("#randomize").checked) {
+		// fisher-yates shuffle - thanks https://javascript.info/task/shuffle
+		for (let i = characters.length - 1; i > 0; i--) {
+			const j = Math.floor(Math.random() * (i + 1));
+			[characters[i], characters[j]] = [characters[j], characters[i]];
+		}
+	}
 
 	// number of characters determines what set of prompts to use.
 	const promptsIndex = characters.length;
@@ -49,31 +55,54 @@ window.generatePrompt = function () {
 	// getting a random prompt
 	const prompt = globalPrompts[promptsIndex][Math.floor(Math.random() * globalPrompts[promptsIndex].length)];
 
-	let output = prompt.text;
+	let output = prompt.text; // declare output...
 
-	// replacing placeholders with characters
-	for (let i = 0; i < characters.length; i++) {
-		const charNum = order[i] ?? i;
-		const characterName = characters[charNum].name;
-		const characterPronouns = characters[charNum].pronouns;
+	const START_REPLACE = "{{";
+	const END_REPLACE = "}}";
 
-		// name tomfoolery
-		output = output.replaceAll(`{${i + 1}}`, // standard
-			window.wrapSpan(charNum, characterName, "name"));
-		output = output.replaceAll(`{${i + 1}.upper}`, // uppercase
-			window.wrapSpan(charNum, characterName.toUpperCase(), "name", "upper"));
-		output = output.replaceAll(`{${i + 1}.first}`, // first letter
-			window.wrapSpan(charNum, characterName.charAt(0), "name", "first"));
+	let start = output.indexOf(START_REPLACE);
+	let end = output.indexOf(END_REPLACE);
 
-		// pronouns!
-		Object.keys(window.pronounTypes).forEach(typeName => {
-			const pronoun = characterPronouns[typeName];
+	while (start >= 0) {
+		const substring = (output.substring(start + 2, end));
 
-			output = output.replaceAll(`{${i + 1}.${typeName}}`, window.wrapSpan(charNum, pronoun, typeName));
+		// parse the substring...
+		const modifiers = substring.split(" ");
+		const value = modifiers[0].split(".");
+
+		const character = characters[value[0] - 1];
+		let replaceValue = character[value[1]];
+
+		if (typeof (replaceValue) === "object") {
+			replaceValue = replaceValue[value[2]];
+		}
+
+		modifiers.forEach(modifier => {
+			switch (modifier) {
+				case "upper":
+					replaceValue = replaceValue.toUpperCase();
+					break;
+
+				case "first":
+					replaceValue = replaceValue[0];
+					break;
+
+				default:
+					break;
+			}
 		});
+
+		output = output.replace(
+			START_REPLACE + substring + END_REPLACE,
+			window.createField(value[2] || value[1], character.charNum, replaceValue).outerHTML
+		);
+
+		start = output.indexOf(START_REPLACE);
+		end = output.indexOf(END_REPLACE);
 	}
 
 	document.querySelector("#output").innerHTML = output;
+	window.fields[0] = document.querySelector("#output.fields");
 };
 
 // wraps some text in a <span> tag with a specific character's class. just because.
@@ -89,19 +118,3 @@ window.wrapSpan = (charNum, text, ...moreClasses) => {
 
 	return span.outerHTML;
 };
-
-// returns an array containing a random order of array indices.
-function randomIndexOrder(array) {
-	const range = []; // range of array indices
-	for (let i = 0; i < array.length; i++) {
-		range.push(i);
-	}
-
-	// fisher-yates shuffle, taken from https://javascript.info/task/shuffle. <3
-	for (let i = array.length - 1; i > 0; i--) {
-		const j = Math.floor(Math.random() * (i + 1));
-		[range[i], range[j]] = [range[j], range[i]];
-	}
-
-	return range;
-}

@@ -24,8 +24,9 @@ window.getCharacters = (() => {
 		}
 
 		characterInputs.push({
-			name: children[0].value,
-			pronouns
+			name: children[0].value || children[0].placeholder,
+			pronouns,
+			charNum: Number(children[0].dataset.charNum)
 		});
 	});
 

@@ -13,10 +13,10 @@ window.fields = [[]];
  * @param {string} [content] - Content of field, if needed.
  * @returns HTMLSpanElement
  */
-window.createField = function (property, charNum, title, content) {
+window.createField = function (property, charNum, content) {
 	const field = document.createElement("span");
 	field.classList.add("field", "char-" + charNum, property);
-	field.title = title ?? property;
+	field.title = property + " (character " + charNum + ")";
 
 	if (!content) {
 		content = window.getCharacterInput(charNum, property);
@@ -43,7 +43,6 @@ window.updateFields = event => {
 	const fields = window.fields[input.dataset.charNum];
 
 	fields.forEach(field => {
-		console.log(field);
 		field.innerText = input.value || input.placeholder;
 	});
 };

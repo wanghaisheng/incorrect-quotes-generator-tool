@@ -101,17 +101,54 @@ window.createPronounsDiv = function (charNum) {
 		pronounInput.addEventListener("input", event => updatePronouns(event));
 
 		// get a random example sentence
-		const {examples} = pronounType;
-		let example = examples[Math.floor(Math.random() * examples.length)];
+		const {examples} = pronounType; // examples for the pronoun type
+		let example = examples[Math.floor(Math.random() * examples.length)]; // get a random example from that
 
-		// replace some placeholder text
-		example = window.replaceText(example, charNum);
+		// replace placeholder text in the examples
+		const START_REPLACE = "{{";
+		const END_REPLACE = "}}";
+
+		let start = example.indexOf(START_REPLACE);
+		let end = example.indexOf(END_REPLACE);
+
+		let input = "";
+		const output = [];
+
+		while (start >= 0) {
+			const substring = (example.substring(start + 2, end));
+
+			switch (substring) {
+				case "name":
+					input = window.createField("name", charNum).outerHTML;
+					break;
+
+				case "input": {
+					const split = example.split(START_REPLACE + substring + END_REPLACE);
+					output[0] = split[0];
+					example = split[1];
+					break;
+				}
+
+				default:
+					break;
+			}
+
+			example = example.replace(
+				START_REPLACE + substring + END_REPLACE,
+				input
+			);
+
+			start = example.indexOf(START_REPLACE);
+			end = example.indexOf(END_REPLACE);
+		}
+
+		output[1] = example;
 
 		// putting it all together with a nice label
 		const label = document.createElement("label");
-		label.insertAdjacentHTML("afterbegin", example[0]);
+		label.insertAdjacentHTML("afterbegin", output[0]);
 		label.insertAdjacentElement("beforeend", pronounInput);
-		label.insertAdjacentHTML("beforeend", example[1]);
+		label.insertAdjacentHTML("beforeend", output[1]);
 
 		pronounSentences.appendChild(label);
 	});

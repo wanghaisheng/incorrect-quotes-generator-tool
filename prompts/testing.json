@@ -5,15 +5,15 @@
 	"prompts": {
 		"1": [
 			{
-				"text": "{1}: this is a one person prompt.<br>{1.upper}: THIS IS MY NAME, BUT UPPERCASE.<br>{1}: the first character of my name is {1.first}."
+				"text": "{{1.name}}: this is a one person prompt.<br>{{1.name upper}}: THIS IS MY NAME, BUT UPPERCASE.<br>{{1.name}}: the first character of my name is {{1.name first}}."
 			},
 			{
-				"text": "{1}: hello! i am {1}, and my pronouns are {1.subjectPn}/{1.objectPn}!"
+				"text": "{{1.name}}: hello! i am {{1.name}}, and my pronouns are {{1.pronouns.subjectPn}}/{{1.pronouns.objectPn}}!"
 			}
 		],
 		"2": [
 			{
-				"text": "{1}: hello, my name is {1}. my pronouns are {1.subjectPn}/{1.objectPn}.<br>{2}: that's rad. you can call me {2}, i use {2.subjectPn}/{2.objectPn}."
+				"text": "{{1.name}}: hello, my name is {{1.name}}. my pronouns are {{1.pronouns.subjectPn}}/{{1.pronouns.objectPn}}.<br>{{2.name}}: that's rad. you can call me {{2.name}}, i use {{2.pronouns.subjectPn}}/{{2.pronouns.objectPn}}."
 			}
 		]
 	}
