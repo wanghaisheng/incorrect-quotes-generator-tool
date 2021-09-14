@@ -115,6 +115,7 @@ a
 	flex-wrap: true
 	width: 100%
 	> label
+		+ *
 		margin-top: 0.5em
 		> input
 			height: 1.5em
@@ -127,8 +128,6 @@ button, input
 input
 	border: 1px var(--fg-secondary) solid
 	color: var(--fg-primary)
-	&:disabled
-		opacity: 0.4
 
 button
 	border: 0
@@ -177,3 +176,12 @@ br
 		margin: 0.5em
 		max-width: 48ch
 		flex-grow: 1
+
+#settings > div
+	display: flex
+	flex-direction: column
+	> * + *
+		margin-top: 0.2em
+
+input[type=number]
+	width: 4ch

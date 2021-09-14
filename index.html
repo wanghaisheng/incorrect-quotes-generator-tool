@@ -11,6 +11,7 @@
 	<script src="./js/prompts.js" defer></script>
 	<script src="./js/inputs.js" defer></script>
 	<script src="./js/inputs.pronouns.js" defer></script>
+	<script src="./js/inputs.settings.js" defer></script>
 	<script src="./js/fields.js" defer></script>
 	<title>Incorrect Quotes Generator</title>
 </head>
@@ -39,15 +40,32 @@
 	</div>
 
 	<h2>other settings</h2>
-	<div class="columns">
+	<div class="columns" id="settings">
 		<div>
 			<label>
 				<input type="checkbox" id="randomize">
 				Randomize characters
 			</label>
+			<label>
+				<input type="checkbox" id="update-output-fields">
+				Update output on input change
+			</label>
 		</div>
 		<div>
-			<p>second column</p>
+			<label>
+				<input type="checkbox" id="character-range-toggle">
+				Use range of characters per prompt
+			</label>
+			<label>
+				Use prompts with
+				<input type="number" id="prompt-characters-min" min=1 value=1 step=1>
+				character
+			</label>
+			<label hidden=true>
+				...and a maximum of
+				<input type="number" id="prompt-characters-max" min=1 value=1 step=1 disabled>
+				character
+			</label>
 		</div>
 	</div>
 

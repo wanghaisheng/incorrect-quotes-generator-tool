@@ -11,7 +11,7 @@ window.onload = (() => {
 	window.addInput();
 });
 
-// something something don't repeat yourself. also used in promptGeneration.js
+// gets information of all characters.
 window.getCharacters = (() => {
 	const characterInputs = []; // should be an array of objects
 
@@ -89,6 +89,8 @@ window.addInput = function () {
 		pronouns: document.querySelectorAll("input.pronoun.char-" + charNum),
 		settings: document.querySelectorAll("input.pronoun-setting.char-" + charNum)
 	};
+
+	window.updateCharacterRange(charNum);
 };
 
 window.removeInput = function () {
@@ -99,4 +101,6 @@ window.removeInput = function () {
 	} else {
 		console.log("there's only one...");
 	}
+
+	window.updateCharacterRange(nodes.length - 1);
 };

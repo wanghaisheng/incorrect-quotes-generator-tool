@@ -1,5 +1,5 @@
-/* prompt.js
-what it says on the tin. handles prompts stuff and settings. */
+// prompts.js
+//  handles prompts stuff and settings.
 
 // defining some variables...
 const globalPrompts = {}; // object containing all the prompts. keys are number of characters.
