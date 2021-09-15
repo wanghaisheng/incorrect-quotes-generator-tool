@@ -104,17 +104,3 @@ window.generatePrompt = function () {
 	document.querySelector("#output").innerHTML = output;
 	window.fields[0] = document.querySelector("#output.fields");
 };
-
-// wraps some text in a <span> tag with a specific character's class. just because.
-window.wrapSpan = (charNum, text, ...moreClasses) => {
-	const span = document.createElement("span");
-	span.classList.add("char-" + (charNum + 1));
-
-	moreClasses.forEach(className => {
-		span.classList.add(className);
-	});
-
-	span.textContent = text;
-
-	return span.outerHTML;
-};
