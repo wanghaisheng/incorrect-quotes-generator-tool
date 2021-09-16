@@ -9,13 +9,13 @@ document.querySelectorAll("#settings input").forEach(input => {
 
 		const value = target.type === "checkbox" ?
 			target.checked :
-			clamp(target.value, target.min, target.max);
+			Number(clamp(target.value, target.min, target.max));
 
 		window.settings.set(target.id, value);
 		console.log("updated setting " + target.id + " to value " + value);
 	});
 
-	const value = input.type === "checkbox" ? input.checked : input.value;
+	const value = input.type === "checkbox" ? input.checked : Number(input.value);
 	window.settings.set(input.id, value);
 	console.log("initialized setting " + input.id + " to value " + value);
 });

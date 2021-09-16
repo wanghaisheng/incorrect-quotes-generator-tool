@@ -49,11 +49,13 @@ window.generatePrompt = function () {
 		}
 	}
 
-	// number of characters determines what set of prompts to use.
-	const promptsIndex = characters.length;
+	// what set of prompts to use...?
+	const charsInPrompt = window.settings.get("character-range-toggle") ?
+		randomPromptSetNumberFromRange(window.settings.get("prompt-characters-min"), window.settings.get("prompt-characters-max")) : // range enabled
+		window.settings.get("prompt-characters-min"); // range disabled
 
 	// getting a random prompt
-	const prompt = globalPrompts[promptsIndex][Math.floor(Math.random() * globalPrompts[promptsIndex].length)];
+	const prompt = globalPrompts[charsInPrompt][Math.floor(Math.random() * globalPrompts[charsInPrompt].length)];
 
 	let output = prompt.text; // declare output...
 
@@ -63,6 +65,7 @@ window.generatePrompt = function () {
 	let start = output.indexOf(START_REPLACE);
 	let end = output.indexOf(END_REPLACE);
 
+	// replacing the text as long as there's "{{"
 	while (start >= 0) {
 		const substring = (output.substring(start + 2, end));
 
@@ -77,13 +80,14 @@ window.generatePrompt = function () {
 			replaceValue = replaceValue[value[2]];
 		}
 
+		// possible modifiers that modify the output.
 		modifiers.forEach(modifier => {
 			switch (modifier) {
-				case "upper":
+				case "upper": // uppercase
 					replaceValue = replaceValue.toUpperCase();
 					break;
 
-				case "first":
+				case "first": // first character
 					replaceValue = replaceValue[0];
 					break;
 
@@ -102,5 +106,40 @@ window.generatePrompt = function () {
 	}
 
 	document.querySelector("#output").innerHTML = output;
-	window.fields[0] = document.querySelector("#output.fields");
+	window.fields[0] = document.querySelectorAll("#output .field");
+};
+
+// returns a random set of prompts, weighted by amount of contents
+const randomPromptSetNumberFromRange = function (min, max) {
+	const weight = {};
+	let total = 0;
+
+	for (let i = min; i < max + 1; i++) {
+		const setLength = globalPrompts[i].length;
+		total += setLength;
+		weight[i] = setLength;
+	}
+
+	const keys = Object.keys(weight);
+
+	keys.forEach(key => {
+		weight[key] /= total;
+	});
+
+	const r = Math.random();
+	let sum = 0;
+	let output;
+
+	keys.some(key => {
+		sum += weight[key];
+		if (r <= sum) {
+			output = key;
+			return true;
+		}
+
+		return false;
+	});
+
+	console.log(output);
+	return output;
 };
