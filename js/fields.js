@@ -45,4 +45,12 @@ window.updateFields = event => {
 	fields.forEach(field => {
 		field.innerText = input.value || input.placeholder;
 	});
+
+	// updating output fields
+	if (window.settings.get("update-output-fields")) {
+		const classList = event.target.className.split(" ").join(".");
+		document.querySelectorAll("#output .field." + classList).forEach(field => {
+			field.innerText = input.value || input.placeholder;
+		});
+	}
 };
