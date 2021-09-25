@@ -9,7 +9,6 @@ window.fields = [[]];
  * Creates a new "field" that updates or whatever.
  * @param {string} property - What type of field (name, pronoun, etc).
  * @param {number} charNum - Character number.
- * @param {string} [title] - Title of field, defaults to property name.
  * @param {string} [content] - Content of field, if needed.
  * @returns HTMLSpanElement
  */
@@ -39,18 +38,28 @@ window.createField = function (property, charNum, content) {
 };
 
 window.updateFields = event => {
+	console.log("updating fields...");
 	const input = event.target;
-	const fields = window.fields[input.dataset.charNum];
 
-	fields.forEach(field => {
-		field.innerText = input.value || input.placeholder;
-	});
+	if (input.name === "name") {
+		const fields = window.fields[input.dataset.charNum];
+
+		fields.forEach(field => {
+			field.innerText = input.value || input.placeholder;
+		});
+	}
 
 	// updating output fields
 	if (window.settings.get("update-output-fields")) {
-		const classList = event.target.className.split(" ").join(".");
-		document.querySelectorAll("#output .field." + classList).forEach(field => {
-			field.innerText = input.value || input.placeholder;
+		const classList = ".char-" + input.dataset.charNum + "." + input.name;
+		document.querySelectorAll("#output .field" + classList).forEach(field => {
+			if (input.name === "plural") {
+				const oldText = field.innerText;
+				field.innerText = field.dataset.alt;
+				field.dataset.alt = oldText;
+			} else {
+				field.innerText = input.value || input.placeholder;
+			}
 		});
 	}
 };

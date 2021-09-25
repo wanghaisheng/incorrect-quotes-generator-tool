@@ -23,9 +23,12 @@ window.getCharacters = (() => {
 			pronouns[input.name] = input.value || input.placeholder;
 		}
 
+		const plural = document.querySelector(".char-" + children[0].dataset.charNum + ".plural").checked;
+
 		characterInputs.push({
 			name: children[0].value || children[0].placeholder,
 			pronouns,
+			plural,
 			charNum: Number(children[0].dataset.charNum)
 		});
 	});
@@ -67,6 +70,7 @@ window.addInput = function () {
 	const nameInput = document.createElement("input");
 	nameInput.classList.add("name", "char-" + charNum);
 	nameInput.dataset.charNum = charNum;
+	nameInput.name = "name";
 	nameInput.setAttribute("placeholder", "character " + charNum);
 	nameInput.setAttribute("type", "text");
 	nameInput.addEventListener("input", event => window.updateFields(event));

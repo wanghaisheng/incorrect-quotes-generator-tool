@@ -96,9 +96,12 @@ window.createPronounsDiv = function (charNum) {
 		// creating the input element
 		const pronounInput = document.createElement("input");
 		pronounInput.classList.add("char-" + charNum, "pronoun", typeName);
+		pronounInput.dataset.charNum = charNum;
 		pronounInput.setAttribute("placeholder", pronounType.defaults.none);
 		pronounInput.setAttribute("name", typeName);
 		pronounInput.addEventListener("input", event => updatePronouns(event));
+		pronounInput.addEventListener("input", event => window.updateFields(event));
+		pronounInput.addEventListener("placeholder-change", event => window.updateFields(event));
 
 		// get a random example sentence
 		const {examples} = pronounType; // examples for the pronoun type
@@ -162,8 +165,10 @@ window.createPronounsDiv = function (charNum) {
 	const pluralInput = document.createElement("input");
 	pluralInput.type = "checkbox";
 	pluralInput.classList.add("char-" + charNum, "plural", "pronoun-setting");
+	pluralInput.dataset.charNum = charNum;
 	pluralInput.name = "plural";
 	pluralInput.addEventListener("change", event => updatePronouns(event));
+	pluralInput.addEventListener("change", event => window.updateFields(event));
 	pluralLabel.appendChild(pluralInput);
 	pluralLabel.insertAdjacentText("beforeend", "Treat as plural");
 
@@ -189,6 +194,7 @@ function updatePronouns(event) {
 			console.log("matched \"" + pronounInputs[0].value + "\" for character " + charNum + "! setting placeholder values for remaining inputs…");
 			for (const input of pronounInputs) {
 				input.placeholder = pronounSet[input.name];
+				input.dispatchEvent(new Event("placeholder-change"));
 			}
 
 			return true;
@@ -221,6 +227,8 @@ function updatePronouns(event) {
 				start = input.placeholder.indexOf("{{");
 				end = input.placeholder.indexOf("}}");
 			}
+
+			input.dispatchEvent(new Event("placeholder-change"));
 		});
 	}
 }

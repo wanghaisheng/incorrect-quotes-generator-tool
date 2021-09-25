@@ -57,6 +57,8 @@ window.generatePrompt = function () {
 	// getting a random prompt
 	const prompt = globalPrompts[charsInPrompt][Math.floor(Math.random() * globalPrompts[charsInPrompt].length)];
 
+	window.altValues.clear();
+
 	let output = prompt.text; // declare output...
 
 	const START_REPLACE = "{{";
@@ -67,40 +69,63 @@ window.generatePrompt = function () {
 
 	// replacing the text as long as there's "{{"
 	while (start >= 0) {
+		let replaceValue; // thing to replace text with
+
 		const substring = (output.substring(start + 2, end));
+		/*
+		format of these things (substrings):
+			{{charNum.value % modifiers}}
+		and if comparing boolean...
+			{{charNum.boolean ? true : false % modifiers}}
+		modifiers are separated by spaces.
+		*/
 
 		// parse the substring...
-		const modifiers = substring.split(" ");
-		const value = modifiers[0].split(".");
+		let [charObject, modifiers] = substring.split("%", 2); // split values + modifiers
 
-		const character = characters[value[0] - 1];
-		let replaceValue = character[value[1]];
+		charObject = charObject.split("?", 2);
+		charObject[0] = charObject[0].split("."); // [charNum, value]
 
-		if (typeof (replaceValue) === "object") {
-			replaceValue = replaceValue[value[2]];
+		// charNum.value
+		const character = characters[charObject[0].shift() - 1]; // returns character object, see window.getCharacters()
+
+		let property = charObject[0].shift().trim();
+		replaceValue = character[property];
+
+		// character.object.value
+		while (typeof (replaceValue) === "object") {
+			property = charObject[0].shift().trim();
+			replaceValue = replaceValue[property];
 		}
 
-		// possible modifiers that modify the output.
-		modifiers.forEach(modifier => {
-			switch (modifier) {
-				case "upper": // uppercase
-					replaceValue = replaceValue.toUpperCase();
-					break;
+		let altValue = "";
+		if (typeof (replaceValue) === "boolean") {
+			const a = charObject[1].split(":");
+			replaceValue = charObject[0] ? a[1] : a[0];
 
-				case "first": // first character
-					replaceValue = replaceValue[0];
-					break;
+			altValue = charObject[0] ? a[0] : a[1];
+			altValue = altValue.trim();
+			altValue = applyModifiers(altValue, modifiers);
+		}
 
-				default:
-					break;
-			}
-		});
+		replaceValue = replaceValue.trim();
+		replaceValue = applyModifiers(replaceValue, modifiers);
 
+		console.log("replacing \"" + substring + "\" with \"" + replaceValue + "\"");
+
+		const field = window.createField(property, character.charNum, replaceValue);
+
+		if (altValue) {
+			field.dataset.alt = altValue;
+		}
+
+		// do the replacement
 		output = output.replace(
 			START_REPLACE + substring + END_REPLACE,
-			window.createField(value[2] || value[1], character.charNum, replaceValue).outerHTML
+			field.outerHTML
 		);
 
+		// get new indices and repeat if {{ and }} still exist
 		start = output.indexOf(START_REPLACE);
 		end = output.indexOf(END_REPLACE);
 	}
@@ -142,4 +167,26 @@ const randomPromptSetNumberFromRange = function (min, max) {
 
 	console.log(output);
 	return output;
+};
+
+const applyModifiers = function (text = "", modifiers = "") {
+	if (modifiers) {
+		modifiers = modifiers.split(" "); // % modifiers
+		modifiers.forEach(modifier => {
+			switch (modifier) {
+				case "upper": // uppercase
+					text = text.toUpperCase();
+					break;
+
+				case "first": // first character
+					text = text[0];
+					break;
+
+				default:
+					break;
+			}
+		});
+	}
+
+	return text;
 };
