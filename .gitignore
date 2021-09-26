@@ -1,5 +1,6 @@
 # node.js stuff, woo
 node_modules
+package-lock.json
 
 # compile sass.
 *.css*
