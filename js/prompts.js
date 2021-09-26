@@ -6,6 +6,33 @@ const globalPrompts = {}; // object containing all the prompts. keys are number 
 const promptCounter = document.querySelector("#prompt-count");
 let promptCount = 0;
 
+const promptCharacterCounts = document.querySelector("#character-counts");
+promptCounter.parentElement.addEventListener("click", () => {
+	const {hidden} = promptCharacterCounts;
+
+	if (hidden) {
+		for (const key of Object.keys(globalPrompts)) {
+			const li = document.createElement("li");
+			const count = globalPrompts[key].length;
+			li.innerText = count + " " +
+				(count === 1 ? "prompt" : "prompts") + " with " +
+				key + " " +
+				(key === "1" ? "character" : "characters");
+			promptCharacterCounts.appendChild(li);
+		}
+
+		promptCounter.nextSibling.nodeValue = " prompts loaded! ▲";
+	} else {
+		while (promptCharacterCounts.hasChildNodes()) {
+			promptCharacterCounts.removeChild(promptCharacterCounts.lastChild);
+		}
+
+		promptCounter.nextSibling.nodeValue = " prompts loaded! ▼";
+	}
+
+	promptCharacterCounts.hidden = !hidden;
+});
+
 // getting prompts - oh no.
 fetch("./prompts.json") // contains an array of paths to files.
 	.then(response => response.json())
