@@ -57,8 +57,6 @@ window.generatePrompt = function () {
 	// getting a random prompt
 	const prompt = globalPrompts[charsInPrompt][Math.floor(Math.random() * globalPrompts[charsInPrompt].length)];
 
-	window.altValues.clear();
-
 	let output = prompt.text; // declare output...
 
 	const START_REPLACE = "{{";
