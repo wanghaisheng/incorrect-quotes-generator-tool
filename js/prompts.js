@@ -52,6 +52,7 @@ fetch("./prompts.json") // contains an array of paths to files.
 						}
 
 						for (const prompt of prompts[key]) {
+							prompt.packName = data.title;
 							globalPrompts[key].push(prompt); // add prompts to array
 						}
 
@@ -157,6 +158,12 @@ window.generatePrompt = function () {
 
 	document.querySelector("#output").innerHTML = output;
 	window.fields[0] = document.querySelectorAll("#output .field");
+
+	const about = document.querySelector("#output-about");
+	about.innerText = "from ";
+	const em = document.createElement("em");
+	em.innerText = prompt.packName;
+	about.appendChild(em);
 };
 
 // returns a random set of prompts, weighted by amount of contents
