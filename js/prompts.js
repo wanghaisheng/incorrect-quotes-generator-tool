@@ -77,10 +77,16 @@ window.generatePrompt = function () {
 		}
 	}
 
+	const minCharsInput = document.querySelector("#prompt-characters-min");
+	const maxCharsInput = document.querySelector("#prompt-characters-max");
+
+	const minChars = minCharsInput.value || minCharsInput.placeholder;
+	const maxChars = minCharsInput.value || maxCharsInput.placeholder;
+
 	// what set of prompts to use...?
 	const charsInPrompt = window.settings.get("character-range-toggle") ?
-		randomPromptSetNumberFromRange(window.settings.get("prompt-characters-min"), window.settings.get("prompt-characters-max")) : // range enabled
-		window.settings.get("prompt-characters-min"); // range disabled
+		randomPromptSetNumberFromRange(minChars, maxChars) : // range enabled
+		minChars; // range disabled
 
 	// getting a random prompt
 	const prompt = globalPrompts[charsInPrompt][Math.floor(Math.random() * globalPrompts[charsInPrompt].length)];

@@ -9,13 +9,13 @@ document.querySelectorAll("#settings input").forEach(input => {
 
 		const value = target.type === "checkbox" ?
 			target.checked :
-			Number(clamp(target.value, target.min, target.max));
+			Number(clamp(target.value || target.placeholder, target.min, target.max));
 
 		window.settings.set(target.id, value);
 		console.log("updated setting " + target.id + " to value " + value);
 	});
 
-	const value = input.type === "checkbox" ? input.checked : Number(input.value);
+	const value = input.type === "checkbox" ? input.checked : Number(input.placeholder);
 	window.settings.set(input.id, value);
 	console.log("initialized setting " + input.id + " to value " + value);
 });
@@ -61,13 +61,22 @@ window.updateCharacterRange = function (charCount) {
 	const maxInput = document.querySelector("#prompt-characters-max");
 	const charRangeToggle = window.settings.get("character-range-toggle");
 
-	minInput.max = charRangeToggle ?
-		charCount - 1 : charCount || 1;
+	if (charRangeToggle) {
+		minInput.max = charCount - 1;
+		minInput.placeholder = 1;
+	} else {
+		minInput.max = charCount || 1;
+		minInput.placeholder = charCount;
+	}
 
-	minInput.valueAsNumber = Math.min(minInput.valueAsNumber, charCount);
+	if (!minInput.value && minInput.placeholder > 1) {
+		minInput.nextSibling.nodeValue = " characters";
+	} else {
+		minInput.nextSibling.nodeValue = " character";
+	}
 
 	maxInput.max = charCount;
-	maxInput.valueAsNumber = Math.min(maxInput.valueAsNumber, charCount);
+	maxInput.placeholder = charCount;
 
 	const toggle = document.querySelector("#character-range-toggle");
 	toggle.disabled = charCount === 1;
@@ -86,12 +95,13 @@ document.querySelector("#character-range-toggle").addEventListener("input", even
 		charRangeInputs[0].previousSibling.nodeValue = "Use prompts with at least ";
 		charRangeInputs[1].parentElement.hidden = false;
 		// gotta set new limits too...
+		charRangeInputs[0].placeholder = 1;
 		charRangeInputs[0].max = charCount - 1;
 		charRangeInputs[1].max = charCount;
-		charRangeInputs[1].valueAsNumber = charRangeInputs[0].valueAsNumber + 1;
 	} else {
 		charRangeInputs[0].previousSibling.nodeValue = "Use prompts with ";
 		charRangeInputs[1].parentElement.hidden = true;
+		charRangeInputs[0].placeholder = charCount;
 		charRangeInputs[0].max = charCount;
 	}
 });
