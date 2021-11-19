@@ -1,0 +1,14 @@
+{
+	"scatterpatter":{
+		"title": "ScatterPatter's Incorrect Quotes",
+		"description": "Prompts taken from ScatterPatter's Incorrect Quotes Generator.",
+		"url": "https://incorrect-quotes-generator.neocities.org/",
+		"path": "./promptSets/scatterpatter.json"
+	},
+	"testing":{
+		"title": "development testing prompts",
+		"description": "prompts used for testing things. not very interesting.",
+		"url": "https://github.com/12beesinatrenchcoat/incorrect-quotes-generator/",
+		"path": "./promptSets/testing.json"
+	}
+}

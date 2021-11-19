@@ -1,68 +1,5 @@
-// prompts.js
-//  handles prompts stuff and settings.
-
-// defining some variables...
-const globalPrompts = {}; // object containing all the prompts. keys are number of characters.
-const promptCounter = document.querySelector("#prompt-count");
-let promptCount = 0;
-
-const promptCharacterCounts = document.querySelector("#character-counts");
-promptCounter.parentElement.addEventListener("click", () => {
-	const {hidden} = promptCharacterCounts;
-
-	if (hidden) {
-		for (const key of Object.keys(globalPrompts)) {
-			const li = document.createElement("li");
-			const count = globalPrompts[key].length;
-			li.innerText = count + " " +
-				(count === 1 ? "prompt" : "prompts") + " with " +
-				key + " " +
-				(key === "1" ? "character" : "characters");
-			promptCharacterCounts.appendChild(li);
-		}
-
-		promptCounter.nextSibling.nodeValue = " prompts loaded! ▲";
-	} else {
-		while (promptCharacterCounts.hasChildNodes()) {
-			promptCharacterCounts.removeChild(promptCharacterCounts.lastChild);
-		}
-
-		promptCounter.nextSibling.nodeValue = " prompts loaded! ▼";
-	}
-
-	promptCharacterCounts.hidden = !hidden;
-});
-
-// getting prompts - oh no.
-fetch("./prompts.json") // contains an array of paths to files.
-	.then(response => response.json())
-	.then(files => {
-		for (const file of files) {
-			fetch(file) // fetch each file defined in prompts.json...
-				.then(response => response.json())
-				.then(data => {
-					console.log("loading prompt collection:", data.title);
-					const {prompts} = data; // the prompts of the file
-
-					for (let i = 0; i < Object.keys(prompts).length; i++) {
-						const key = Object.keys(prompts)[i]; // key = # of characters in prompt
-
-						if (!globalPrompts[key]) {
-							globalPrompts[key] = []; // initialize an empty array if needed
-						}
-
-						for (const prompt of prompts[key]) {
-							prompt.packName = data.title;
-							globalPrompts[key].push(prompt); // add prompts to array
-						}
-
-						// prompt count and stuff
-						promptCount += prompts[key].length;
-						promptCounter.textContent = promptCount;
-					}
-				});
-		}
-	});
+// prompts.generator.js
+// generating the prompt/quote/whatever term i use anymore.
 
 window.generatePrompt = function () {
 	// get characters from <input>s, add to array
@@ -83,13 +20,21 @@ window.generatePrompt = function () {
 	const minChars = minCharsInput.value || minCharsInput.placeholder;
 	const maxChars = minCharsInput.value || maxCharsInput.placeholder;
 
-	// what set of prompts to use...?
+	// how many characters to use in the prompt?
 	const charsInPrompt = window.settings.get("character-range-toggle") ?
 		randomPromptSetNumberFromRange(minChars, maxChars) : // range enabled
 		minChars; // range disabled
 
+	console.log(`using ${charsInPrompt} characters...`);
+
+	const workingArray = [];
+
+	Object.keys(window.prompts).forEach(key => {
+		workingArray.push(...window.prompts[key][charsInPrompt]);
+	});
+
 	// getting a random prompt
-	const prompt = globalPrompts[charsInPrompt][Math.floor(Math.random() * globalPrompts[charsInPrompt].length)];
+	const prompt = workingArray[Math.floor(Math.random() * workingArray.length)];
 
 	let output = prompt.text; // declare output...
 
@@ -168,7 +113,7 @@ window.generatePrompt = function () {
 	const about = document.querySelector("#output-about");
 	about.innerText = "from ";
 	const em = document.createElement("em");
-	em.innerText = prompt.packName;
+	em.innerText = window.fetchedPromptSets[prompt.set].title;
 	about.appendChild(em);
 };
 
@@ -178,7 +123,7 @@ const randomPromptSetNumberFromRange = function (min, max) {
 	let total = 0;
 
 	for (let i = min; i < max + 1; i++) {
-		const setLength = globalPrompts[i].length;
+		const setLength = window.prompts[i].length;
 		total += setLength;
 		weight[i] = setLength;
 	}
