@@ -77,10 +77,11 @@ window.generatePrompt = function () {
 
 		let altValue = "";
 		if (typeof (replaceValue) === "boolean") {
+			console.log(replaceValue);
 			const a = charObject[1].split(":");
-			replaceValue = charObject[0] ? a[1] : a[0];
+			replaceValue = replaceValue ? a[0] : a[1];
 
-			altValue = charObject[0] ? a[0] : a[1];
+			altValue = charObject[0] ? a[1] : a[0];
 			altValue = altValue.trim();
 			altValue = applyModifiers(altValue, modifiers);
 		}
