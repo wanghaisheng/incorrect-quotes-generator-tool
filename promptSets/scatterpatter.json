@@ -9,9 +9,11 @@
 			}, {
 				"text": "{{1.name}}: You seem familiar, have I threatened you before?"
 			}, {
-				"text": "{{1.name}}: bitches b like “im baby” but have childhood trauma and neglect like wtf do u know about being baby u were forced to grow up from an early age anyways I’m bitches"
+				"text": "{{1.name}}: bitches b like “im baby” but have childhood trauma and neglect like wtf do u know about being baby u were forced to grow up from an early age anyways I’m bitches",
+				"tags": ["swearing"]
 			}, {
-				"text": "{{1.name}}: Okay okay stop asking me if I'm straight, gay, bi, whatever. I identify as a FUCKING THREAT."
+				"text": "{{1.name}}: Okay okay stop asking me if I'm straight, gay, bi, whatever. I identify as a FUCKING THREAT.",
+				"tags": ["swearing"]
 			}, {
 				"text": "{{1.name}}: Died and came back as a cowboy, I call that reintarnation."
 			}, {
@@ -19,13 +21,15 @@
 			}, {
 				"text": "Shapeshifter: *transforms to look like {{1.name}}*<br>{{1.name}}: Okay, are you like BLIND? You look nothing like me. First off, I'm way taller. Secondly, I DO NOT look so sleep deprived and lastly, if you could drag comb through that hair you're like a 7 on a good day and I've been told I'm a constant 10."
 			}, {
-				"text": "{{1.name}}: You think I really give a fuck? I can’t even read."
+				"text": "{{1.name}}: You think I really give a fuck? I can’t even read.",
+				"tags": ["swearing"]
 			}, {
 				"text": "{{1.name}}: Dear friends, your Christmas gift this year… is me. That’s right, another year of friendship. Your membership has been renewed."
 			}, {
 				"text": "{{1.name}}: Some of you may die, but that’s a sacrifice I’m willing to make."
 			}, {
-				"text": "{{1.name}}: I’ve come to a point in my life where I need a stronger word than fuck"
+				"text": "{{1.name}}: I’ve come to a point in my life where I need a stronger word than fuck",
+				"tags": ["swearing"]
 			}, {
 				"text": "{{1.name}}: I was born for politics. I have great hair and I love lying."
 			}, {
@@ -49,7 +53,8 @@
 			}, {
 				"text": "{{1.name}}: Physically, yes, I could fight a bird. But emotionally? Imagine the toll."
 			}, {
-				"text": "{{1.name}}: BEHOLD, the field in which I grow my fucks! Lay thine eyes upon it, and thou shalt see that it is barren!"
+				"text": "{{1.name}}: BEHOLD, the field in which I grow my fucks! Lay thine eyes upon it, and thou shalt see that it is barren!",
+				"tags": ["swearing"]
 			}, {
 				"text": "{{1.name}}, motioning to a Halloween display: All these ghosts! All these ghosts! I still can’t find a boo."
 			}, {
@@ -57,11 +62,13 @@
 			}, {
 				"text": "{{1.name}}: When someone points at your black clothes and asks whose funeral it is, having a look around the room and saying 'Haven’t decided yet' is typically a good response."
 			}, {
-				"text": "{{1.name}}: What doesn't kill me should run, because now I'm fucking pissed."
+				"text": "{{1.name}}: What doesn't kill me should run, because now I'm fucking pissed.",
+				"tags": ["swearing"]
 			}, {
 				"text": "{{1.name}}: You wanna see how hardcore I am?<br>{{1.name}}: *punches wall*<br>{{1.name}}:<br>{{1.name}}: Take me to the hospital."
 			}, {
-				"text": "{{1.name}}: If I'm really as evil as you say I am, then have the gods strike me down where I stand.<br>*Lightning strikes {{1.name}}*<br>{{1.name}}: Ha! Nice try, jackass! Next time, give it your A-game!"
+				"text": "{{1.name}}: If I'm really as evil as you say I am, then have the gods strike me down where I stand.<br>*Lightning strikes {{1.name}}*<br>{{1.name}}: Ha! Nice try, jackass! Next time, give it your A-game!",
+				"tags": ["swearing"]
 			}, {
 				"text": "{{1.name}}, threatening the others with a paintball gun: Listen... Life comes at us fast. We don't know what life is gonna give us... And today, it's gonna give you... a paintball!"
 			}, {
@@ -75,7 +82,8 @@
 			}, {
 				"text": "{{1.name}}: Goodnight moon.<br>{{1.name}}: Goodnight tree.<br>{{1.name}}: Goodnight ghosts that only I can see."
 			}, {
-				"text": "{{1.name}}: Well, well, well... if it isn’t my old friend: the dawning realization that I fucked up bad."
+				"text": "{{1.name}}: Well, well, well... if it isn’t my old friend: the dawning realization that I fucked up bad.",
+				"tags": ["swearing"]
 			}, {
 				"text": "{{1.name}}: Just because I'm too short to reach the lowest self in the cabinet doesn't mean you shouldn't watch out for your kneecaps."
 			}
@@ -92,19 +100,22 @@
 			}, {
 				"text": "{{1.name}}: Man, I only ever see you awake, do you ever shut down or stop running?<br>{{2.name}}: Oh, I’m always running<br>{{2.name}}: The question is from what"
 			}, {
-				"text": "{{1.name}}: What the fuck is wrong with you?!<br>{{2.name}}: Wow, you could start with a 'good morning'.<br>{{1.name}}: Good morning. What the fuck is wrong with you?!"
+				"text": "{{1.name}}: What the fuck is wrong with you?!<br>{{2.name}}: Wow, you could start with a 'good morning'.<br>{{1.name}}: Good morning. What the fuck is wrong with you?!",
+				"tags": ["swearing"]
 			}, {
 				"text": "{{1.name}}: WHAT’S YOUR TYPE<br>{{2.name}}: Anything, honestly, but nerds especially<br>{{1.name}}, desperately, as {{2.name}} bleeds out: <strong><em>YOUR BLOOD TYPE</strong></em><br>{{2.name}}: Oh! B positive.<br>{{1.name}}: DONT TRY TO CHEER ME UP JUST TELL ME YOUR BLOOD TYPE<br>{{2.name}}:"
 			}, {
 				"text": "{{1.name}}: *holding a bottle* Is this whiskey or perfume?<br>{{2.name}}: *chugs entire bottle*<br>{{2.name}}: It’s perfume."
 			}, {
-				"text": "{{1.name}}: Top 30 reasons why {{1.name}} is sorry... Number 5 will surprise you!<br>{{2.name}}: Top 30 anime deaths. Number One: YOUR FUCKING ASS RIGHT NOW!!!"
+				"text": "{{1.name}}: Top 30 reasons why {{1.name}} is sorry... Number 5 will surprise you!<br>{{2.name}}: Top 30 anime deaths. Number One: YOUR FUCKING ASS RIGHT NOW!!!",
+				"tags": ["swearing"]
 			}, {
 				"text": "{{1.name}}: I want to wake up with you every day for the rest of our lives<br>{{2.name}}: I wake up at 4:30 AM<br>{{1.name}}:<br>{{1.name}}: I want to see you at some point every day for the rest of our lives"
 			}, {
 				"text": "{{1.name}}: You often use humor to deflect trauma<br>{{2.name}}: Thank you<br>{{1.name}}: I didn't say that was a good thing<br>{{2.name}}: What I'm hearing is, you think I'm funny"
 			}, {
-				"text": "{{1.name}}: Go to Hell<br>{{2.name}}, tearing up: I wish I could"
+				"text": "{{1.name}}: Go to Hell<br>{{2.name}}, tearing up: I wish I could",
+				"tags": ["swearing"]
 			}, {
 				"text": "{{1.name}}, pointing: May I sit there?<br>{{2.name}}: That's my lap<br>{{1.name}}: That doesn't answer my question, {{2.name}}."
 			}, {
@@ -116,11 +127,14 @@
 			}, {
 				"text": "{{1.name}}: Am I going too far?<br>{{2.name}}: No, no, no. You went too far about seven hours ago. Now you're going to prison."
 			}, {
-				"text": "{{1.name}}: *Walking in to a room* Sorry I’m late... I was... doing things.<br>*Sounds of running footsteps progressively getting louder*<br>{{2.name}}: *Out of breath* THEY PUSHED ME DOWN THE FUCKIN’ STAIRS."
+				"text": "{{1.name}}: *Walking in to a room* Sorry I’m late... I was... doing things.<br>*Sounds of running footsteps progressively getting louder*<br>{{2.name}}: *Out of breath* THEY PUSHED ME DOWN THE FUCKIN’ STAIRS.",
+				"tags": ["swearing"]
 			}, {
-				"text": "{{1.name}}, watching the news: Someone tried to fight a squid at the aquarium today!<br>{{2.name}}: *walks in covered with ink* Well, maybe the squid was being a dick."
+				"text": "{{1.name}}, watching the news: Someone tried to fight a squid at the aquarium today!<br>{{2.name}}: *walks in covered with ink* Well, maybe the squid was being a dick.",
+				"tags": ["swearing"]
 			}, {
-				"text": "{{1.name}}: What if the 'g' in 'gif' is silent?<br>{{2.name}}: Go the fuck to sleep<br>{{1.name}}: What gif I don't want to?<br>{{2.name}}: Fuck You"
+				"text": "{{1.name}}: What if the 'g' in 'gif' is silent?<br>{{2.name}}: Go the fuck to sleep<br>{{1.name}}: What gif I don't want to?<br>{{2.name}}: Fuck You",
+				"tags": ["swearing"]
 			}, {
 				"text": "{{1.name}}: This is a mistake<br>{{2.name}}, enthusiastically: A mistake we're going to laugh about one day!<br>{{1.name}}: But not today<br>{{2.name}}, still enthusiastic: Oh, no. Today's going to be a mess"
 			}, {
@@ -164,15 +178,18 @@
 			}, {
 				"text": "{{1.name}}: Where are you going?<br>{{2.name}}: To get ice cream or commit a felony, I’ll decide on the way there"
 			}, {
-				"text": "{{1.name}}: Bad things keep happening to me, like I have bad luck or something.<br>{{2.name}}: {{1.name}}, you don't have bad luck. The reason bad things happen to you is because you're a dumbass."
+				"text": "{{1.name}}: Bad things keep happening to me, like I have bad luck or something.<br>{{2.name}}: {{1.name}}, you don't have bad luck. The reason bad things happen to you is because you're a dumbass.",
+				"tags": ["swearing"]
 			}, {
 				"text": "{{1.name}}: How many kids do you have?<br>{{2.name}}: Biologically, emotionally, or legally?"
 			}, {
 				"text": "{{1.name}}: {{2.name}}... Why did you draw a pentagram on the floor?<br>{{2.name}}: Your text told me to satanize the house before you returned.<br>{{1.name}}:<br>{{1.name}}: I wrote sanitize, {{2.name}}."
 			}, {
-				"text": "{{1.name}}: *Stubs {{1.pronouns.possessiveDet}} toe* FUCK!<br>{{2.name}}: Mind your language!<br>{{1.name}}: What else am I supposed to say, “Woe is I”???<br>{{2.name}}:<br>{{1.name}}: You have to accept that swear words are necessary sometimes."
+				"text": "{{1.name}}: *Stubs {{1.pronouns.possessiveDet}} toe* FUCK!<br>{{2.name}}: Mind your language!<br>{{1.name}}: What else am I supposed to say, “Woe is I”???<br>{{2.name}}:<br>{{1.name}}: You have to accept that swear words are necessary sometimes.",
+				"tags": ["swearing"]
 			}, {
-				"text": "{{1.name}}, in a beach shirt: So sue me, it's October and I'd like to be on Island Time for a day!<br>{{2.name}}: I have Spotify open right now on my computer, do you want me to blast you? Do you want me to put you on blast? Cuz I've got your history right here on the sidebar,<br>{{2.name}}: Take it Back by Jimmy Buffet, Nautical Wheelers by Jimmy Buffet, Jolly Mon Sing by Jimmy Buffet, Steamer by Jimmy Buffet, trEAT HER LIKE A LADY BY JIMMY BUFFET, MAÑANA BY JIMMY BUFFET, WHEN SALOME PLAYS THE DRUMS BY <strong><em>JAMES BUFFET</strong></em>, HAVANA DAYDREAMIN BY JIMMY BUFFET- What the <em>FUCK</em> happened to you?!<br>{{1.name}}, laughing: I HAD A CASE OF THE MONDAYS<br>{{2.name}}: ARE YOU HAUNTED?! ARE YOU FUCKING <em>POSSESSED</em>?!<br>{{2.name}}: <strong><em>YOU USED TO BE MY FRIEND</strong></em><br>{{1.name}}, cry-laughing: ᴵ ᴴᴬᴰ ᴬ ᶜᴬˢᴱ ᴼᶠ ᵀᴴᴱ ᴹᴼᴺᴰᴬʸˢ"
+				"text": "{{1.name}}, in a beach shirt: So sue me, it's October and I'd like to be on Island Time for a day!<br>{{2.name}}: I have Spotify open right now on my computer, do you want me to blast you? Do you want me to put you on blast? Cuz I've got your history right here on the sidebar,<br>{{2.name}}: Take it Back by Jimmy Buffet, Nautical Wheelers by Jimmy Buffet, Jolly Mon Sing by Jimmy Buffet, Steamer by Jimmy Buffet, trEAT HER LIKE A LADY BY JIMMY BUFFET, MAÑANA BY JIMMY BUFFET, WHEN SALOME PLAYS THE DRUMS BY <strong><em>JAMES BUFFET</strong></em>, HAVANA DAYDREAMIN BY JIMMY BUFFET- What the <em>FUCK</em> happened to you?!<br>{{1.name}}, laughing: I HAD A CASE OF THE MONDAYS<br>{{2.name}}: ARE YOU HAUNTED?! ARE YOU FUCKING <em>POSSESSED</em>?!<br>{{2.name}}: <strong><em>YOU USED TO BE MY FRIEND</strong></em><br>{{1.name}}, cry-laughing: ᴵ ᴴᴬᴰ ᴬ ᶜᴬˢᴱ ᴼᶠ ᵀᴴᴱ ᴹᴼᴺᴰᴬʸˢ",
+				"tags": ["swearing"]
 			}, {
 				"text": "{{1.name}}: You're right.<br>{{2.name}}: That's... That's an unusual phrase for you. Did you just learn it?"
 			}, {
@@ -206,7 +223,8 @@
 			}, {
 				"text": "{{1.name}}: Here's some advice<br>{{2.name}}: I didn't ask for any<br>{{1.name}}: Too bad. I'm stuck here with my thoughts and you're the only one who talks to me"
 			}, {
-				"text": "{{1.name}}: Three words. Say them and I'm yours.<br>{{2.name}}: Three words.<br>{{1.name}}:"
+				"text": "{{1.name}}: Three words. Say them and I'm yours.<br>{{2.name}}: Three words.<br>{{1.name}}:",
+				"tags": ["shipping"]
 			}, {
 				"text": "{{1.name}}: Am I in trouble?<br>{{2.name}}: Take a guess.<br>{{1.name}}: No?<br>{{2.name}}: Take another guess."
 			}, {
@@ -222,13 +240,15 @@
 			}, {
 				"text": "{{1.name}}: I made tea.<br>{{2.name}}: I don’t want tea.<br>{{1.name}}: I did not make tea for you. This is my tea.<br>{{2.name}}: Then why are you telling me?<br>{{1.name}}: It is a conversation starter.<br>{{2.name}}: That’s a lousy conversation starter.<br>{{1.name}}: Oh, is it? We are conversing. Checkmate."
 			}, {
-				"text": "{{1.name}}: So that’s my plan.<br>{{2.name}}: Are you alright with constructive criticism? I don’t want to sound mean.<br>{{1.name}}: No, go ahead, I want to hear it.<br>{{2.name}}: It fucking sucks.<br>{{1.name}}: That’s not constructive criticism."
+				"text": "{{1.name}}: So that’s my plan.<br>{{2.name}}: Are you alright with constructive criticism? I don’t want to sound mean.<br>{{1.name}}: No, go ahead, I want to hear it.<br>{{2.name}}: It fucking sucks.<br>{{1.name}}: That’s not constructive criticism.",
+				"tags": ["swearing"]
 			}, {
 				"text": "{{1.name}}, standing with {{1.pronouns.possessiveDet}} back turned: I’ve been expecting you, {{2.name}}.<br>{{2.name}}: How did you do that without turning around?<br>{{1.name}}: ... To be perfectly honest, the first couple of people I did that to were not you."
 			}, {
-				"text": "{{1.name}}: Let’s watch Sharkboy and Lavagirl.<br>{{2.name}}: Okay.<br>{{1.name}}: And make out during the scary parts.<br>{{2.name}}: Th-<br>{{2.name}}: The scary parts.<br>{{2.name}}: Of Sharkboy and Lavagirl."
+				"text": "{{1.name}}: Let’s watch Sharkboy and Lavagirl.<br>{{2.name}}: Okay.<br>{{1.name}}: And make out during the scary parts.<br>{{2.name}}: Th-<br>{{2.name}}: The scary parts.<br>{{2.name}}: Of Sharkboy and Lavagirl.",
+				"tags": ["shipping"]
 			}, {
-				"text": "{{1.name}}: {{2.name}}, stop!  This isn't you, you've gone mad with power!<br>{{2.name}}: Well of course I have.<br>{{2.name}}: Have you ever tried going mad without power?<br>{{2.name}}: It's boring."
+				"text": "{{1.name}}: {{2.name}}, stop! This isn't you, you've gone mad with power!<br>{{2.name}}: Well of course I have.<br>{{2.name}}: Have you ever tried going mad without power?<br>{{2.name}}: It's boring."
 			}, {
 				"text": "{{1.name}}: I'm a reverse necromancer.<br>{{2.name}}: Isn't that just killing people?<br>{{1.name}}: Ah, technicality."
 			}, {
@@ -252,13 +272,15 @@
 			}, {
 				"text": "{{1.name}}: Okay, truth or dare?<br>{{2.name}}: Truth<br>{{1.name}}: How many hours have you slept this week?<br>{{2.name}}:<br>{{2.name}}: ...Dare<br>{{1.name}}: Go to bed.<br>{{2.name}}: I don’t like this game."
 			}, {
-				"text": "{{1.name}}: In light of what you did for me, you can hug me for four to five seconds.<br>{{2.name}}: FORTY FIVE SECONDS?!?<br>{{1.name}}: No! Four to five seconds!<br>{{2.name}}: Too late!!!"
+				"text": "{{1.name}}: In light of what you did for me, you can hug me for four to five seconds.<br>{{2.name}}: FORTY FIVE SECONDS?!?<br>{{1.name}}: No! Four to five seconds!<br>{{2.name}}: Too late!!!",
+				"tags": ["shipping"]
 			}, {
 				"text": "{{1.name}}: English is a difficult language. It can be understood through tough thorough thought, though.<br>{{2.name}}: You need to stop."
 			}, {
 				"text": "{{1.name}}: Date someone who will drag you outside at 3am to look at the stars.<br>{{2.name}}: If anyone, and I mean <em>anyone</em>, wakes me up at 3am to go look at the damn sky they will be removed indefinitely from my life."
 			}, {
-				"text": "{{1.name}}: You're the love of my life and my best friend, I would do anything for you.<br>{{2.name}}: I want you to eat three meals a day and have a decent sleep schedule.<br>{{1.name}}: Absolutely not."
+				"text": "{{1.name}}: You're the love of my life and my best friend, I would do anything for you.<br>{{2.name}}: I want you to eat three meals a day and have a decent sleep schedule.<br>{{1.name}}: Absolutely not.",
+				"tags": ["shipping"]
 			}, {
 				"text": "{{1.name}}: Do you have any skeletons in your closet?<br>{{2.name}}: You mean literally or figuratively?<br>{{1.name}}: Honestly, the fact that I have to specify..."
 			}, {
@@ -270,11 +292,13 @@
 			}, {
 				"text": "{{1.name}}: {{2.name}}! My face is on fire!<br>{{2.name}}: {{1.name}}! Are you ok?!<br>{{1.name}}: Oh yes, I'm fine. I just said that to make sure you'd come in here quickly.<br>{{2.name}}: But your face <em>is</em> on fire.<br>{{1.name}}: Yes. It's much faster than shaving."
 			}, {
-				"text": "{{1.name}}: Fuck.<br>{{2.name}}: We've got to work on your cursing.<br>{{1.name}}: Why? I'm pretty good at cursing already."
+				"text": "{{1.name}}: Fuck.<br>{{2.name}}: We've got to work on your cursing.<br>{{1.name}}: Why? I'm pretty good at cursing already.",
+				"tags": ["swearing"]
 			}, {
 				"text": "{{1.name}}: Do you take constructive criticism?<br>{{2.name}}: I only take cash or credit."
 			}, {
-				"text": "{{1.name}}: Name a more iconic duo than my crippling fear of abandonment and my anxiety. I'll wait.<br>{{2.name}}: You and me!!!<br>{{1.name}}, tearing up: Okay."
+				"text": "{{1.name}}: Name a more iconic duo than my crippling fear of abandonment and my anxiety. I'll wait.<br>{{2.name}}: You and me!!!<br>{{1.name}}, tearing up: Okay.",
+				"tags": ["shipping"]
 			}, {
 				"text": "{{1.name}}: I actually have a black belt.<br>{{2.name}}: In what, karate?<br>{{1.name}}: No, from Gucci."
 			}, {
@@ -324,7 +348,8 @@
 			}, {
 				"text": "{{1.name}}: I was arrested for being too cool.<br>{{2.name}}: The charges were dropped due to a lack of supporting evidence."
 			}, {
-				"text": "*{{1.name}} and {{2.name}} skipping stones on lake*<br>{{1.name}}: It’s such a beautiful evening.<br>{{2.name}}, whispering: Take that you fucking lake"
+				"text": "*{{1.name}} and {{2.name}} skipping stones on lake*<br>{{1.name}}: It’s such a beautiful evening.<br>{{2.name}}, whispering: Take that you fucking lake",
+				"tags": ["swearing"]
 			}, {
 				"text": "{{1.name}}: Oh just so you know, it's very muggy outside<br>{{2.name}}:<br>{{2.name}}: {{1.name}}, I swear, if I step outside and all of our mugs are on the front lawn...<br>{{1.name}}: *Sips coffee from bowl*"
 			}, {
@@ -334,11 +359,13 @@
 			}, {
 				"text": "{{1.name}}: Sorry it took me so long to bail you out of jail<br>{{2.name}}: No it’s my fault, I shouldn’t’ve used my one phone call to prank call the police"
 			}, {
-				"text": "{{1.name}}: So are we flirting right now?<br>{{2.name}}: I AM LITERALLY STABBING YOU<br>{{1.name}}: That doesn’t answer my question"
+				"text": "{{1.name}}: So are we flirting right now?<br>{{2.name}}: I AM LITERALLY STABBING YOU<br>{{1.name}}: That doesn’t answer my question",
+				"tags": ["shipping"]
 			}, {
 				"text": "{{1.name}}: {{2.name}}, you’ve ingested a dangerous amount of alcohol.<br>{{2.name}}: The only dangerous amount of is none!"
 			}, {
-				"text": "{{1.name}}: Hey {{2.name}}! Nice hair.<br>{{2.name}}: [internally] Oh my god, the first piece of positive reinforcement I've received in 6 months. Respond appropriately.<br>{{2.name}}: Thank you, I grew it myself.<br>{{2.name}}: [internally] DAMNIT!"
+				"text": "{{1.name}}: Hey {{2.name}}! Nice hair.<br>{{2.name}}: [internally] Oh my god, the first piece of positive reinforcement I've received in 6 months. Respond appropriately.<br>{{2.name}}: Thank you, I grew it myself.<br>{{2.name}}: [internally] DAMNIT!",
+				"tags": ["swearing"]
 			}, {
 				"text": "{{1.name}}: I'm so tough, I'm on alert even when there's no danger!<br>{{2.name}}: {{1.name}}, that's PTSD."
 			}, {
@@ -349,15 +376,18 @@
 			{
 				"text": "{{1.name}}: {{2.name}} and I were crossing the street, and this dude drove by and honked at us<br>{{3.name}}: *Sighing* What did {{2.name}} do?<br>{{1.name}}: They chased him to the next red light, then reached into his window and...<br>{{2.name}}: Who wants a steering wheel?"
 			}, {
-				"text": "{{1.name}}: What if I press the brake and gas at the same time?<br>{{2.name}}: The car takes a screenshot.<br>{{3.name}}: For the last time, get the fuck out."
+				"text": "{{1.name}}: What if I press the brake and gas at the same time?<br>{{2.name}}: The car takes a screenshot.<br>{{3.name}}: For the last time, get the fuck out.",
+				"tags": ["swearing"]
 			}, {
 				"text": "{{1.name}}: HELP! I TOLD {{3.name upper}} I’D COOK DINNER TONIGHT BUT I CAN’T COOK!<br>{{2.name}}, pouring milk directly into the cereal bag: And you thought I could help?"
 			}, {
-				"text": "{{1.name}}: {{2.name}} and I don’t use pet names.<br>{{3.name}}: I see. Hey, what do bees make?<br>{{1.name}}: Honey?<br>{{2.name}}: Yes, dear?<br>{{1.name}}:<br>{{3.name}}: Don't ever lie to my face again."
+				"text": "{{1.name}}: {{2.name}} and I don’t use pet names.<br>{{3.name}}: I see. Hey, what do bees make?<br>{{1.name}}: Honey?<br>{{2.name}}: Yes, dear?<br>{{1.name}}:<br>{{3.name}}: Don't ever lie to my face again.",
+				"tags": ["shipping"]
 			}, {
 				"text": "{{1.name}}: I know you snuck out last night, {{2.name}}.<br>{{3.name}}: Play dumb!<br>{{2.name}}: Who's {{2.name}}?<br>{{3.name}}: NOT THAT DUMB!!!"
 			}, {
-				"text": "{{1.name}}: {{3.name}} and I are having a baby.<br>{{2.name}}: That's gre-<br>{{1.name}}, slamming adoption papers on the table: It's you, sign here."
+				"text": "{{1.name}}: {{3.name}} and I are having a baby.<br>{{2.name}}: That's gre-<br>{{1.name}}, slamming adoption papers on the table: It's you, sign here.",
+				"tags": ["shipping"]
 			}, {
 				"text": "*The group is getting into the car*<br>{{1.name}}: I’m driving.<br>{{2.name}}, out of view: Shotgun!<br>{{3.name}}, turning to face {{2.name}}: Aww! But you had it on the way here-<br>Everyone except {{2.name}}: WOAH-<br>{{2.name}}, holding a shotgun: No! I found a shotgun! And I want the front seat! *Pumps gun*"
 			}, {
@@ -365,7 +395,8 @@
 			}, {
 				"text": "{{1.name}}: We need to get through this locked door. {{2.name}}, give me your credit card.<br>{{2.name}}: Here.<br>{{1.name}}, pocketing it: Thanks. {{3.name}}, kick down the door."
 			}, {
-				"text": "{{1.name}}: You have to apologize to {{2.name}}<br>{{3.name}}: Fine.<br>{{3.name}}: 'Unfuck you' or whatever."
+				"text": "{{1.name}}: You have to apologize to {{2.name}}<br>{{3.name}}: Fine.<br>{{3.name}}: 'Unfuck you' or whatever.",
+				"tags": ["swearing"]
 			}, {
 				"text": "{{1.name}}: Dandelions symbolize everything I want to be in life<br>{{2.name}}: Fluffy and dead with a gust of wind?<br>{{1.name}}: Unapologetic. Hard to kill. Feral, filled with sunlight, bright, beautiful in a way that the conventional and controlling hate but cannot ever fully destroy. Stubborn. Happy. Bastardous. Friends with bees. Highly disapproving of lawns. Full of wishes that will be carried far after I die.<br>{{3.name}}: edible"
 			}, {
@@ -373,15 +404,18 @@
 			}, {
 				"text": "{{1.name}}: Let me show you a picture from last night that really upset me<br>{{2.name}}: Okay, but in my defense, {{3.name}} bet me 50 cents I couldn’t drink all that shampoo.<br>{{1.name}}: That’s not what I wanted to- you drank SHAMPOO?!"
 			}, {
-				"text": "{{1.name}}: Are you the big spoon or the little spoon?<br>{{2.name}}: I'm a knife.<br>{{3.name}}, from across the room: They're the little spoon."
+				"text": "{{1.name}}: Are you the big spoon or the little spoon?<br>{{2.name}}: I'm a knife.<br>{{3.name}}, from across the room: They're the little spoon.",
+				"tags": ["shipping"]
 			}, {
 				"text": "{{1.name}}: Do you ever want to talk about your emotions, {{2.name}}?<br>{{2.name}}: … No.<br>{{3.name}}: I do!<br>{{1.name}}: I know, {{3.name}}.<br>{{3.name}}: I’m sad!<br>{{1.name}}: I know, {{3.name}}."
 			}, {
 				"text": "{{1.name}}: Who thinks I can fit 15 marshmallows in my mouth?<br>{{2.name}}: You’re a hazard to society<br>{{3.name}}: And a coward. DO TWENTY."
 			}, {
-				"text": "{{1.name}}: Come on, I wasn’t that drunk last night.<br>{{2.name}}: You were flirting with {{3.name}}.<br>{{1.name}}: So what? They're my partner.<br>{{2.name}}: You asked {{3.pronouns.objectPn}} if {{3.pronouns.subjectPn}} {{3.plural ? were : was}} single.<br>{{1.name}}:<br>{{2.name}}: And then you cried when {{3.pronouns.subjectPn}} said {{3.pronouns.subjectPn}} {{3.plural ? weren't : wasn't}}."
+				"text": "{{1.name}}: Come on, I wasn’t that drunk last night.<br>{{2.name}}: You were flirting with {{3.name}}.<br>{{1.name}}: So what? They're my partner.<br>{{2.name}}: You asked {{3.pronouns.objectPn}} if {{3.pronouns.subjectPn}} {{3.plural ? were : was}} single.<br>{{1.name}}:<br>{{2.name}}: And then you cried when {{3.pronouns.subjectPn}} said {{3.pronouns.subjectPn}} {{3.plural ? weren't : wasn't}}.",
+				"tags": ["shipping"]
 			}, {
-				"text": "{{1.name}}: What time is it?<br>{{2.name}}: I don’t know; pass me that saxophone and we’ll find out<br>{{2.name}}: *Plays sax loudly and extremely out of tune*<br>{{3.name}}: WHO THE FUCK IS PLAYING THE SAXOPHONE AT TWO IN THE MORNING<br>{{2.name}}: It’s 2 am"
+				"text": "{{1.name}}: What time is it?<br>{{2.name}}: I don’t know; pass me that saxophone and we’ll find out<br>{{2.name}}: *Plays sax loudly and extremely out of tune*<br>{{3.name}}: WHO THE FUCK IS PLAYING THE SAXOPHONE AT TWO IN THE MORNING<br>{{2.name}}: It’s 2 am",
+				"tags": ["swearing"]
 			}, {
 				"text": "{{1.name}}: In my defense, I was left unsupervised.<br>{{2.name}}: Wasn't {{3.name}} with you?<br>{{3.name}}: In my defense, I was also left unsupervised."
 			}, {
@@ -395,7 +429,8 @@
 			}, {
 				"text": "*The squad is having dinner together*<br>{{1.name}}: {{2.name}}, can you pass the salt?<br>{{2.name}}: *Throws {{3.name}} across the table*"
 			}, {
-				"text": "{{1.name}}: How's the sexiest person here~?<br>{{2.name}}: I don't know, how are they~?<br>{{1.name}}, flustered: I-<br>{{3.name}}, from across the room: I'm doing great, thanks!"
+				"text": "{{1.name}}: How's the sexiest person here~?<br>{{2.name}}: I don't know, how are they~?<br>{{1.name}}, flustered: I-<br>{{3.name}}, from across the room: I'm doing great, thanks!",
+				"tags": ["shipping"]
 			}, {
 				"text": "{{1.name}}, whispering to {{2.name}}, who’s on the phone with {{3.name}}: Ask {{3.pronouns.objectPn}} something!<br>{{2.name}}: How are you feeling?<br>{{3.name}}: Fine.<br>{{1.name}}: Something personal!<br>{{2.name}}: At what age did you first get your period?"
 			}, {
@@ -405,19 +440,22 @@
 			}, {
 				"text": "{{1.name}}: Don't worry, I got a plan.<br>{{2.name}}: Alright.<br>{{1.name}}: TraitorSayWhat?<br>{{3.name}}: Excuse me?<br>{{1.name}}: What?<br>{{2.name}}:<br>{{1.name}}:<br>{{1.name}}: No wait-"
 			}, {
-				"text": "{{1.name}}: Hey, {{2.name}}? Can I get some dating advice?<br>{{2.name}}: Just because I’m with {{3.name}} doesn’t mean I know how I did it."
+				"text": "{{1.name}}: Hey, {{2.name}}? Can I get some dating advice?<br>{{2.name}}: Just because I’m with {{3.name}} doesn’t mean I know how I did it.",
+				"tags": ["shipping"]
 			}, {
 				"text": "The squad is trying to con some random guy<br>{{1.name}}: Um, {{2.name}}, why are you pretending I'm this guy's family?<br>{{2.name}}: We need money!<br>{{1.name}}: You're scamming him?<br>{{2.name}}: I was thinking more like flat-out stealing from him?<br>{{1.name}}: What?! No way!<br>{{2.name}}: Why not? We already stole {{3.name}}!<br>{{3.name}}: Hey guys<br>{{1.name}}: No, we didn't. {{3.name}} can think and talk for {{3.pronouns.reflexivePn}}, {{3.pronouns.subjectPn}} can do whatever {{3.pronouns.subjectPn}} {{3.plural ? want : wants}}!<br>{{3.name}}: I wanna steal"
 			}, {
 				"text": "{{1.name}}: Why are you on the floor?<br>{{2.name}}: I'm depressed.<br>{{2.name}}: Also I was stabbed, can you get {{3.name}}, please."
 			}, {
-				"text": "*The squad is talking about what it'd be like to open up a homemade Pokemon gym*<br>{{1.name}}, joking: {{2.name}}'s just sitting at the end, juggling- fushigi-ing 2 glass balls, in super tight pants, just waiting for {{2.pronouns.possessiveDet}} kid delivery once they best {{2.pronouns.possessiveDet}} minions.<br>{{2.name}}: Well they would be Pokeballs. And also it's not a kid delivery. There's no fucking guarantee that a kid that comes into the <em>beginning</em> of my crucible makes it to the <em>end</em> of it undefeated.<br>{{2.name}}: In fact, I'm gonna stack this gym! With fuckin pros!<br>{{2.name}}: It's- It's gonna be brutal. It's gonna be a torture gym.<br>{{3.name}}: Well- Well what's the theme? Are you like- is it a bug theme, or like-<br>{{2.name}}: YEAH, {{3.name upper}}. UH- UH- UH- UH YEAH {{3.name upper}}. IM GONNA OPEN UP A <em>BUG TYPE</em> POKEMON GYM. YOU <em><strong>IDIOT</em></strong>.<br>{{2.name}}: YEAH THAT'S WHAT I WANT, BECAUSE I WANNA GIVE- I WANNA SHIT OUT BADGES FOR EVERY HAM AND EGGER THAT COMES TO MY FRONT DOOR.<br>{{1.name}}: *Cracking up*<br>{{2.name}}: YEAH, {{3.name upper}}. 'Uhh, go Caterpie! >~>' That's me, you FUCKING imbecile. 'Yeah go- uhhh- d-do your best, Kakuna!'<br>{{2.name}}: WHAT ARE YOU FUCKING TALKING ABOU- Yeah a ~bug type~ gym.<br>{{3.name}}:<br>{{1.name}}: Okaaay-<br>{{3.name}}: Alright, um, I'm gonna go. I've embarrassed myself...<br>{{1.name}}: Maybe fire? Fire type?<br>{{3.name}}: Yeah fire-based? Like- have fires?<br>{{2.name}}: Yeah, yeah I'll probably just- That's a good idea {{1.name}} I'll probably just do a fire type one... SO THAT <em>ONE</em> KID WITH <em>ONE</em> BLASTOISE CAN FUCK UP MY WHOLE SHOP.<br>{{2.name}}: KILLED ALL OF US WITH ONE BLASTOISE, HUH? WOW. SHIT I SHOULD'VE-<br>{{3.name}}: Just do rock, then! Just do rock type!<br>{{2.name}}, voice dripping with contempt: <em><strong>The same Blastoise...</em></strong>"
+				"text": "*The squad is talking about what it'd be like to open up a homemade Pokemon gym*<br>{{1.name}}, joking: {{2.name}}'s just sitting at the end, juggling- fushigi-ing 2 glass balls, in super tight pants, just waiting for {{2.pronouns.possessiveDet}} kid delivery once they best {{2.pronouns.possessiveDet}} minions.<br>{{2.name}}: Well they would be Pokeballs. And also it's not a kid delivery. There's no fucking guarantee that a kid that comes into the <em>beginning</em> of my crucible makes it to the <em>end</em> of it undefeated.<br>{{2.name}}: In fact, I'm gonna stack this gym! With fuckin pros!<br>{{2.name}}: It's- It's gonna be brutal. It's gonna be a torture gym.<br>{{3.name}}: Well- Well what's the theme? Are you like- is it a bug theme, or like-<br>{{2.name}}: YEAH, {{3.name upper}}. UH- UH- UH- UH YEAH {{3.name upper}}. IM GONNA OPEN UP A <em>BUG TYPE</em> POKEMON GYM. YOU <em><strong>IDIOT</em></strong>.<br>{{2.name}}: YEAH THAT'S WHAT I WANT, BECAUSE I WANNA GIVE- I WANNA SHIT OUT BADGES FOR EVERY HAM AND EGGER THAT COMES TO MY FRONT DOOR.<br>{{1.name}}: *Cracking up*<br>{{2.name}}: YEAH, {{3.name upper}}. 'Uhh, go Caterpie! >~>' That's me, you FUCKING imbecile. 'Yeah go- uhhh- d-do your best, Kakuna!'<br>{{2.name}}: WHAT ARE YOU FUCKING TALKING ABOU- Yeah a ~bug type~ gym.<br>{{3.name}}:<br>{{1.name}}: Okaaay-<br>{{3.name}}: Alright, um, I'm gonna go. I've embarrassed myself...<br>{{1.name}}: Maybe fire? Fire type?<br>{{3.name}}: Yeah fire-based? Like- have fires?<br>{{2.name}}: Yeah, yeah I'll probably just- That's a good idea {{1.name}} I'll probably just do a fire type one... SO THAT <em>ONE</em> KID WITH <em>ONE</em> BLASTOISE CAN FUCK UP MY WHOLE SHOP.<br>{{2.name}}: KILLED ALL OF US WITH ONE BLASTOISE, HUH? WOW. SHIT I SHOULD'VE-<br>{{3.name}}: Just do rock, then! Just do rock type!<br>{{2.name}}, voice dripping with contempt: <em><strong>The same Blastoise...</em></strong>",
+				"tags": ["swearing"]
 			}, {
 				"text": "{{1.name}}: Are you sure this is the right direction?<br>{{2.name}}: Certainly, I'm as sure as I am honest!<br>{{3.name}}: In that case, we're <em>definitely</em> lost."
 			}, {
 				"text": "{{1.name}}: Naturally, <em>we</em> are on the cutting edge of technology.<br>{{2.name}}, amazed: Wow...<br>{{3.name}}, to {{2.name}}: Well what does that mean?<br>{{2.name}}: I don't know.<br>{{2.name}}, to {{1.name}}: What does that mean?"
 			}, {
-				"text": "{{1.name}}, trying to ask {{2.name}} out: Would you like to stay for dinner?<br>{{3.name}}: WOULD YOU LIKE TO STAY FOREVER?"
+				"text": "{{1.name}}, trying to ask {{2.name}} out: Would you like to stay for dinner?<br>{{3.name}}: WOULD YOU LIKE TO STAY FOREVER?",
+				"tags": ["shipping"]
 			}, {
 				"text": "{{1.name}}: We need a distraction.<br>{{2.name}}: Is anyone here good at jumping up and down and making weird noises?<br>{{3.name}}, whispering: My time has come"
 			}, {
@@ -445,7 +483,8 @@
 			}, {
 				"text": "{{1.name}}: So, what, now I’m just supposed to do anything that {{2.name}} does? I mean, what if {{2.pronouns.subjectPn}} jumped off a cliff?<br>{{3.name}}: If {{2.name}} were to jump off a cliff, {{2.pronouns.subjectPn}} would’ve done {{2.pronouns.possessiveDet}} due diligence regarding the height of the cliff, the depth of the water, and the angle of entry, so yes. If you see {{2.name}} jump off a cliff, by all means, jump off a cliff.<br>{{1.name}}: <em>You</em> jump off a cliff!<br>{{3.name}}: Gladly. Provided {{2.name}} did first."
 			}, {
-				"text": "{{1.name}}: {{3.name}}, can I talk to you for a second?<br>{{3.name}}: Yeah, what’s up? Lemme guess. You and {{2.name}} are having problems and you want me to teach you how to kiss?<br>{{1.name}}: What? No, stop that. I know how to kiss. I’ve read books."
+				"text": "{{1.name}}: {{3.name}}, can I talk to you for a second?<br>{{3.name}}: Yeah, what’s up? Lemme guess. You and {{2.name}} are having problems and you want me to teach you how to kiss?<br>{{1.name}}: What? No, stop that. I know how to kiss. I’ve read books.",
+				"tags": ["shipping"]
 			}, {
 				"text": "{{1.name}}: What do you think {{2.name}} will do for a distraction?<br>{{3.name}}: They’ll probably, like, make a noise or throw a rock. That’s what I would do.<br>*Building explodes and several car alarms go off*<br>{{3.name}}: ... or {{2.pronouns.subjectPn}} could do that."
 			}, {
@@ -459,7 +498,8 @@
 			}, {
 				"text": "{{1.name}}: While I’m gone, {{2.name}}, you’re in charge.<br>{{2.name}}: Yes!!!<br>{{1.name}}, whispering: {{3.name}}, you’re secretly in charge.<br>{{3.name}}: Obviously."
 			}, {
-				"text": "{{1.name}}: {{2.name}}, what do IDK, LY, and TTYL mean?<br>{{2.name}}: I don’t know, love you, talk to you later<br>{{1.name}}: Ok, I love you too, I’ll just ask {{3.name}}."
+				"text": "{{1.name}}: {{2.name}}, what do IDK, LY, and TTYL mean?<br>{{2.name}}: I don’t know, love you, talk to you later<br>{{1.name}}: Ok, I love you too, I’ll just ask {{3.name}}.",
+				"tags": ["shipping"]
 			}, {
 				"text": "{{1.name}}: Sometimes I drink milk straight out of the container.<br>{{2.name}}: The cow???<br>{{1.name}}: What?<br>{{3.name}}: {{2.name}}, W H Y?"
 			}, {
@@ -467,15 +507,18 @@
 			}, {
 				"text": "{{1.name}}: What did you do with {{3.name}}'s body?<br>{{2.name}}: What didn’t I do with the body?<br>{{1.name}}:<br>{{2.name}}: Okay, that sounded more sexual than I intended. I disposed of the corpse respectfully."
 			}, {
-				"text": "{{1.name}}, in a high voice, holding barbie: hey ken! I was thinking about going back to school and starting a career!<br>{{2.name}}, in a deep voice, holding ken: nonsense, barbie. you’re staying home and having my kids<br>{{3.name}}: what the fuck are you guys doing?<br>{{1.name}}: playing systemic oppression"
+				"text": "{{1.name}}, in a high voice, holding barbie: hey ken! I was thinking about going back to school and starting a career!<br>{{2.name}}, in a deep voice, holding ken: nonsense, barbie. you’re staying home and having my kids<br>{{3.name}}: what the fuck are you guys doing?<br>{{1.name}}: playing systemic oppression",
+				"tags": ["swearing"]
 			}, {
 				"text": "Store Worker: Would a Mx. {{1.name}} please come to the front desk?<br>{{1.name}}, arriving at the desk: Hello, is there a problem?<br>Store Worker: points to {{2.name}} and {{3.name}}<br>Store Worker: I believe they belong to you?<br>{{2.name}} and {{3.name}}, simultaneously: We got lost :(<br>{{1.name}}: I didn’t even bring you guys here with me-"
 			}, {
 				"text": "{{1.name}}, texting {{2.name}}: {{2.name}}! Help I’m being kidnapped<br>{{3.name}}: Where are you?<br>{{1.name}}: I’m with some strange person. In a car. Help.<br>{{2.name}}: I’ll call {{3.name}}.<br>{{3.name}}, answering {{3.pronouns.possessiveDet}} cell: Y’ello?<br>{{2.name}}: Where’s {{1.name}}? They texted me that {{1.pronouns.subjectPn}} {{1.plural ? were : was}} being kidnapped.<br>{{3.name}}: {{1.name}}? Whaddya mean, they're right next to me-<br>{{3.name}}:<br>{{3.name}}: I’ll call you back. *hangs up*<br>{{3.name}}: THE NEW HAIRCUT ISN’T THAT BAD!<br>{{1.name}}: WHO ARE YOU?!"
 			}, {
-				"text": "{{1.name}}: I told {{2.name}} {{2.pronouns.possessiveDet}} ears flush when {{2.pronouns.subjectPn}} lie.<br>{{3.name}}: Why?<br>{{1.name}}: Look.<br>{{1.name}}: Hey {{2.name}}! Do you love us?<br>{{2.name}}, covering {{2.pronouns.possessiveDet}} ears: No.<br>{{3.name}}:"
+				"text": "{{1.name}}: I told {{2.name}} {{2.pronouns.possessiveDet}} ears flush when {{2.pronouns.subjectPn}} lie.<br>{{3.name}}: Why?<br>{{1.name}}: Look.<br>{{1.name}}: Hey {{2.name}}! Do you love us?<br>{{2.name}}, covering {{2.pronouns.possessiveDet}} ears: No.<br>{{3.name}}:",
+				"tags": ["shipping"]
 			}, {
-				"text": "{{1.name}}: I’m kind of crushing on someone, but I’m worried about telling you who it is, because you’re not going to like it<br>{{2.name}}: Just rip the bandage off.<br>{{1.name}}: It’s {{3.name}}.<br>{{2.name}}: Put the bandage back on."
+				"text": "{{1.name}}: I’m kind of crushing on someone, but I’m worried about telling you who it is, because you’re not going to like it<br>{{2.name}}: Just rip the bandage off.<br>{{1.name}}: It’s {{3.name}}.<br>{{2.name}}: Put the bandage back on.",
+				"tags": ["shipping"]
 			}, {
 				"text": "{{1.name}}: If {{2.name}} and I were drowning, who would you save?<br>{{3.name}}: You two can’t swim?<br>{{2.name}}: It’s a hypothetical question, {{3.name}}! who would you save?<br>{{3.name}}: my time and effort."
 			}, {
@@ -483,14 +526,16 @@
 			}, {
 				"text": "{{1.name}}, holding a cauliflower in front of {{2.name}}’s face: What is this?<br>{{2.name}}:... a cauliflower?<br>{{1.name}} to {{3.name}}: Now tell him what you think it is.<br>{{3.name}}, arms folded: Ghost broccoli."
 			}, {
-				"text": "{{1.name}}, stubbing his toe: Ow, son of a bi-<br>{{2.name}}, motioning to {{3.name}}: {{1.name}}! Children!!!<br>{{1.name}}: ... iscuit. Son of a biscuit.<br>{{2.name}}: Nice save.<br>{{1.name}}: Yeah. Fucking nailed it."
+				"text": "{{1.name}}, stubbing his toe: Ow, son of a bi-<br>{{2.name}}, motioning to {{3.name}}: {{1.name}}! Children!!!<br>{{1.name}}: ... iscuit. Son of a biscuit.<br>{{2.name}}: Nice save.<br>{{1.name}}: Yeah. Fucking nailed it.",
+				"tags": ["swearing"]
 			}
 		],
 		"4": [
 			{
 				"text": "{{1.name}}: On a scale from “damn Daniel” to “fre sha vaca do”, how are you feeling?<br>{{2.name}}: In between “it’s an avocado, thanks” and “how did you defeat Captain America”, but as a solid answer I would say “I don’t need a degree to be a clothing hanger”. How about you, {{3.name}}?<br>{{3.name}}: Probably “road work ahead”.<br>{{4.name}}: I speak many languages, and this is none of them."
 			}, {
-				"text": "{{1.name}}: Yo is {{4.name}} sleeping or dead?<br>{{2.name}}: Hopefully dead, I hated {{4.pronouns.possessiveDet}} guts.<br>{{3.name}}: Yeah, so did I.<br>{{4.name}}: Okay first of all, fuck you-"
+				"text": "{{1.name}}: Yo is {{4.name}} sleeping or dead?<br>{{2.name}}: Hopefully dead, I hated {{4.pronouns.possessiveDet}} guts.<br>{{3.name}}: Yeah, so did I.<br>{{4.name}}: Okay first of all, fuck you-",
+				"tags": ["swearing"]
 			}, {
 				"text": "{{1.name}}: I think we're missing something.<br>{{2.name}}: Teamwork?<br>{{3.name}}: Cohesion?<br>{{4.name}}: A general sense of what we’re doing?"
 			}, {
@@ -502,11 +547,13 @@
 			}, {
 				"text": "{{1.name}}: Wake me up…<br>{{2.name}}: Before you go go!<br>{{3.name}}: When September ends…<br>{{4.name}}: WAKE ME UP INSIDE-"
 			}, {
-				"text": "{{1.name}}: Truth or dare?<br>{{2.name}}: Dare<br>{{1.name}}: I dare you to kiss the hottest person in the room<br>{{2.name}}: Hey {{3.name}}<br>{{3.name}}, blushing: Yeah?<br>{{2.name}}: Could you move? I’m trying to get to {{4.name}}"
+				"text": "{{1.name}}: Truth or dare?<br>{{2.name}}: Dare<br>{{1.name}}: I dare you to kiss the hottest person in the room<br>{{2.name}}: Hey {{3.name}}<br>{{3.name}}, blushing: Yeah?<br>{{2.name}}: Could you move? I’m trying to get to {{4.name}}",
+				"tags": ["shipping"]
 			}, {
 				"text": "{{1.name}}: Is stabbing someone immoral?<br>{{2.name}}: Not if they consent to it.<br>{{3.name}}: Depends who you’re stabbing.<br>{{4.name}}: YES?!?"
 			}, {
-				"text": "Cop: You’re receiving a ticket for having three people on one motorcycle.<br>{{1.name}}: Shit.<br>{{2.name}}: Wait, three?<br>Cop: Yeah?<br>{{3.name}}: OH MY GOD {{4.name upper}} FELL OFF!!!"
+				"text": "Cop: You’re receiving a ticket for having three people on one motorcycle.<br>{{1.name}}: Shit.<br>{{2.name}}: Wait, three?<br>Cop: Yeah?<br>{{3.name}}: OH MY GOD {{4.name upper}} FELL OFF!!!",
+				"tags": ["swearing"]
 			}, {
 				"text": "{{1.name}}: How did none of you hear what I just said?<br>{{2.name}}: I’ve been zoned out for the past two and a half hours.<br>{{3.name}}: I got distracted about halfway through.<br>{{4.name}}: Ignoring you was a conscious decision."
 			}, {
@@ -514,7 +561,7 @@
 			}, {
 				"text": "{{1.name}}: Listen, I can explain...<br>{{2.name}}: You’re making $500,000 and you’re only gonna pay me $30,000?<br>{{3.name}}: You’re getting 30 grand? I’m getting $1,000!<br>{{4.name}}: You guys are getting paid?"
 			}, {
-				"text": "{{1.name}}: I think {{4.name}} was right.<br>{{2.name}}: I'm surprised {{4.pronouns.subjectPn}} {{4.plural ? haven't : hasn't}} marched in here to say 'I told you so.'<br>{{3.name}}: They wouldn't do that.<br>{{4.name}}: You're right, {{3.name}}. For once in your life, you're 100% right. I would never say that.<br>{{4.name}}: *turns around, the shirt they're wearing says '{{4.name}} Told You So' on the back*"
+				"text": "{{1.name}}: I think {{4.name}} was right.<br>{{2.name}}: I'm surprised {{4.pronouns.subjectPn}} {{4.plural ? haven't : hasn't}} marched in here to say 'I told you so.'<br>{{3.name}}: {{4.pronouns.subjectPn}} wouldn't do that.<br>{{4.name}}: You're right, {{3.name}}. For once in your life, you're 100% right. I would never say that.<br>{{4.name}}: *turns around, the shirt {{4.pronouns.subjectPn}}'{{4.plural ? re : s}} wearing says '{{4.name}} Told You So' on the back*"
 			}, {
 				"text": "{{1.name}}: Self care is actually getting into fights with randoms in dark alleys.<br>{{2.name}}: No, self care is stuff like taking a bubble bath, or putting on a lot of makeup if you like it, or taking a nice warm nap!<br>{{3.name}}: Self care is the burning heat when rage washes over you!! Self care is when you feel the bones crack under your powerful fists!! Self care is the fear in your enemies’ eyes!!!<br>{{4.name}}: Lmao self care is taking your birthday cake just so I can eat the frosting.<br>{{1.name}}: If you touch my birthday cake I’ll make you eat your hands."
 			}, {
@@ -530,13 +577,12 @@
 			}, {
 				"text": "{{1.name}}: Why is {{2.name}} so sad?<br>{{3.name}}: They took one of those “Which Character Are You?” quizzes<br>{{1.name}}: And...?<br>{{2.name}}: They got {{4.name}}."
 			}, {
-				"text": "{{1.name}}: *Screams*<br>{{2.name}}: *Screams louder to establish dominance*<br>{{3.name}}: Should we do something?<br>{{4.name}}: No, I want to see who wins."
-			}, {
 				"text": "{{1.name}}: Dammit, {{2.name}}!<br>{{2.name}}: What?! It wasn’t me!<br>{{1.name}}: Sorry, force of habit. Dammit, {{3.name}}!<br>{{3.name}}: Not me either.<br>{{1.name}}: Oh...Then who set the house on fire?<br>{{4.name}}: *whistles*"
 			}, {
 				"text": "{{1.name}}, banging on the door: {{2.name}}! Open up!<br>{{2.name}}: Well, it all started when I was a kid...<br>{{3.name}}: No, {{1.pronouns.subjectPn}} meant-<br>{{4.name}}: Let {{2.pronouns.objectPn}} finish."
 			}, {
-				"text": "{{3.name}}: Why are {{1.name}} and {{2.name}} sitting with their backs to each other?<br>{{4.name}}: They had a fight.<br>{{3.name}}: Then why are they holding hands?<br>{{4.name}}: They get sad when they fight."
+				"text": "{{3.name}}: Why are {{1.name}} and {{2.name}} sitting with their backs to each other?<br>{{4.name}}: They had a fight.<br>{{3.name}}: Then why are they holding hands?<br>{{4.name}}: They get sad when they fight.",
+				"tags": ["shipping"]
 			}, {
 				"text": "{{1.name}}, {{2.name}}, and {{3.name}} are sitting on a bench<br>{{4.name}}: Why do you guys look so sad?<br>{{1.name}}: Sit down with us so we can tell you.<br>*{{4.name}} sits down*<br>{{2.name}}: The bench is freshly painted."
 			}, {
@@ -550,7 +596,8 @@
 			}, {
 				"text": "{{1.name}}: Tonight, one of you will betray us.<br>{{2.name}}: Is it me, {{1.name}}?<br>{{1.name}}: No, it’s not you.<br>{{3.name}}: Is it me, {{1.name}}?<br>{{1.name}}: It’s not you either.<br>{{4.name}}: Is it me, {{1.name}}?<br>{{1.name}}:<br>{{1.name}}, mockingly: Is IT mE {{1.name}}?"
 			}, {
-				"text": "{{1.name}}: You lying, cheating, piece of shit!<br>{{2.name}}: Oh yeah? You’re the idiot who thinks you can get away with everything you do. WELCOME TO THE REAL WORLD<br>{{1.name}}: I’m leaving you, and I’M TAKING {{3.name upper}} WITH ME<br>{{4.name}}, picking up the monopoly board: I think we’re gonna stop playing now."
+				"text": "{{1.name}}: You lying, cheating, piece of shit!<br>{{2.name}}: Oh yeah? You’re the idiot who thinks you can get away with everything you do. WELCOME TO THE REAL WORLD<br>{{1.name}}: I’m leaving you, and I’M TAKING {{3.name upper}} WITH ME<br>{{4.name}}, picking up the monopoly board: I think we’re gonna stop playing now.",
+				"tags": ["swearing"]
 			}, {
 				"text": "{{1.name}}: You are now one day closer to eating your next plate of nachos.<br>{{2.name}}: That's the most hopeful thing I've ever heard.<br>{{3.name}}: But what if I die tomorrow and never eat any nachos?<br>{{4.name}}: Then tomorrow is nacho lucky day."
 			}, {
@@ -564,22 +611,26 @@
 			}, {
 				"text": "{{1.name}}: I currently have 7 empty notebooks and I have no clue what to put in them. Suggestions?<br>{{2.name}}: Put spaghetti in it.<br>{{1.name}}: I'm currently taking suggestions from literally anyone but you.<br>{{3.name}}: Put spaghetti in it.<br>{{1.name}}: I'm currently taking suggestions from anyone but you two.<br>{{4.name}}: Put spaghetti in it.<br>{{1.name}}: I'm no longer taking suggestions."
 			}, {
-				"text": "{{1.name}}: I just ended a four year relationship.<br>{{2.name}}: Oh, I’m so sorry. Are you okay?<br>{{1.name}}: Hm? Oh yeah, I’m fine. It wasn’t my relationship.<br>*{{3.name}} and {{4.name}} fighting from across the room*"
+				"text": "{{1.name}}: I just ended a four year relationship.<br>{{2.name}}: Oh, I’m so sorry. Are you okay?<br>{{1.name}}: Hm? Oh yeah, I’m fine. It wasn’t my relationship.<br>*{{3.name}} and {{4.name}} fighting from across the room*",
+				"tags": ["shipping"]
 			}, {
-				"text": "{{1.name}}: {{2.name}} isn’t answering {{2.pronouns.possessiveDet}} phone<br>{{3.name}}: I’ll call<br>{{1.name}}: {{4.name}} and I have both tried six times each, what makes you thi-<br>{{2.name}}: Hello?"
+				"text": "{{1.name}}: {{2.name}} isn’t answering {{2.pronouns.possessiveDet}} phone<br>{{3.name}}: I’ll call<br>{{1.name}}: {{4.name}} and I have both tried six times each, what makes you thi-<br>{{2.name}}: Hello?",
+				"tags": ["shipping"]
 			}, {
 				"text": "{{1.name}}, about {{2.name}}: Apparently we’re getting someone new in the group.<br>{{3.name}}: Are we stealing them?<br>{{4.name}}: New or used?<br>{{1.name}}: Wonderful responses, both of you."
 			}, {
-				"text": "{{1.name}}: Why are your tongues purple?<br>{{3.name}}: We had slushies. I had a blue one.<br>{{4.name}}: I had a red one.<br>{{1.name}}: oh<br>{{1.name}}:<br>{{1.name}}: OH<br>{{2.name}}:<br>{{2.name}}: You drank each other's slushies?"
+				"text": "{{1.name}}: Why are your tongues purple?<br>{{3.name}}: We had slushies. I had a blue one.<br>{{4.name}}: I had a red one.<br>{{1.name}}: oh<br>{{1.name}}:<br>{{1.name}}: OH<br>{{2.name}}:<br>{{2.name}}: You drank each other's slushies?",
+				"tags": ["shipping"]
 			}, {
 				"text": "{{1.name}}: Guys, what color would you say {{2.name}}'s armor is?<br>{{3.name}}: Gray?<br>{{4.name}}: Yeah, gray.<br>{{5.name}}: Like a dark gray, yeah<br>{{1.name}}, to {{2.name}}: Now, tell them what color you said.<br>{{2.name}}: ... Dark white."
 			}
 		],
 		"5": [
 			{
-				"text": "{{1.name}}: Anyone d-<br>{{2.name}}: Depressed?<br>{{3.name}}: Drained?<br>{{4.name}}: Dumb?<br>{{5.name}}: Disliked?<br>{{1.name}}: -done with their work... what is wrong with you people ..."
+				"text": "{{1.name}}: Anyone d-<br>{{2.name}}: Depressed?<br>{{3.name}}: Drained?<br>{{4.name}}: Dumb?<br>{{5.name}}: Disliked?<br>{{1.name}}: -done with their work... what is wrong with you people..."
 			}, {
-				"text": "{{1.name}}: Poison is a magic transmutation potion that turns people into corpses.<br>{{2.name}}: This knife is actually a magic wand.<br>{{3.name}}: Meet me in the Denny’s parking lot for a wizard duel.<br>{{4.name}}: *cocks gun* Magic missile.<br>{{5.name}}: What the fuck is wrong with you people."
+				"text": "{{1.name}}: Poison is a magic transmutation potion that turns people into corpses.<br>{{2.name}}: This knife is actually a magic wand.<br>{{3.name}}: Meet me in the Denny’s parking lot for a wizard duel.<br>{{4.name}}: *cocks gun* Magic missile.<br>{{5.name}}: What the fuck is wrong with you people.",
+				"tags": ["swearing"]
 			}, {
 				"text": "{{1.name}}: Imagine if someone handed you a box full of all the items you have lost throughout your life<br>{{2.name}}: Self-esteem, haven't seen you in years!<br>{{3.name}}: Oh wow, my childhood innocence! Thank you for finding this!<br>{{4.name}}: I knew I lost that potential somewhere!<br>{{5.name}}: My moral code, is that you?<br>{{1.name}}:<br>{{1.name}}: I was just gonna show you this cool trunk my mother left me but do you guys need a hug?"
 			}, {
@@ -591,7 +642,8 @@
 			}, {
 				"text": "{{1.name}}: There are seven chairs and ten kids. What do you do?<br>{{2.name}}: Have everyone stand.<br>{{3.name}}: Bring three more chairs!<br>{{4.name}}: The most important ones can sit down.<br>{{5.name}}: Kill three."
 			}, {
-				"text": "{{1.name}}: Good morning.<br>{{2.name}}: Good morning.<br>{{3.name}}: Good morning.<br>{{4.name}}: You all sound like robots, try spicing it up a bit.<br>{{5.name}}: MORNING MOTHERFUCKERS"
+				"text": "{{1.name}}: Good morning.<br>{{2.name}}: Good morning.<br>{{3.name}}: Good morning.<br>{{4.name}}: You all sound like robots, try spicing it up a bit.<br>{{5.name}}: MORNING MOTHERFUCKERS",
+				"tags": ["swearing"]
 			}, {
 				"text": "{{1.name}}: Good responses for being stabbed with a knife?<br>{{2.name}}: Rude.<br>{{3.name}}: That’s fair.<br>{{4.name}}: Not again.<br>{{5.name}}: Are you going to want this back?"
 			}, {
@@ -611,15 +663,18 @@
 			}, {
 				"text": "{{1.name}}: Where's {{2.name}}, {{3.name}}, and {{4.name}}?<br>{{5.name}}: They're playing hide and seek.<br>{{1.name}}: Where?<br>{{5.name}}: I don't think you get how this game works."
 			}, {
-				"text": "{{1.name}}: So uhhh... my question is: my friend keeps on going into the pantry and grabbing handfuls of fettuccine... uncooked...<br>{{4.name}}: I would hope they're not grabbing handfuls of cooked fettuccine!<br>{{5.name}}: In your pantry!<br>{{1.name}}: Yeah... and eating them raw, and they keep calling them 'chips'. ... How do I make them stop?<br>{{4.name}}: Is your friend here?<br>{{1.name}}, motioning to {{2.name}}: Yeah.<br>{{4.name}}, to {{2.name}}: You're a monster! Words MEAN things! >:(<br>{{3.name}}: Does anybody remember- I haven't been to Olive Garden in many moons- but they DO have a like- fettuccine bottle that you can just- grab em out of and chew-<br>{{3.name}}: HOLD ON. WAS THIS A PRANK YOU GUYS PULLED ON ME WHEN WE WENT TO OLIVE GARDEN AS KIDS?!<br>{{3.name}}: NO, STOP. EVERYBODY SHUT UP. DO THEY GIVE YOU RAW FETTUCCINE TO CHEW ON IN THE LOBBY OF THE OLIVE GARDEN<br>Everyone else: No.<br>{{3.name}}, to {{4.name}} and {{5.name}}: YOU FUCKIN <em><strong>BASTARDS</em></strong><br>{{4.name}}: YAAAAAAAAY!<br>{{5.name}}: THE <em>PRESTIGE</em>!"
+				"text": "{{1.name}}: So uhhh... my question is: my friend keeps on going into the pantry and grabbing handfuls of fettuccine... uncooked...<br>{{4.name}}: I would hope they're not grabbing handfuls of cooked fettuccine!<br>{{5.name}}: In your pantry!<br>{{1.name}}: Yeah... and eating them raw, and they keep calling them 'chips'. ... How do I make them stop?<br>{{4.name}}: Is your friend here?<br>{{1.name}}, motioning to {{2.name}}: Yeah.<br>{{4.name}}, to {{2.name}}: You're a monster! Words MEAN things! >:(<br>{{3.name}}: Does anybody remember- I haven't been to Olive Garden in many moons- but they DO have a like- fettuccine bottle that you can just- grab em out of and chew-<br>{{3.name}}: HOLD ON. WAS THIS A PRANK YOU GUYS PULLED ON ME WHEN WE WENT TO OLIVE GARDEN AS KIDS?!<br>{{3.name}}: NO, STOP. EVERYBODY SHUT UP. DO THEY GIVE YOU RAW FETTUCCINE TO CHEW ON IN THE LOBBY OF THE OLIVE GARDEN<br>Everyone else: No.<br>{{3.name}}, to {{4.name}} and {{5.name}}: YOU FUCKIN <em><strong>BASTARDS</em></strong><br>{{4.name}}: YAAAAAAAAY!<br>{{5.name}}: THE <em>PRESTIGE</em>!",
+				"tags": ["swearing"]
 			}, {
 				"text": "{{1.name}}: That's it, we're gonna go out and find what we need!<br>{{4.name}}: To the <em>city</em>?<br>{{1.name}}: Yeah, no matter what!<br>{{5.name}}: Well- How exactly do you propose we do that, exactly?<br>{{1.name}}: I... I don't know!<br>{{2.name}}: Oh come off it, be serious!<br>{{1.name}}: I <em>am</em> serious!<br>{{2.name}}: You're <em>insane</em>!<br>{{3.name}}: Why, if only we were all wiener dogs, our problems would be solved!<br>Everyone:<br>{{1.name}}: What???<br>{{3.name}}: Or maybe it was a basset hound!<br>{{2.name}}, panicked: YOU'RE <em>ALL</em> INSANE!"
 			}, {
-				"text": "{{1.name}}: Bye {{2.name}}! Bye {{3.name}}! Bye {{4.name}}! Bye {{5.name}}! Bye {{2.name}}!<br>{{3.name}}: You said ‘bye {{2.name}}’ twice.<br>{{1.name}}: I like {{2.name}}."
+				"text": "{{1.name}}: Bye {{2.name}}! Bye {{3.name}}! Bye {{4.name}}! Bye {{5.name}}! Bye {{2.name}}!<br>{{3.name}}: You said ‘bye {{2.name}}’ twice.<br>{{1.name}}: I like {{2.name}}.",
+				"tags": ["shipping"]
 			}, {
 				"text": "{{1.name}}: Why isn’t the statue smirking at me?<br>{{2.name}}: It isn’t smirking at anyone, they’re all just imagining it.<br>{{1.name}}: Three of us saw it, {{2.name}}. How do you explain that?<br>{{2.name}}: *points at {{3.name}}* Sleep deprivation. *points at {{4.name}}* Paranoia. *points at {{5.name}}* Delusional personality disorder."
 			}, {
-				"text": "{{1.name}}: Looking left cause you don’t treat me right<br>{{2.name}}: Looking right because you left<br>{{3.name}}: Looking up cause you let me down<br>{{4.name}}: Looking down cause you fucked up<br>{{5.name}}: What is wrong with you guys"
+				"text": "{{1.name}}: Looking left cause you don’t treat me right<br>{{2.name}}: Looking right because you left<br>{{3.name}}: Looking up cause you let me down<br>{{4.name}}: Looking down cause you fucked up<br>{{5.name}}: What is wrong with you guys",
+				"tags": ["swearing"]
 			}, {
 				"text": "{{1.name}}: I’ve done a lot of dumb stuff.<br>{{2.name}}: I witnessed the dumb stuff.<br>{{3.name}}: I recorded the dumb stuff.<br>{{4.name}}: I joined in on the dumb stuff.<br>{{5.name}}: I TRIED TO STOP YOU FROM DOING THE DUMB STUFF!!!"
 			}, {
@@ -639,7 +694,8 @@
 				"text": "{{1.name}}: Dumbest scar stories, go!<br>{{2.name}}: I burned my tongue once drinking tea.<br>{{3.name}}: I dropped a hair dryer on my leg once and burned it.<br>{{4.name}}: I have a piece of graphite in my leg for accidentally stabbing myself with a pencil in the first grade.<br>{{5.name}}: I was taking a cup of noodles out of the microwave and spilled it on my hand and I got a really bad burn.<br>{{6.name}}:<br>{{6.name}}: I have emotional scars."
 			},
 			{
-				"text": "{{1.name}}: Who the fuck added me to a fucking group chat?<br>{{2.name}}: >:O language<br>{{3.name}}: Yeah watch your fucking language<br>{{4.name}}: OKAY WHO TAUGHT {{3.name upper}} THE FUCK WORD?<br>{{5.name}}: 'The fuck word'.<br>{{6.name}}: Are you stupid? You guys use the f word all the time<br>{{3.name}}: Oh my god {{6.pronouns.subjectPn}} censored it<br>{{5.name}}: Say fuck, {{6.name}}.<br>{{3.name}}: Do it, {{6.name}}. Say fuck."
+				"text": "{{1.name}}: Who the fuck added me to a fucking group chat?<br>{{2.name}}: >:O language<br>{{3.name}}: Yeah watch your fucking language<br>{{4.name}}: OKAY WHO TAUGHT {{3.name upper}} THE FUCK WORD?<br>{{5.name}}: 'The fuck word'.<br>{{6.name}}: Are you stupid? You guys use the f word all the time<br>{{3.name}}: Oh my god {{6.pronouns.subjectPn}} censored it<br>{{5.name}}: Say fuck, {{6.name}}.<br>{{3.name}}: Do it, {{6.name}}. Say fuck.",
+				"tags": ["swearing"]
 			},
 			{
 				"text": "{{1.name}}: Rules are made to be broken.<br>{{2.name}}: They were made to be followed. Nothing is made to be broken.<br>{{3.name}}: Uh, piñatas.<br>{{4.name}}: Glow sticks.<br>{{5.name}}: Karate boards.<br>{{6.name}}: Spaghetti when you have a small pot.<br>{{1.name}}: Rules.<br>{{2.name}}:"
@@ -666,13 +722,15 @@
 				"text": "{{1.name}}, walking into {{1.pronouns.possessiveDet}} house: Hello, people who do not live here.<br>{{2.name}}: Hey.<br>{{3.name}}: Hi.<br>{{4.name}}: Hello.<br>{{5.name}}: Hey!<br>{{1.name}}: I gave you the key to my place for emergencies only!<br>{{6.name}}: We were out of Doritos."
 			},
 			{
-				"text": "{{1.name}}: Hewwo.<br>{{2.name}}: Hihiiiiii!<br>{{3.name}}: Greetings, Humans.<br>{{5.name}}: Three kinds of people.<br>{{4.name}}: I want pudding.<br>{{1.name}}: Four kinds of people.<br>{{6.name}}: WHAT’S UP FUCKERS?<br>{{5.name}}: Five kinds of people."
+				"text": "{{1.name}}: Hewwo.<br>{{2.name}}: Hihiiiiii!<br>{{3.name}}: Greetings, Humans.<br>{{5.name}}: Three kinds of people.<br>{{4.name}}: I want pudding.<br>{{1.name}}: Four kinds of people.<br>{{6.name}}: WHAT’S UP FUCKERS?<br>{{5.name}}: Five kinds of people.",
+				"tags": ["swearing"]
 			},
 			{
 				"text": "*Squad reactions to being told ‘I love you’*<br>{{1.name}}: Thanks fam!<br>{{2.name}}: oh no<br>{{3.name}}: *cries* I love you too<br>{{4.name}}: Sounds fake but okay<br>{{5.name}}: *A flustered mess*<br>{{6.name}}: can i get a refund"
 			},
 			{
-				"text": "{{1.name}}: Croissants: dropped<br>{{2.name}}: Road: works ahead<br>{{3.name}}: BBQ sauce: on my titties<br>{{4.name}}: Shavacado: fre<br>{{5.name}}: Miss Keisha: fuckin dead<br>{{6.name}}:<br>{{6.name}}, grumpy: I didn’t understand a single word of that and I hate every single one of you."
+				"text": "{{1.name}}: Croissants: dropped<br>{{2.name}}: Road: works ahead<br>{{3.name}}: BBQ sauce: on my titties<br>{{4.name}}: Shavacado: fre<br>{{5.name}}: Miss Keisha: fuckin dead<br>{{6.name}}:<br>{{6.name}}, grumpy: I didn’t understand a single word of that and I hate every single one of you.",
+				"tags": ["swearing"]
 			},
 			{
 				"text": "{{1.name}}: *Posts a super low-quality image to the group chat*<br>{{2.name}}: If I had a dollar for every pixel in this image, I’d have 15 cents<br>{{1.name}}: If I had a dollar for every ounce of rage I felt in my body after I read this text, I would have enough money to buy a cannon to fire at you<br>{{3.name}}: Actually I did the math, {{2.name}} would have $225, not $0.15.<br>{{2.name}}: Fam I’m right here....<br>{{4.name}}: If I had a dollar I would buy a can of soda :)<br>{{1.name}}: while you’re there could you buy me an apply juice please?<br>{{4.name}}: Sorry I only have a dollar<br>{{1.name}}: :(<br>{{3.name}}: Hey I just realized my friend is right, {{2.name}} would have $22,500 because it's a dollar for every pixel, not a cent<br>{{4.name}}: If I had $22,500 I would buy a can of soda and an apply juice<br>{{3.name}}: You can buy anything you want with $22,500<br>{{5.name}}: Yeah and {{4.pronouns.subjectPn}} {{4.plural ? want : wants}} soda and apply juice<br>{{3.name}}: Apply juice to what<br>{{6.name}}: Directly to the forehead<br>{{2.name}}: Great chat everyone"
@@ -681,10 +739,12 @@
 				"text": "{{1.name}}: Would you guys be there for me if I was going through something?<br>{{2.name}}: Nope, absolutely not.<br>{{3.name}}: I hope it sucks, whatever you're going through.<br>{{4.name}}: I hope it emotionally scars you for the rest of your life.<br>{{5.name}}: I hope you reach out to me so I can ignore you.<br>{{6.name}}: I can't wait to go to your funeral, knowing I could've changed that outcome."
 			},
 			{
-				"text": "{{1.name}}: I CAN'T DO IT!<br>{{2.name}}, laughing: I CAN'T EITHER!<br>{{1.name}}: I CANT FUCKING DO IT ANYMORE<br>{{3.name}}: WELL I'LL TELL YOU WHAT, YOU CAN EITHER GIVE UP NOW, OR YOU CAN FIGURE IT OUT. BECAUSE WE CERTAINLY CAN'T DO IT WITHOUT YOU, AND WE KNOW YOU CAN'T DO IT WITHOUT US.<br>{{1.name}}:<br>{{1.name}}: I appreciate it,<br>{{1.name}}: BUT LOOK WHAT WE'RE DEALING WITH-<br>{{4.name}}: {{1.name}}-<br>{{1.name}}: YOU GOTTA DRAW THE LINE SOMEWHERE!<br>{{5.name}}: {{1.name}} we gotta-<br>{{1.name}}: YOU GOTTA DRAW A FUCKING LINE IN THE SAND. YOU GOTTA MAKE A STATEMENT.<br>{{1.name}}: YOU GOTTA LOOK INSIDE YOURSELF AND SAY 'What am I willing to put up with today?'<br>{{1.name}}, motioning to {{6.name}}: <strong><em>NOT FUCKING THIS</strong></em>"
+				"text": "{{1.name}}: I CAN'T DO IT!<br>{{2.name}}, laughing: I CAN'T EITHER!<br>{{1.name}}: I CANT FUCKING DO IT ANYMORE<br>{{3.name}}: WELL I'LL TELL YOU WHAT, YOU CAN EITHER GIVE UP NOW, OR YOU CAN FIGURE IT OUT. BECAUSE WE CERTAINLY CAN'T DO IT WITHOUT YOU, AND WE KNOW YOU CAN'T DO IT WITHOUT US.<br>{{1.name}}:<br>{{1.name}}: I appreciate it,<br>{{1.name}}: BUT LOOK WHAT WE'RE DEALING WITH-<br>{{4.name}}: {{1.name}}-<br>{{1.name}}: YOU GOTTA DRAW THE LINE SOMEWHERE!<br>{{5.name}}: {{1.name}} we gotta-<br>{{1.name}}: YOU GOTTA DRAW A FUCKING LINE IN THE SAND. YOU GOTTA MAKE A STATEMENT.<br>{{1.name}}: YOU GOTTA LOOK INSIDE YOURSELF AND SAY 'What am I willing to put up with today?'<br>{{1.name}}, motioning to {{6.name}}: <strong><em>NOT FUCKING THIS</strong></em>",
+				"tags": ["swearing"]
 			},
 			{
-				"text": "{{1.name}}: Just be yourself.<br>{{2.name}}: 'Be myself'? {{1.name}}, I have one day to win {{3.name}} over. How long did it take before you guys started liking me?<br>{{4.name}}: Couple weeks.<br>{{5.name}}: Six months.<br>{{6.name}}: Jury’s still out.<br>{{2.name}}: See, {{1.name}}?<br>{{2.name}}: 'Be myself'. What kind of garbage advice is that?"
+				"text": "{{1.name}}: Just be yourself.<br>{{2.name}}: 'Be myself'? {{1.name}}, I have one day to win {{3.name}} over. How long did it take before you guys started liking me?<br>{{4.name}}: Couple weeks.<br>{{5.name}}: Six months.<br>{{6.name}}: Jury’s still out.<br>{{2.name}}: See, {{1.name}}?<br>{{2.name}}: 'Be myself'. What kind of garbage advice is that?",
+				"tags": ["shipping"]
 			},
 			{
 				"text": "*The squad is over at {{1.name}}'s house*<br>{{2.name}}: Ohhhh, we each get our own oven?<br>{{1.name}}: ... N-No...<br>{{1.name}}, laughing: How many ovens do you think I have???<br>{{2.name}}, motioning to {{2.pronouns.possessiveDet}} kitchen: Three, I thought!<br>{{3.name}}: I see a-<br>{{1.name}}, motioning to one device: This is a microwave.<br>{{2.name}}: Oh, well I-<br>{{1.name}}: Hey wait wait, actually- hang on- *fiddles with the buttons on the microwave*<br>{{1.name}}, amazed: Its got a bake setting!<br>{{4.name}}: Ohoho, you learn something new every day!<br>{{5.name}}: Do we- Do we roshambo for who gets to pick first?<br>{{1.name}}: Now I've just discovered I have more ovens than I thought, we don't have to roshambo nothin!<br>{{1.name}}: I am someone who owns four ovens...<br>{{1.name}}, louder and way too happy: I am someone... who owns FOUR OVENS...<br>{{1.name}}: I didn't know I was so rich with ovens...<br>{{6.name}}, pointing to another appliance: Also the toaster oven!<br>{{1.name}}:<br>{{2.name}}: Ohhh, toasty boy! Four- Five ovens!<br>{{1.name}}:<br>{{1.name}}, fucking ECSTATIC: I AM SOMEONE WHO OWNS <em><strong>FIVE OVENS<em><strong>"

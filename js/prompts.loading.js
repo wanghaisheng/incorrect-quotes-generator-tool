@@ -1,12 +1,11 @@
 // prompts.loading.js
 // deals with loading prompts.
 
-window.prompts = {}; // object containing all the selected prompts. keys are number of characters
 const promptSetList = {}; // list of selectable promptSets.
 window.fetchedPromptSets = {}; // list of fetched promptSets.
-const promptCounter = document.querySelector("#prompt-count");
-
-/* FETCHING PROMPTS */
+const prompts = {}; // object containing prompts from enabled promptSets. keys are number of characters.
+window.filteredPrompts = {}; // duplicate of above, but filtered
+const tags = {}; // tags, and whether or not they are enabled
 
 // get the list of prompt sets.
 fetch("./promptSetList.json")
@@ -25,6 +24,7 @@ fetch("./promptSetList.json")
 
 const promptSetSelector = document.querySelector("#prompt-set-selector");
 
+// adding the prompt set to the selector, and fetching it.
 function addPromptSetToSelector(key) {
 	const set = promptSetList[key];
 	const input = document.createElement("input");
@@ -40,26 +40,36 @@ function addPromptSetToSelector(key) {
 			if (window.fetchedPromptSets[key]) {
 				console.log(`${promptSetList[key].title} already fetched...`);
 			} else {
+				target.indeterminate = true;
 				await fetch(promptSetList[key].path)
 					.then(response => response.json())
 					.then(set => {
-						// giving each prompt a "set" key
 						Object.keys(set.prompts).forEach(charNum => {
-							set.prompts[charNum].forEach(a => {
-								a.set = key;
-							});
+							set.prompts[charNum].forEach(p => promptSetup(p, key));
 						});
 						window.fetchedPromptSets[key] = set;
+
+						target.indeterminate = false;
 						console.log(`fetched ${promptSetList[key].title}!`);
 					});
 			}
 
-			window.prompts[key] = window.fetchedPromptSets[key].prompts;
+			Object.keys(window.fetchedPromptSets[key].prompts).forEach(charNum => {
+				if (!prompts[charNum]) {
+					prompts[charNum] = [];
+				}
+
+				prompts[charNum] = [...prompts[charNum],
+					...window.fetchedPromptSets[key].prompts[charNum]];
+			});
 		} else {
-			delete window.prompts[key];
+			// delete prompts from set when unselected
+			Object.keys(prompts).forEach(charNum => {
+				prompts[charNum] = prompts[charNum].filter(p => p.set !== key);
+			});
 		}
 
-		updatePromptCounter();
+		updateFilteredPrompts();
 	});
 
 	// the label...
@@ -81,13 +91,117 @@ function addPromptSetToSelector(key) {
 	promptSetSelector.appendChild(label);
 }
 
-const updatePromptCounter = () => {
-	let count = 0;
-	Object.keys(window.prompts).forEach(set => {
-		Object.keys(window.prompts[set]).forEach(key => {
-			count += window.prompts[set][key].length;
+// to be run for every prompt
+const promptSetup = (p, key) => {
+	// giving each prompt a "set" key
+	p.set = key;
+
+	if (p.tags) {
+		p.tags.forEach(tag => {
+			if (!tags[tag]) {
+				tags[tag] = {
+					enabled: true
+				};
+				addTagToList(tag);
+			}
 		});
+	}
+};
+
+// counting propts.
+const promptCounter = document.querySelector("#prompt-count");
+function updatePromptCounter() {
+	let count = 0;
+	runOnAllPrompts(window.filteredPrompts, () => {
+		count++;
 	});
 
 	promptCounter.textContent = `${count > 0 ? count : "no"} prompt${count === 1 ? "" : "s"}`;
-};
+}
+
+/**
+ * Runs a function on every prompt.
+ * @param {function} callbackFn
+ */
+function runOnAllPrompts(prompts, callbackFn) {
+	Object.keys(prompts).forEach(charNum => {
+		prompts[charNum].forEach(p => callbackFn(p));
+	});
+	return prompts;
+}
+
+/* FUNCTIONS INVOLVING TAGS AND STUFF */
+
+// adding a tag to the page's tag list.
+const tagList = document.querySelector("#tag-list");
+function addTagToList(tagName) {
+	if (Object.keys(tags).length > 0) {
+		document.querySelector("#tag-list-empty").hidden = true;
+	}
+
+	const span = document.createElement("span");
+	span.className = "tag";
+
+	const input = document.createElement("input");
+	input.type = "checkbox";
+	input.id = tagName;
+	input.checked = true;
+
+	input.addEventListener("input", event => {
+		const {target} = event;
+		tags[target.id].enabled = target.checked;
+
+		if (target.checked) {
+			updateFilteredPrompts();
+		} else {
+			console.log(`filtered out ${filterPromptsByTag(target.id)} prompts with tag ${target.id}!`);
+		}
+	});
+
+	span.appendChild(input);
+
+	const label = document.createElement("label");
+	label.htmlFor = tagName;
+	label.append(tagName);
+
+	span.appendChild(label);
+
+	tagList.appendChild(span);
+}
+
+// filtering singular tags...
+function filterPromptsByTag(tag) {
+	let filteredCount = 0;
+	Object.keys(window.filteredPrompts).forEach(charNum => {
+		window.filteredPrompts[charNum] = window.filteredPrompts[charNum].filter(p => {
+			if (p.tags && p.tags.includes(tag)) {
+				filteredCount++;
+				return false;
+			}
+
+			return true;
+		});
+	});
+	updatePromptCounter();
+	return filteredCount;
+}
+
+// filtering by all the tags / resetting window.filteredPrompts
+function updateFilteredPrompts() {
+	let totalFiltered = 0;
+	const filteredTags = [];
+
+	// reset...
+	window.filteredPrompts = {...prompts};
+
+	// filter out any disabled tags
+	Object.keys(tags).forEach(tag => {
+		if (!tags[tag].enabled) {
+			filteredTags.push(tag);
+			totalFiltered += filterPromptsByTag(tag);
+		}
+	});
+
+	console.log(`reset window.filteredPrompts, and filtered ${filteredTags.length > 0 ? `${totalFiltered} prompts with tags [${filteredTags.join(", ")}]` : "nothing"}!`);
+	updatePromptCounter();
+}

@@ -27,11 +27,7 @@ window.generatePrompt = function () {
 
 	console.log(`using ${charsInPrompt} characters...`);
 
-	const workingArray = [];
-
-	Object.keys(window.prompts).forEach(key => {
-		workingArray.push(...window.prompts[key][charsInPrompt]);
-	});
+	const workingArray = window.filteredPrompts[charsInPrompt];
 
 	// getting a random prompt
 	const prompt = workingArray[Math.floor(Math.random() * workingArray.length)];

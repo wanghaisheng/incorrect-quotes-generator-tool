@@ -17,13 +17,6 @@
 	--gray-2: #C6C6C6
 	--gray-3: #ABABAB
 
-	--char-1: #F99FB180
-	--char-2: #FAA56C80
-	--char-3: #D2B83A80
-	--char-4: #96C83980
-	--char-5: #3BD18A80
-	--char-6: #3ECDBF80
-
 	--rainbow-gradient: linear-gradient(to right, #F99FB1, #FAA56C, #D2B83A, #96C839, #3BD18A, #3ECDBF, #41C8E5, #98B9F8, #D5A6F8, #F99ADD)
 
 /* dark theme! /*
@@ -121,7 +114,39 @@ a
 			height: 1.5em
 			width: 12ch
 
-/* style the things so they don't look like windows 98 */
+/* the "get some prompts" area */
+
+/* prompts */
+#prompt-set-selector
+	flex-grow: 1
+	flex-basis: 50%
+
+/* tags */
+#tag-list
+	display: inline-flex
+	flex-direction: row
+	flex-wrap: wrap
+	justify-content: space-between
+
+#tag-list-container
+	flex-shrink: 1
+	flex-basis: 40%
+
+.tag
+	background: var(--bg-secondary)
+	padding: 0.2em 0.5em 0.2em 0.2em
+	+ .tag
+		margin-left: 0.5em
+
+	> input:checked + label:hover
+		text-decoration: line-through
+
+	> input:not(:checked) + label
+		text-decoration: line-through
+		&:hover
+			text-decoration: none
+
+/* style the inputs so they don't look like windows 98 */
 button, input
 	font-size: 1em
 
