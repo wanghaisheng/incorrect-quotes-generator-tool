@@ -110,7 +110,8 @@
 				"text": "{{1.name}}: Top 30 reasons why {{1.name}} is sorry... Number 5 will surprise you!<br>{{2.name}}: Top 30 anime deaths. Number One: YOUR FUCKING ASS RIGHT NOW!!!",
 				"tags": ["swearing"]
 			}, {
-				"text": "{{1.name}}: I want to wake up with you every day for the rest of our lives<br>{{2.name}}: I wake up at 4:30 AM<br>{{1.name}}:<br>{{1.name}}: I want to see you at some point every day for the rest of our lives"
+				"text": "{{1.name}}: I want to wake up with you every day for the rest of our lives<br>{{2.name}}: I wake up at 4:30 AM<br>{{1.name}}:<br>{{1.name}}: I want to see you at some point every day for the rest of our lives",
+				"tags": ["shipping"]
 			}, {
 				"text": "{{1.name}}: You often use humor to deflect trauma<br>{{2.name}}: Thank you<br>{{1.name}}: I didn't say that was a good thing<br>{{2.name}}: What I'm hearing is, you think I'm funny"
 			}, {

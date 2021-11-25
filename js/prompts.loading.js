@@ -38,7 +38,7 @@ function addPromptSetToSelector(key) {
 
 		if (target.checked) {
 			if (window.fetchedPromptSets[key]) {
-				console.log(`${promptSetList[key].title} already fetched...`);
+				console.debug(`${promptSetList[key].title} already fetched...`);
 			} else {
 				target.indeterminate = true;
 				await fetch(promptSetList[key].path)
@@ -50,7 +50,7 @@ function addPromptSetToSelector(key) {
 						window.fetchedPromptSets[key] = set;
 
 						target.indeterminate = false;
-						console.log(`fetched ${promptSetList[key].title}!`);
+						console.debug(`fetched ${promptSetList[key].title}!`);
 					});
 			}
 
@@ -110,7 +110,7 @@ const promptSetup = (p, key) => {
 
 // counting prompts. also disables the "generate prompt" button when there are no prompts.
 const promptCounter = document.querySelector("#prompt-count");
-const generatePromptButton = document.querySelector("#generate-prompt");
+const generateQuoteButton = document.querySelector("#generate-quote");
 function updatePromptCounter() {
 	let count = 0;
 	runOnAllPrompts(window.filteredPrompts, () => {
@@ -120,9 +120,9 @@ function updatePromptCounter() {
 	promptCounter.textContent = `${count > 0 ? count : "no"} prompt${count === 1 ? "" : "s"}`;
 
 	if (count === 0) {
-		generatePromptButton.disabled = true;
+		generateQuoteButton.disabled = true;
 	} else {
-		generatePromptButton.disabled = false;
+		generateQuoteButton.disabled = false;
 	}
 }
 
@@ -161,7 +161,7 @@ function addTagToList(tagName) {
 		if (target.checked) {
 			updateFilteredPrompts();
 		} else {
-			console.log(`filtered out ${filterPromptsByTag(target.id)} prompts with tag ${target.id}!`);
+			console.debug(`filtered out ${filterPromptsByTag(target.id)} prompts with tag ${target.id}!`);
 		}
 	});
 
@@ -209,6 +209,6 @@ function updateFilteredPrompts() {
 		}
 	});
 
-	console.log(`reset window.filteredPrompts, and filtered ${filteredTags.length > 0 ? `${totalFiltered} prompts with tags [${filteredTags.join(", ")}]` : "nothing"}!`);
+	console.debug(`reset window.filteredPrompts, and filtered ${filteredTags.length > 0 ? `${totalFiltered} prompts with tags [${filteredTags.join(", ")}]` : "nothing"}!`);
 	updatePromptCounter();
 }

@@ -1,7 +1,10 @@
 // prompts.generator.js
 // generating the prompt/quote/whatever term i use anymore.
 
-window.generatePrompt = function () {
+window.generateQuote = function () {
+	console.group("creating a new quote...");
+	console.time("generateQuote");
+
 	// get characters from <input>s, add to array
 	const characters = window.getCharacters();
 
@@ -25,7 +28,7 @@ window.generatePrompt = function () {
 		randomPromptSetNumberFromRange(minChars, maxChars) : // range enabled
 		minChars; // range disabled
 
-	console.log(`using ${charsInPrompt} characters...`);
+	console.debug(`using ${charsInPrompt} characters...`);
 
 	const workingArray = window.filteredPrompts[charsInPrompt];
 
@@ -33,6 +36,11 @@ window.generatePrompt = function () {
 	const prompt = workingArray[Math.floor(Math.random() * workingArray.length)];
 
 	let output = prompt.text; // declare output...
+
+	console.debug("prompt:", prompt);
+
+	console.group("text replacement");
+	console.time("generateQuote > text replacement");
 
 	const START_REPLACE = "{{";
 	const END_REPLACE = "}}";
@@ -73,7 +81,7 @@ window.generatePrompt = function () {
 
 		let altValue = "";
 		if (typeof (replaceValue) === "boolean") {
-			console.log(replaceValue);
+			console.debug(replaceValue);
 			const a = charObject[1].split(":");
 			replaceValue = replaceValue ? a[0] : a[1];
 
@@ -85,7 +93,7 @@ window.generatePrompt = function () {
 		replaceValue = replaceValue.trim();
 		replaceValue = applyModifiers(replaceValue, modifiers);
 
-		console.log("replacing \"" + substring + "\" with \"" + replaceValue + "\"");
+		console.debug("replacing \"" + substring + "\" with \"" + replaceValue + "\"");
 
 		const field = window.createField(property, character.charNum, replaceValue);
 
@@ -104,6 +112,9 @@ window.generatePrompt = function () {
 		end = output.indexOf(END_REPLACE);
 	}
 
+	console.timeEnd("generateQuote > text replacement");
+	console.groupEnd(); // text replacement done
+
 	document.querySelector("#output").innerHTML = output;
 	window.fields[0] = document.querySelectorAll("#output .field");
 
@@ -112,15 +123,21 @@ window.generatePrompt = function () {
 	const em = document.createElement("em");
 	em.innerText = window.fetchedPromptSets[prompt.set].title;
 	about.appendChild(em);
+
+	console.timeEnd("generateQuote");
+	console.groupEnd();
 };
 
 // returns a random set of prompts, weighted by amount of contents
 const randomPromptSetNumberFromRange = function (min, max) {
+	min = Number(min);
+	max = Number(max);
+
 	const weight = {};
 	let total = 0;
 
-	for (let i = min; i < max + 1; i++) {
-		const setLength = window.prompts[i].length;
+	for (let i = min; i < (max + 1); i++) {
+		const setLength = window.filteredPrompts[i].length;
 		total += setLength;
 		weight[i] = setLength;
 	}
@@ -145,7 +162,6 @@ const randomPromptSetNumberFromRange = function (min, max) {
 		return false;
 	});
 
-	console.log(output);
 	return output;
 };
 

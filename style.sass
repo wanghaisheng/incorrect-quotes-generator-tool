@@ -42,6 +42,7 @@ nav
 
 a
 	color: inherit
+	display: inline-block
 
 a[href^="https"]::after
 	// fa-solid fa-arrow-up-right-from-square
@@ -64,18 +65,8 @@ a[href^="https"]::after
 	background: var(--bg-2)
 	border: 2px var(--gray-3) solid
 
-/* this exists to center the button. */
-.center-wrapper
-	display: flex
-	justify-content: center
-
 /* the div containing the character input boxes. */
-#character-inputs
-	display: flex
-	flex-direction: row
-	margin: 0 -3% 1em
-	max-height: 36em
-	overflow-y: auto
+#character-blocks
 
 .character-block
 	border: 2px var(--gray-3) solid
@@ -83,18 +74,15 @@ a[href^="https"]::after
 	margin: 0.25em
 	display: flex
 	flex-direction: column
-	> div
-		display: flex
-		justify-content: space-between
-		flex-grow: 1
-		column-gap: 1em
 
 .name
 	width: 100%
 	height: 2em
 
 .pronouns-block
+	display: flex
 	flex-direction: column
+	flex-shrink: 1
 	border: 1px var(--gray-3) solid
 	margin-top: 0.5em
 
@@ -103,17 +91,16 @@ a[href^="https"]::after
 	flex-direction: column
 	justify-content: space-between
 	flex-grow: 1
-	flex-wrap: true
-	width: 100%
-	> label
-		+ *
-			margin-top: 0.5em
-		> input
-			height: 1.5em
-			width: 12ch
+	flex-shrink: 1
+	flex-wrap: wrap
+	> label	> input
+		height: 1.5em
+		width: 12ch
+
+label + *
+	margin-top: 0.4em
 
 /* the "get some prompts" area */
-
 /* prompts */
 #prompt-set-selector
 	flex-grow: 1
@@ -153,16 +140,27 @@ input
 
 button
 	border: 0
-	background: #E6DEFFDF
+	background: var(--bg-2)
+	color: var(--fg-2)
 	text-align: center
+	vertical-align: middle
+	&:disabled
+		color: var(--gray-3)
 	&:hover
-		background: #E6DEFFC4
+		background: var(--gray-1)
 	&:active
-		background: #FFFFFF96
+		background: var(--bg-1)
+
+/* this exists to center the buttons. */
+.center-wrapper
+	display: flex
+	justify-content: center
+	align-items: center
 
 #remove-character, #add-character
 	width: 4ch
 	margin: 0 2ch
+	height: 1.3em
 	border: 1px var(--gray-3) solid
 
 #remove-character:active
@@ -171,31 +169,40 @@ button
 #add-character:active
 	background: var(--accent-4)
 
-#generate-prompt
-	position: relative
+#generate-quote
+	position: absolute
+	width: 100%
+	height: 80%
+	bottom: 0
 
 	&:disabled:hover::after
 		position: absolute
-		content: "Hey! This button is disabled because there aren't any prompts enabled. Enable some!"
+		content: "This button is disabled because there aren't any prompts enabled. Enable some first!"
 
 		background: var(--bg-2)
 		color: var(--fg-1)
-		border: 2px var(--fg-2) solid
+		border: 2px var(--gray-2) solid
 		padding: 1ch
 
-		left: -8ch
-		right: -8ch
+		left: -4ch
+		right: -4ch
 		top: 2em
 		max-width: 24ch
 
-br
-	/* wow this is (probably) awful */
-	margin-bottom: 0.25em
-
 /* rainbow thing on the top of the button. thanks css-tricks (https://css-tricks.com/gradient-borders-in-css/) */
 .rainbow-wrapper
-		background: var(--rainbow-gradient)
-		padding-top: 0.2em
+	background: var(--rainbow-gradient)
+	position: relative
+	width: 18ch
+	height: 1.8em
+	padding-top: 0.4em
+	border: 1px var(--gray-2) solid
+
+/* well this is disgusting */
+br
+	content: '\A'
+	display: block
+	margin-bottom: 0.25em
 
 .columns
 	margin: 0.5em
@@ -212,8 +219,6 @@ br
 .flex-column
 	display: flex
 	flex-direction: column
-	> * + *
-		margin-top: 0.2em
 
 input[type=number]
 	width: 4ch

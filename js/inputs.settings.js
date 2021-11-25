@@ -12,12 +12,12 @@ document.querySelectorAll("#settings input").forEach(input => {
 			Number(clamp(target.value || target.placeholder, target.min, target.max));
 
 		window.settings.set(target.id, value);
-		console.log("updated setting " + target.id + " to value " + value);
+		console.debug("updated setting " + target.id + " to value " + value);
 	});
 
 	const value = input.type === "checkbox" ? input.checked : Number(input.placeholder);
 	window.settings.set(input.id, value);
-	console.log("initialized setting " + input.id + " to value " + value);
+	console.debug("initialized setting " + input.id + " to value " + value);
 });
 
 // relating to characters in prompts settings
@@ -34,7 +34,9 @@ document.querySelector("#prompt-characters-min").addEventListener("input", event
 	if (window.settings.get("character-range-toggle")) {
 		const maxInput = document.querySelector("#prompt-characters-max");
 		maxInput.min = eventValue + 1;
-		maxInput.value = clamp(maxInput.valueAsNumber, maxInput.min, maxInput.max);
+		if (maxInput.value) {
+			maxInput.value = clamp(maxInput.valueAsNumber, maxInput.min, maxInput.max);
+		}
 	}
 });
 
@@ -83,7 +85,7 @@ window.updateCharacterRange = function (charCount) {
 	if (charCount === 1 && toggle.checked) {
 		toggle.checked = false;
 		maxInput.parentElement.hidden = true;
-		console.log("updated setting character-range-toggle to value false", "(too few characters!)");
+		console.debug("updated setting character-range-toggle to value false", "(too few characters!)");
 		window.settings.set("character-range-toggle", false);
 	}
 };

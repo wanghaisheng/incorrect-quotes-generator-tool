@@ -38,7 +38,6 @@ window.createField = function (property, charNum, content) {
 };
 
 window.updateFields = event => {
-	console.log("updating fields...");
 	const input = event.target;
 
 	if (input.name === "name") {

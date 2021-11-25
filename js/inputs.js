@@ -99,7 +99,7 @@ window.removeInput = function () {
 		window.fields.splice(nodes.length, 1);
 		nodes[nodes.length - 1].remove();
 	} else {
-		console.log("there's only one...");
+		console.debug("there's only one...");
 	}
 
 	window.updateCharacterRange(nodes.length - 1);

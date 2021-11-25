@@ -9,7 +9,7 @@
 	<link rel="stylesheet" href="./style.css">
 	<script src="./js/prompts.loading.js" defer></script>
 	<script src="./js/prompts.generator.js" defer></script>
-	<script src="./js/inputs.js" defer></script>
+<script src="./js/inputs.js" defer></script>
 	<script src="./js/inputs.pronouns.js" defer></script>
 	<script src="./js/inputs.settings.js" defer></script>
 	<script src="./js/fields.js" defer></script>
@@ -35,10 +35,12 @@
 			</div>
 			<div id="tag-list-container">
 				<h2>tags</h2>
-				<p id="tag-list-empty">this is where tags go... but there's nothing here yet.</p>
+				<p id="tag-list-empty">this is where tags go... but there aren't any here yet.</p>
 				<div id="tag-list"></div>
 			</div>
 		</div>
+
+		<span>More prompts eventually...</span>
 	</div>
 
 	<h1>input some stuff</h1>
@@ -47,8 +49,9 @@
 	<div class="center-wrapper">
 		<button id="remove-character" onclick="removeInput()">x</button>
 		<div class="rainbow-wrapper">
-			<button id="generate-prompt" class="rainbow-button" onclick="generatePrompt()" disabled>do the thing!</button>
+			<button id="generate-quote" onclick="generateQuote()" disabled>do the thing!</button>
 		</div>
+
 		<button id="add-character" onclick="addInput()">+</button>
 	</div>
 
@@ -57,17 +60,17 @@
 		<div class="flex-column">
 			<label>
 				<input type="checkbox" id="randomize">
-				Randomize characters
+				Randomize character order
 			</label>
 			<label>
 				<input type="checkbox" id="update-output-fields" checked>
-				Update output on input change
+				Update output on change
 			</label>
 		</div>
 		<div class="flex-column">
 			<label>
 				<input type="checkbox" id="character-range-toggle" disabled>
-				Use range of characters per prompt
+				Use random number of characters
 			</label>
 			<label>
 				Use prompts with

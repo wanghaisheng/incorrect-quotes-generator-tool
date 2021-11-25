@@ -191,7 +191,7 @@ function updatePronouns(event) {
 
 	if (!pronounSets.some(pronounSet => {
 		if (pronounInputs[0].value === pronounSet.subjectPn) {
-			console.log("matched \"" + pronounInputs[0].value + "\" for character " + charNum + "! setting placeholder values for remaining inputs…");
+			console.info("matched \"" + pronounInputs[0].value + "\" for character " + charNum + "! setting placeholder values for remaining inputs…");
 			for (const input of pronounInputs) {
 				input.placeholder = pronounSet[input.name];
 				input.dispatchEvent(new Event("placeholder-change"));
