@@ -1,23 +1,21 @@
 # incorrect-quotes-generator
 
 ![GitHub last commit](https://img.shields.io/github/last-commit/AndyThePie/incorrect-quotes-generator?style=flat-square)
-![XO code style](https://flat.badgen.net/badge/code%20style/XO/cyan)
+![XO code style](https://flat.badgen.net/badge/code%20style/XO%28-ish%29/cyan)
 ![Badge count](https://img.shields.io/badge/badges-half%20life%203%20confirmed-informational?style=flat-square)
 
-**a little web thing that inserts character names into prompts. because comedy.**
+**A little overcomplicated web thing that inserts character names into prompts to make "incorrect quotes". Because comedy.**
 
- ~~rips off~~ heavily inspired by [scatterpatter's incorrect quotes generator](https://incorrect-quotes-generator.neocities.org/). in fact, all of the prompts are stolen from his generator.
+ ~~Rips off~~ heavily inspired by [Scatterpatter's Incorrect Quotes Generator](https://incorrect-quotes-generator.neocities.org/) — in fact, all of the prompts are stolen from his generator.
 
-colors are from (or are based on) holllo's color theme, [love](https://love.holllo.cc/). (it's quite pretty!) love is under the [MIT License](https://git.holllo.cc/Holllo/love/src/branch/main/LICENSE).
+Colors are from / based on Holllo's color theme, [Love](https://love.holllo.cc/). (It's quite pretty!) Love is under the [MIT License](https://git.holllo.cc/Holllo/love/src/branch/main/LICENSE).
 
-character colors (past character 6) are generated using [HSLuv](https://www.hsluv.org/). the javascript implementation and a copy of its license (the [MIT License](https://github.com/hsluv/hsluv/blob/master/LICENSE)) can be found in the [`./hsluv`](./hsluv) folder.
+Colors are generated using [HSLuv](https://www.hsluv.org/). The used JavaScipt implementation and a copy of its license (the [MIT License](https://github.com/hsluv/hsluv/blob/master/LICENSE)) can be found in the [`./hsluv`](./hsluv) folder.
 
-## structure of stuff
-[inputs.js](./inputs.js) handles the `<input>` elements on the page -- adding and removing them, adding functions, etc.
-[promptGeneration.js](./promptGeneration.js) deals with generating the prompts.
+The external link icon ("arrow-up-right-from-square") is from [Font Awesome 6.0](https://fontawesome.com/v6.0/icons/arrow-up-right-from-square?s=solid). Its SVG code is in the stylesheet.
 
-### prompts
-[prompts.json](./prompts.json) simply contains an array with paths to each prompts file. a prompts file is json, and is structured like...
+## prompts
+The [promptSets](./promptSets) directory contains the sets of prompts, each of which are formatted like:
 ```jsonc
 {
 	"title": "a title for this fine collection of prompts",
@@ -25,18 +23,16 @@ character colors (past character 6) are generated using [HSLuv](https://www.hslu
 	"url": "creator's url or something. attribution.",
 	"prompts": {
 		"1": [ // prompts grouped by how many characters are in them
-			{ // text: String; notes: String; tags: [String]
+			{ // text: String; tags: [String]
 				"text": "{1}: boy do i like beans!",
-				"notes": "from user <a href='https://example.com'>sampletext</a>", //innerHTML. whoops.
-				"tags": ["shipping", "nsfw"]
-			}
-		],
-		"3": [ // character count doesn't necessarily have to be in order...
-			{ // and fields can be ommitted.
-				"text": "{1}: yo do you like waffles<br>{2}: yeah i like waffles<br>{3}: this is blasphemy pancakes are better<br>{1}: no u<br>{3}: excuse me<br>{1}: you heard me",
-				"tags": ["shipping"]
+				"tags": ["shipping", "swearing"] // optional.
 			}
 		]
 	}
 }
 ```
+
+There's also [promptSetList.json](./promptSetList.json), containing all the loadable prompt sets.
+
+## contributing
+[Issues](https://github.com/12beesinatrenchcoat/incorrect-quotes-generator/issues/new) and pull requests welcome (please create an issue if you plan on working on anything major though, thanks!)
