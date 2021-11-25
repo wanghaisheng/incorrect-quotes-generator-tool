@@ -24,7 +24,7 @@ fetch("./promptSetList.json")
 
 const promptSetSelector = document.querySelector("#prompt-set-selector");
 
-// adding the prompt set to the selector, and fetching it.
+// adding the prompt set to the selector, and logic for fetching it.
 function addPromptSetToSelector(key) {
 	const set = promptSetList[key];
 	const input = document.createElement("input");
@@ -37,22 +37,9 @@ function addPromptSetToSelector(key) {
 		const key = target.id;
 
 		if (target.checked) {
-			if (window.fetchedPromptSets[key]) {
-				console.debug(`${promptSetList[key].title} already fetched...`);
-			} else {
-				target.indeterminate = true;
-				await fetch(promptSetList[key].path)
-					.then(response => response.json())
-					.then(set => {
-						Object.keys(set.prompts).forEach(charNum => {
-							set.prompts[charNum].forEach(p => promptSetup(p, key));
-						});
-						window.fetchedPromptSets[key] = set;
-
-						target.indeterminate = false;
-						console.debug(`fetched ${promptSetList[key].title}!`);
-					});
-			}
+			target.indeterminate = true;
+			await window.fetchPromptSet(promptSetList[key].path, key);
+			target.indeterminate = false;
 
 			Object.keys(window.fetchedPromptSets[key].prompts).forEach(charNum => {
 				if (!prompts[charNum]) {
@@ -136,6 +123,45 @@ function runOnAllPrompts(prompts, callbackFn) {
 	});
 	return prompts;
 }
+
+/**
+ * Fetches a prompt set, and adds it to fetchedPromptSets.
+ * @param {String} path
+ * @param {String} key
+ */
+window.fetchPromptSet = async (path, key) => {
+	if (window.fetchedPromptSets[key]) {
+		console.debug(`${promptSetList[key].title} already fetched...`);
+	} else {
+		await fetch(path)
+			.then(response => response.json())
+			.then(set => {
+				// if the function is called manually, the prompt set may not be in the set list.
+				// in which case... add it.
+				if (!promptSetList[key]) {
+					promptSetList[key] = {
+						title: set.title,
+						description: set.description,
+						url: set.url,
+						path
+					};
+				}
+
+				console.log(set);
+				Object.keys(set.prompts).forEach(charNum => {
+					set.prompts[charNum].forEach(p => promptSetup(p, key));
+				});
+				window.fetchedPromptSets[key] = set;
+
+				console.debug(`fetched ${promptSetList[key].title}!`);
+			});
+	}
+
+	// in case there's no visible selector on the page
+	if (!document.querySelector("#" + key)) {
+		addPromptSetToSelector(key);
+	}
+};
 
 /* FUNCTIONS INVOLVING TAGS AND STUFF */
 

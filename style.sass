@@ -65,9 +65,8 @@ a[href^="https"]::after
 	background: var(--bg-2)
 	border: 2px var(--gray-3) solid
 
-/* the div containing the character input boxes. */
-#character-blocks
 
+/* character inputs. */
 .character-block
 	border: 2px var(--gray-3) solid
 	padding: 0.5em
@@ -101,7 +100,6 @@ label + *
 	margin-top: 0.4em
 
 /* the "get some prompts" area */
-/* prompts */
 #prompt-set-selector
 	flex-grow: 1
 	flex-basis: 50%
@@ -112,6 +110,9 @@ label + *
 	flex-direction: row
 	flex-wrap: wrap
 	justify-content: space-between
+
+	&:empty // fixes a weird spacing thing.
+		display: none
 
 #tag-list-container
 	flex-shrink: 1
@@ -137,6 +138,10 @@ button, input
 input
 	border: 1px var(--gray-3) solid
 	color: var(--fg-1)
+
+	&:placeholder-shown
+		border-style: dashed
+		color: var(--gray-3)
 
 button
 	border: 0
