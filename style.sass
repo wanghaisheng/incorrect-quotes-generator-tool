@@ -80,7 +80,7 @@ a
 	overflow-y: auto
 
 .character-block
-	border: 2px var(--fg-secondary) solid
+	border: 2px var(--gray-3) solid
 	padding: 0.5em
 	margin: 0.25em
 	display: flex
@@ -97,7 +97,7 @@ a
 
 .pronouns-block
 	flex-direction: column
-	border: 1px var(--fg-secondary) solid
+	border: 1px var(--gray-3) solid
 	margin-top: 0.5em
 
 .pronouns
@@ -131,6 +131,7 @@ a
 #tag-list-container
 	flex-shrink: 1
 	flex-basis: 40%
+	min-width: 36ch
 
 .tag
 	background: var(--bg-secondary)
@@ -151,7 +152,7 @@ button, input
 	font-size: 1em
 
 input
-	border: 1px var(--fg-secondary) solid
+	border: 1px var(--gray-3) solid
 	color: var(--fg-primary)
 
 button
@@ -166,6 +167,7 @@ button
 #remove-character, #add-character
 	width: 4ch
 	margin: 0 2ch
+	border: 1px var(--gray-3) solid
 
 #remove-character:active
 	background: #F99FB1 // accent 1
@@ -173,17 +175,26 @@ button
 #add-character:active
 	background: #96C839 // accent 4
 
+#generate-prompt
+	position: relative
+
+	&:disabled:hover::after
+		position: absolute
+		content: "Hey! This button is disabled because there aren't any prompts enabled. Enable some!"
+
+		background: var(--bg-secondary)
+		color: var(--fg-primary)
+		border: 2px var(--fg-secondary) solid
+		padding: 1ch
+
+		left: -8ch
+		right: -8ch
+		top: 2em
+		max-width: 24ch
+
 br
 	/* wow this is (probably) awful */
 	margin-bottom: 0.25em
-
-// .char-#{ background: var(--char-#); }
-@mixin character-highlight($character-numbers)
-	@each $character-number in $character-numbers
-		.char-#{$character-number}
-			background: var(--char-#{$character-number})
-
-@include character-highlight(1 2 3 4 5 6)
 
 /* rainbow thing on the top of the button. thanks css-tricks (https://css-tricks.com/gradient-borders-in-css/) */
 .rainbow-wrapper

@@ -108,8 +108,9 @@ const promptSetup = (p, key) => {
 	}
 };
 
-// counting propts.
+// counting prompts. also disables the "generate prompt" button when there are no prompts.
 const promptCounter = document.querySelector("#prompt-count");
+const generatePromptButton = document.querySelector("#generate-prompt");
 function updatePromptCounter() {
 	let count = 0;
 	runOnAllPrompts(window.filteredPrompts, () => {
@@ -117,6 +118,12 @@ function updatePromptCounter() {
 	});
 
 	promptCounter.textContent = `${count > 0 ? count : "no"} prompt${count === 1 ? "" : "s"}`;
+
+	if (count === 0) {
+		generatePromptButton.disabled = true;
+	} else {
+		generatePromptButton.disabled = false;
+	}
 }
 
 /**
