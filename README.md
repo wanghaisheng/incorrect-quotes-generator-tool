@@ -10,8 +10,6 @@
 
 Colors are from / based on Holllo's color theme, [Love](https://love.holllo.cc/). (It's quite pretty!) Love is under the [MIT License](https://git.holllo.cc/Holllo/love/src/branch/main/LICENSE).
 
-Colors are generated using [HSLuv](https://www.hsluv.org/). The used JavaScipt implementation and a copy of its license (the [MIT License](https://github.com/hsluv/hsluv/blob/master/LICENSE)) can be found in the [`./hsluv`](./hsluv) folder.
-
 The external link icon ("arrow-up-right-from-square") is from [Font Awesome 6.0](https://fontawesome.com/v6.0/icons/arrow-up-right-from-square?s=solid). Its SVG code is in the stylesheet.
 
 ## prompts

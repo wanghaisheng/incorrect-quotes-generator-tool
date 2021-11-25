@@ -78,11 +78,7 @@ window.addInput = function () {
 
 	charBlock.appendChild(window.createPronounsDiv(charNum));
 
-	// creating a new color for the new character...
-	const color = window.hsluv.hsluvToHex([
-		((charNum - 1) * 36) % 360, 70, 75
-	]);
-	style.sheet.insertRule(`.char-${charNum} { background: ${color}C4 }`);
+	style.sheet.insertRule(`.char-${charNum} { background: var(--accent-${charNum % 10 || 10}) }`);
 
 	charBlocks.append(charBlock);
 

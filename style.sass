@@ -3,33 +3,14 @@
 @use "sass:color"
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap')
 
+@import colors
+
 *
 	box-sizing: border-box
 
 :root
 	font-family: "Open Sans", "Ubuntu", "Helvetica Neue", "Arial", sans-serif
 
-	/* colors are taken from the love color theme (https://love.holllo.cc), under the MIT license. <3 */
-	--bg-primary:   #F2EFFF
-	--bg-secondary: #E6DEFF
-	--fg-primary:   #1F1731
-	--fg-secondary: #2A2041
-	--gray-2: #C6C6C6
-	--gray-3: #ABABAB
-
-	--rainbow-gradient: linear-gradient(to right, #F99FB1, #FAA56C, #D2B83A, #96C839, #3BD18A, #3ECDBF, #41C8E5, #98B9F8, #D5A6F8, #F99ADD)
-
-/* dark theme! /*
-@media (prefers-color-scheme: dark)
-	:root
-		--bg-primary:   #1F1731
-		--bg-secondary: #2A2041
-		--fg-primary:  #F2EFFF
-		--fg-secondary: #E6DEFF
-		--gray-2: #303030
-		--gray-3: #474747
-
-/* end of colors, now the rest  of the stylesheet */
 h1
 	margin: 0.4em 0
 
@@ -37,12 +18,12 @@ body
 	width: 90vw
 	max-width: 96ch
 	margin: 2% auto
-	background: var(--bg-primary)
-	color: var(--fg-primary)
+	background: var(--bg-1)
+	color: var(--fg-1)
 
 nav
-	background: var(--fg-secondary)
-	color: var(--bg-primary)
+	background: var(--fg-2)
+	color: var(--bg-1)
 	padding: 0.5em
 	opacity: 0.8
 	display: flex
@@ -51,6 +32,9 @@ nav
 
 	> a[href^="https"]::after
 		filter: invert(100%)
+
+		@media (prefers-color-scheme: dark)
+			filter: none
 
 @media (max-width: 64ch)
 	nav > a
@@ -67,6 +51,9 @@ a[href^="https"]::after
 	width: 0.8em
 	margin-left: 0.2em
 
+	@media (prefers-color-scheme: dark)
+		filter: invert(100%)
+
 /* the little text in the top bar. */
 #title
 	font-weight: 600
@@ -74,7 +61,7 @@ a[href^="https"]::after
 /* the output box */
 #output
 	padding: 0.5em
-	background: var(--bg-secondary)
+	background: var(--bg-2)
 	border: 2px var(--gray-3) solid
 
 /* this exists to center the button. */
@@ -145,7 +132,7 @@ a[href^="https"]::after
 	min-width: 36ch
 
 .tag
-	background: var(--bg-secondary)
+	background: var(--bg-2)
 	padding: 0.2em 0.5em 0.2em 0.2em
 	+ .tag
 		margin-left: 0.5em
@@ -155,8 +142,6 @@ a[href^="https"]::after
 
 	> input:not(:checked) + label
 		text-decoration: line-through
-		&:hover
-			text-decoration: none
 
 /* style the inputs so they don't look like windows 98 */
 button, input
@@ -164,7 +149,7 @@ button, input
 
 input
 	border: 1px var(--gray-3) solid
-	color: var(--fg-primary)
+	color: var(--fg-1)
 
 button
 	border: 0
@@ -181,10 +166,10 @@ button
 	border: 1px var(--gray-3) solid
 
 #remove-character:active
-	background: #F99FB1 // accent 1
+	background: var(--accent-1)
 
 #add-character:active
-	background: #96C839 // accent 4
+	background: var(--accent-4)
 
 #generate-prompt
 	position: relative
@@ -193,9 +178,9 @@ button
 		position: absolute
 		content: "Hey! This button is disabled because there aren't any prompts enabled. Enable some!"
 
-		background: var(--bg-secondary)
-		color: var(--fg-primary)
-		border: 2px var(--fg-secondary) solid
+		background: var(--bg-2)
+		color: var(--fg-1)
+		border: 2px var(--fg-2) solid
 		padding: 1ch
 
 		left: -8ch
