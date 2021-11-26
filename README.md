@@ -1,6 +1,6 @@
 # incorrect-quotes-generator
 
-![GitHub last commit](https://img.shields.io/github/last-commit/AndyThePie/incorrect-quotes-generator?style=flat-square)
+![GitHub last commit](https://img.shields.io/github/last-commit/12beesinatrenchcoat/incorrect-quotes-generator?style=flat-square)
 ![XO code style](https://flat.badgen.net/badge/code%20style/XO%28-ish%29/cyan)
 ![Badge count](https://img.shields.io/badge/badges-half%20life%203%20confirmed-informational?style=flat-square)
 
