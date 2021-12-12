@@ -8,15 +8,19 @@
 	},
 	"author": "AndyThePie",
 	"license": "MIT",
+	"private": true,
 	"bugs": {
 		"url": "https://github.com/AndyThePie/incorrect-quotes-generator/issues"
 	},
 	"homepage": "andythepie.github.io/incorrect-quotes-generator",
 	"scripts": {
-		"test": "xo"
+		"test": "xo",
+		"build": "node build.js"
 	},
 	"devDependencies": {
+		"esbuild": "^0.14.2",
 		"eslint": "^7.28.0",
-		"eslint-config-xo": "^0.36.0"
+		"eslint-config-xo": "^0.36.0",
+		"sass": "^1.45.0"
 	}
 }

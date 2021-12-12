@@ -1,9 +1,9 @@
 # node.js stuff, woo
 node_modules
-package-lock.json
 
-# compile sass.
+# compiled files
 *.css*
+dist
 
 # configure your own workspace.
 .vscode
