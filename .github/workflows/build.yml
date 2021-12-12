@@ -1,0 +1,28 @@
+# building the thing, then commiting it to the gh-pages branch
+
+on:
+  release:
+    types:
+      - published
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: build the site
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: use node.js 16.x
+        uses: actions/setup-node@v2
+        with:
+          node-version: 16.x
+          cache: 'npm'
+      - run: npm i
+      - run: npm run build
+
+      - name: commit to gh-pages
+        run: |
+          git add -Af
+          git commit -m "build for $(git rev-parse HEAD)"
+          git push origin gh-pages --force
