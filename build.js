@@ -1,5 +1,6 @@
 const {compile} = require("sass");
-const {writeFile} = require("fs");
+const minify = require("node-json-minify");
+const {writeFile, readFileSync, readdirSync} = require("fs");
 
 // compiling sass...
 const sassOutput = compile("sass/style.sass", {
@@ -24,5 +25,15 @@ require('esbuild').build({
 	target: "es6",
 	outdir: 'dist'
 }).catch(() => process.exit(1));
+
+// minifying json...
+readdirSync("promptSets").forEach(filename => {
+	const fileContent = readFileSync("promptSets/" + filename, "utf-8");
+	writeFile("promptSets/" + filename, minify(fileContent), err => {
+		if (err) {
+			console.log(err);
+		}
+	});
+});
 
 console.log("built files!");
