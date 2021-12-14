@@ -27,8 +27,8 @@ require('esbuild').build({
 }).catch(() => process.exit(1));
 
 // minifying json...
-readdirSync("promptSets").forEach(filename => {
-	const fileContent = readFileSync("promptSets/" + filename, "utf-8");
+readdirSync("rawPromptSets").forEach(filename => {
+	const fileContent = readFileSync("rawPromptSets/" + filename, "utf-8");
 	writeFile("promptSets/" + filename, minify(fileContent), err => {
 		if (err) {
 			console.log(err);
