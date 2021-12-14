@@ -13,7 +13,7 @@ Colors are from / based on Holllo's color theme, [Love](https://love.holllo.cc/)
 The external link icon ("arrow-up-right-from-square") is from [Font Awesome 6.0](https://fontawesome.com/v6.0/icons/arrow-up-right-from-square?s=solid). Its SVG code is [style.sass](sass/style.sass).
 
 ## prompts
-The [promptSets](./promptSets) directory contains the sets of prompts, each of which are formatted like:
+The [rawPromptSets](./rawPromptSets) directory contains the sets of prompts, each of which are formatted like:
 ```jsonc
 {
 	"title": "a title for this fine collection of prompts",
