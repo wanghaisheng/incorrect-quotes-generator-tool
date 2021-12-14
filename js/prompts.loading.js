@@ -70,10 +70,12 @@ function addPromptSetToSelector(key) {
 
 	label.append(" " + set.description + " ");
 
-	const sourceLink = document.createElement("a");
-	sourceLink.textContent = "Source";
-	sourceLink.href = set.url;
-	label.append(sourceLink);
+	if (set.url) {
+		const sourceLink = document.createElement("a");
+		sourceLink.textContent = "Source";
+		sourceLink.href = set.url;
+		label.append(sourceLink);
+	}
 
 	promptSetSelector.appendChild(label);
 }
