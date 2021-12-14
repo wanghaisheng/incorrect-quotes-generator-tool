@@ -21,8 +21,11 @@ jobs:
         with:
           node-version: 16
 
-      - run: npm i
-      - run: npm run build
+      - name: building the thing
+        run: |
+          npm i
+          mkdir promptSets
+          npm run build
 
       - name: commit to gh-pages
         run: |
