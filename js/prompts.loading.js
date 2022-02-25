@@ -149,13 +149,12 @@ window.fetchPromptSet = async (path, key) => {
 					};
 				}
 
-				console.log(set);
 				Object.keys(set.prompts).forEach(charNum => {
 					set.prompts[charNum].forEach(p => promptSetup(p, key));
 				});
 				window.fetchedPromptSets[key] = set;
 
-				console.debug(`fetched ${promptSetList[key].title}!`);
+				console.debug(`fetched ${promptSetList[key].title}!`, set);
 			});
 	}
 

@@ -49,7 +49,7 @@ window.updateFields = event => {
 	}
 
 	// updating output fields
-	if (window.settings.get("update-output-fields")) {
+	if (window.settings["update-output-fields"].checked) {
 		const classList = ".char-" + input.dataset.charNum + "." + input.name;
 		document.querySelectorAll("#output .field" + classList).forEach(field => {
 			if (input.name === "plural") {

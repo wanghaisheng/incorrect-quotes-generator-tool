@@ -9,7 +9,7 @@ window.generateQuote = function () {
 	const characters = window.getCharacters();
 
 	// randomize character order?
-	if (document.querySelector("#randomize").checked) {
+	if (window.settings["randomize"].checked) {
 		// fisher-yates shuffle - thanks https://javascript.info/task/shuffle
 		for (let i = characters.length - 1; i > 0; i--) {
 			const j = Math.floor(Math.random() * (i + 1));
@@ -17,14 +17,14 @@ window.generateQuote = function () {
 		}
 	}
 
-	const minCharsInput = document.querySelector("#prompt-characters-min");
-	const maxCharsInput = document.querySelector("#prompt-characters-max");
+	const minCharsInput = window.settings["prompt-characters-min"];
+	const maxCharsInput = window.settings["prompt-characters-max"];
 
 	const minChars = minCharsInput.value || minCharsInput.placeholder;
 	const maxChars = minCharsInput.value || maxCharsInput.placeholder;
 
 	// how many characters to use in the prompt?
-	const charsInPrompt = window.settings.get("character-range-toggle") ?
+	const charsInPrompt = window.settings["character-range-toggle"].checked ?
 		randomPromptSetNumberFromRange(minChars, maxChars) : // range enabled
 		minChars; // range disabled
 
@@ -39,7 +39,7 @@ window.generateQuote = function () {
 
 	console.debug("prompt:", prompt);
 
-	console.group("text replacement");
+	console.groupCollapsed("text replacement");
 	console.time("generateQuote > text replacement");
 
 	const START_REPLACE = "{{";

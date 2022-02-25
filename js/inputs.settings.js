@@ -1,26 +1,16 @@
 // inputs.settings.js
 // stuff dealing with settings.
 
-// setting up a Map and adding functions.
-window.settings = new Map();
+// contains input element objects.
+window.settings = {};
 document.querySelectorAll("#settings input").forEach(input => {
-	input.addEventListener("input", event => {
-		const {target} = event;
-
-		const value = target.type === "checkbox" ?
-			target.checked :
-			Number(clamp(target.value || target.placeholder, target.min, target.max));
-
-		window.settings.set(target.id, value);
-		console.debug("updated setting " + target.id + " to value " + value);
-	});
-
-	const value = input.type === "checkbox" ? input.checked : Number(input.placeholder);
-	window.settings.set(input.id, value);
-	console.debug("initialized setting " + input.id + " to value " + value);
+	// turns out getElementById is dynamic. neato.
+	window.settings[input.id] = document.getElementById(input.id);
 });
 
-// relating to characters in prompts settings
+console.debug(settings);
+
+// updating maximum characters in prompt input when minimum is updated
 document.querySelector("#prompt-characters-min").addEventListener("input", event => {
 	if (isNaN(event.target.valueAsNumber)) {
 		// things get messy if the value isn't a number...
@@ -31,7 +21,7 @@ document.querySelector("#prompt-characters-min").addEventListener("input", event
 
 	const eventValue = clamp(target.valueAsNumber, target.min, target.max);
 
-	if (window.settings.get("character-range-toggle")) {
+	if (window.settings["character-settings-toggle"].checked) {
 		const maxInput = document.querySelector("#prompt-characters-max");
 		maxInput.min = eventValue + 1;
 		if (maxInput.value) {
@@ -44,7 +34,7 @@ document.querySelectorAll("#settings input[type=number]").forEach(input => {
 	input.addEventListener("input", event => {
 		const {target} = event;
 
-		// input validation
+		// input validation, must not be less than minimum / greater than maximum
 		target.value = clamp(target.value, target.min, target.max);
 
 		// plural or singular "character"
@@ -56,12 +46,11 @@ document.querySelectorAll("#settings input[type=number]").forEach(input => {
 	});
 });
 
-// stuff relating to character ranges
+// updating character ranges when characters are added or removed
 window.updateCharacterRange = function (charCount) {
-	// runs on addition or removal of character
 	const minInput = document.querySelector("#prompt-characters-min");
 	const maxInput = document.querySelector("#prompt-characters-max");
-	const charRangeToggle = window.settings.get("character-range-toggle");
+	const charRangeToggle = window.settings["character-range-toggle"].checked;
 
 	if (charRangeToggle) {
 		minInput.max = charCount - 1;
@@ -86,10 +75,10 @@ window.updateCharacterRange = function (charCount) {
 		toggle.checked = false;
 		maxInput.parentElement.hidden = true;
 		console.debug("updated setting character-range-toggle to value false", "(too few characters!)");
-		window.settings.set("character-range-toggle", false);
 	}
 };
 
+// when the character range toggle is checked or unchecked.
 document.querySelector("#character-range-toggle").addEventListener("input", event => {
 	const charRangeInputs = document.querySelectorAll("#settings input[type=number]");
 	const charCount = window.getCharacters().length;
