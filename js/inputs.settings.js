@@ -8,7 +8,7 @@ document.querySelectorAll("#settings input").forEach(input => {
 	window.settings[input.id] = document.getElementById(input.id);
 });
 
-console.debug(settings);
+console.debug(window.settings);
 
 // updating maximum characters in prompt input when minimum is updated
 document.querySelector("#prompt-characters-min").addEventListener("input", event => {
@@ -21,7 +21,7 @@ document.querySelector("#prompt-characters-min").addEventListener("input", event
 
 	const eventValue = clamp(target.valueAsNumber, target.min, target.max);
 
-	if (window.settings["character-settings-toggle"].checked) {
+	if (window.settings["character-range-toggle"].checked) {
 		const maxInput = document.querySelector("#prompt-characters-max");
 		maxInput.min = eventValue + 1;
 		if (maxInput.value) {
