@@ -21,7 +21,7 @@ window.generateQuote = function () {
 	const maxCharsInput = window.settings["prompt-characters-max"];
 
 	const minChars = minCharsInput.value || minCharsInput.placeholder;
-	const maxChars = minCharsInput.value || maxCharsInput.placeholder;
+	const maxChars = maxCharsInput.value || maxCharsInput.placeholder;
 
 	// how many characters to use in the prompt?
 	const charsInPrompt = window.settings["character-range-toggle"].checked ?
