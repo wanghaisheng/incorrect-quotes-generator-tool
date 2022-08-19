@@ -2,9 +2,9 @@ name: build + publish the site
 # building the thing, then commiting it to the gh-pages branch
 
 on:
-  release:
-    types:
-      - published
+  push:
+    branches:
+      - master
   workflow_dispatch:
 
 jobs:
