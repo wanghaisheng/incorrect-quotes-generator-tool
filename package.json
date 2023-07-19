@@ -6,13 +6,13 @@
 		"type": "git",
 		"url": "git+https://github.com/12beesinatrenchcoat/incorrect-quotes-generator.git"
 	},
-	"author": "Andy Chan / 12beesinatrenchcoat <12beesinatrenchcoat@protonmail.com>",
+	"author": "Andy Chan (12beesinatrenchcoat) <andy@12beesinatrenchco.at>",
 	"license": "MIT",
 	"private": true,
 	"bugs": {
 		"url": "https://github.com/12beesinatrenchcoat/incorrect-quotes-generator/issues"
 	},
-	"homepage": "12beesinatrenchcoat.github.io/incorrect-quotes-generator",
+	"homepage": "https://12beesinatrenchco.at/incorrect-quotes-generator",
 	"scripts": {
 		"lint": "eslint js",
 		"dev": "vite",
@@ -20,12 +20,12 @@
 		"preview": "vite preview"
 	},
 	"devDependencies": {
-		"esbuild": "^0.14.2",
-		"eslint": "^7.28.0",
-		"eslint-config-xo": "^0.36.0",
-		"sass": "^1.45.0",
-		"terser": "^5.14.2",
-		"vite": "^3.0.8",
+		"esbuild": "^0.18.14",
+		"eslint": "^8.45.0",
+		"eslint-config-xo": "^0.43.1",
+		"sass": "^1.63.6",
+		"terser": "^5.19.1",
+		"vite": "^4.4.4",
 		"vite-plugin-html": "^3.2.0"
 	}
 }
