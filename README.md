@@ -1,4 +1,4 @@
-# incorrect-quotes-generator
+# shopconna incorrect-quotes-generator
 
 ![GitHub last commit](https://img.shields.io/github/last-commit/12beesinatrenchcoat/incorrect-quotes-generator?style=flat-square)
 ![XO code style](https://flat.badgen.net/badge/code%20style/XO%28-ish%29/cyan)
